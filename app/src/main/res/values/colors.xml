@@ -14,6 +14,9 @@
     <color name="color_secondary_dark">#04322D</color>
     <color name="color_text_onsecondary">#FF000000</color>
 
+    <color name="azul">#6498FE</color>
+    <color name="Transparente">#BFFFFFFF</color>
+
 
 
 </resources>
