@@ -53,10 +53,54 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         // Constrain the camera target to the Adelaide bounds.
         mMap.setLatLngBoundsForCameraTarget(colombia);
 
+        //SubRegiones De Antioquia
+
+
+
+        //OCCIDENTE ANTIOQUEÑO
+        //Dabeiba
         mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(6.00, -73.817))
-                .title("San Francisco")
-                .snippet("Population: 776733"));
+                .position(new LatLng(7, -76.25))
+                .title("OCCIDENTE ANTIOQUEÑO"));
+
+        //NORTE ANTIOQUEÑO
+        //Ituango
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(6.233, -75.15))
+                .title("NORTE ANTIOQUEÑO"));
+
+        //VALLE DE ABURRÁ
+        //Medellin
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(6.217, -75.567))
+                .title("VALLE DE ABURRÁ"));
+
+
+        //SubReguiones
+        //BAJO CAUCA
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(7.583, -75.317))
+                .title("BAJO CAUCA"));
+
+        //MAGDALENA MEDIO
+        //puerto berrio
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(6.48998, -74.4025))
+                .title("MAGDALENA MEDIO"));
+
+
+        //NORDESTE ANTIOQUEÑO
+        //Remedios
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(7.0275, -74.694))
+                .title("NORDESTE ANTIOQUEÑO"));
+
+        //ORIENTE ANTIOQUEÑO
+        //Guatapé
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(6.233, -75.15))
+                .title("ORIENTE ANTIOQUEÑO"));
+
 
 
 
