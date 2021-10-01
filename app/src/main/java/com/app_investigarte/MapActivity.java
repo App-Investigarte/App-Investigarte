@@ -40,8 +40,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         // Add a marker in Sydney and move the camera
         LatLng antioquia = new LatLng(6.55, -75.817);
-        mMap.addMarker(new MarkerOptions().position(antioquia).title("Departamento de Antioquia"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(antioquia, 7.0f));
+        mMap.addMarker(new MarkerOptions().position(antioquia)
+                .title("Departamento de Antioquia")
+                .snippet("Population: 6680000"));
+
 
         mMap.setMinZoomPreference(5.5f);
 
@@ -53,9 +56,100 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         // Constrain the camera target to the Adelaide bounds.
         mMap.setLatLngBoundsForCameraTarget(colombia);
 
-        //SubRegiones De Antioquia
+          
+      
+      //SubRegiones De Antioquia
+      
+       //Urabá Antioqueño
+        LatLng apartado=new LatLng(7.883,-76.633);
+        mMap.addMarker(new MarkerOptions().position(apartado)
+                        .title("Municipio de Apartadó"));
+
+        LatLng turbo=new LatLng(8.0926,-76.7282);
+        mMap.addMarker(new MarkerOptions().position(turbo)
+                .title("Municipio de Turbo"));
+
+        LatLng necocli=new LatLng(8.4357, -76.7767);
+        mMap.addMarker(new MarkerOptions().position(necocli)
+                .title("Municipio de Necoclí"));
 
 
+        LatLng chigorodo=new LatLng( 7.667, -76.683);
+        mMap.addMarker(new MarkerOptions().position(chigorodo)
+                .title("Municipio de Chigorodó"));
+
+        LatLng sanPedroUraba=new LatLng( 8.283, -76.383);
+        mMap.addMarker(new MarkerOptions().position( sanPedroUraba)
+                .title("Municipio de San Pedro de Urabá"));
+
+        LatLng mutata=new LatLng( 7.233,  -76.433);
+        mMap.addMarker(new MarkerOptions().position( mutata)
+                .title("Municipio de Mutatá"));
+
+
+        //Suroeste Antioqueño
+
+        LatLng jerico=new LatLng( 6.267, -75.783);
+        mMap.addMarker(new MarkerOptions().position(jerico)
+                .title("Municipio de Jericó"));
+
+        LatLng jardin=new LatLng( 5.6, -75.817);
+        mMap.addMarker(new MarkerOptions().position(jardin)
+                .title("Municipio de Jardín"));
+
+        LatLng amaga=new LatLng( 6.05, -75.683);
+        mMap.addMarker(new MarkerOptions().position(amaga)
+                .title("Municipio de Amagá"));
+
+        LatLng andes=new LatLng( 5.65, -75.867);
+        mMap.addMarker(new MarkerOptions().position(andes)
+                .title("Municipio de Andes"));
+
+        LatLng betania=new LatLng( 5.733, -75.967);
+        mMap.addMarker(new MarkerOptions().position(betania)
+                .title("Municipio de Betania"));
+
+        LatLng caramanta=new LatLng( 5.617, -75.85);
+        mMap.addMarker(new MarkerOptions().position(caramanta)
+                .title("Municipio de Caramanta"));
+
+        LatLng ciudadBolivar=new LatLng( 5.85, -76.017);
+        mMap.addMarker(new MarkerOptions().position(ciudadBolivar)
+                .title("Municipio de Ciudad Bolivar"));
+
+        LatLng concordia=new LatLng( 6.05, -75.9);
+        mMap.addMarker(new MarkerOptions().position(concordia)
+                .title("Municipio de Concordia"));
+
+        LatLng hispania=new LatLng( 5.8, -75.9);
+        mMap.addMarker(new MarkerOptions().position(hispania)
+                .title("Municipio de Hispania"));
+
+        LatLng salgar=new LatLng( 5.95, -75.967);
+        mMap.addMarker(new MarkerOptions().position(salgar)
+                .title("Municipio de Salgar"));
+
+        LatLng tarso=new LatLng( 5.867, -75.817);
+        mMap.addMarker(new MarkerOptions().position(tarso)
+                .title("Municipio de Tarso"));
+
+        LatLng titiribi=new LatLng( 6.05, -75.783);
+        mMap.addMarker(new MarkerOptions().position(titiribi)
+                .title("Municipio de Titiribí"));
+
+        LatLng urrao=new LatLng( 6.317, -76.133);
+        mMap.addMarker(new MarkerOptions().position(urrao)
+                .title("Municipio de Urrao"));
+
+        LatLng fredonia=new LatLng( 5.917, -75.667);
+        mMap.addMarker(new MarkerOptions().position(fredonia)
+                .title("Municipio de Fredonia"));
+
+        LatLng valparaiso=new LatLng(  5.617, -75.633);
+        mMap.addMarker(new MarkerOptions().position(valparaiso)
+                .title("Municipio de Valparaiso"));
+
+      
 
         //OCCIDENTE ANTIOQUEÑO
         //Dabeiba
@@ -85,8 +179,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         //MAGDALENA MEDIO
         //puerto berrio
         mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(6.48998, -74.4025))
-                .title("MAGDALENA MEDIO"));
+        .position(new LatLng(6.48998, -74.4025))
+        .title("MAGDALENA MEDIO"));
 
 
         //NORDESTE ANTIOQUEÑO
@@ -100,6 +194,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.233, -75.15))
                 .title("ORIENTE ANTIOQUEÑO"));
+
 
 
 
