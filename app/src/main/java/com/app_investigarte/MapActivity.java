@@ -302,11 +302,89 @@ public class MapActivity extends AppCompatActivity
                 .position(new LatLng(7, -76.25))
                 .title("Municipio de Valparaiso"));
 
+        //Santa Fé de Antioquia
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng( 6.55, -75.817))
+                .title("Municipio de Santa Fé de Antioquia"));
+
+        //Buriticá
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng( 6.717, -75.917))
+                .title("Municipio de Buriticá"));
+
+        //Cañasgordas
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng( 6.74972, -76.0258))
+                .title("Municipio de Cañasgordas"));
+        //Ebéjico
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(  6.317, -75.767))
+                .title("Municipio de Ebéjico"));
+
+        //Frontino
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(  6.767, -76.117))
+                .title("Municipio de Frontino"));
+
+        //Heliconia
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(  6.2, -75.733))
+                .title("Municipio de Heliconia"));
+
+        //Peque
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(  7.017, -75.9))
+                .title("Municipio de Peque"));
+
+        //Sabanalarga
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(  6.85, -75.817))
+                .title("Municipio de Sabanalarga"));
+
+        //San Jerónimo
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(  6.433, -75.717))
+                .title("Municipio de San Jerónimo"));
+
+        //Abriaquí
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(  6.633, -76.05))
+                .title("Abriaquí"));
+
+
+
+
+
         //NORTE ANTIOQUEÑO
         //Ituango
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.233, -75.15))
-                .title("Municipio de Valparaiso"));
+                .title("Municipio de Ituango"));
+
+        //Municipio de Carolina del Príncipe
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(6.7, -75.283))
+                .title("Municipio de Carolina del Príncipe"));
+
+        //Municipio de Don Matías
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(6.483, -75.417))
+                .title("Municipio de Don Matías"));
+
+        //Municipio de San Pedro de los Milagros
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(6.45,  -75.55))
+                .title("Municipio de San Pedro de los Milagros"));
+
+        //Municipio de Santa Rosa de Osos
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng( 6.633,  -75.467))
+                .title("Municipio de Santa Rosa de Osos"));
+
+        //Municipio de Yarumal
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(  6.95,  -75.417))
+                .title("Municipio de Yarumal"));
 
         //VALLE DE ABURRÁ
         //Medellin
