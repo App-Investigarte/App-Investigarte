@@ -3,28 +3,44 @@ package com.app_investigarte;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Resources;
+import android.util.Log;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.Circle;
-import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.maps.model.TileOverlay;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnCameraIdleListener;
+import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
 
-public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MapActivity extends AppCompatActivity
+        implements
+        GoogleMap.OnCameraMoveStartedListener,
+        GoogleMap.OnCameraMoveListener,
+        GoogleMap.OnCameraMoveCanceledListener,
+        OnCameraIdleListener,
+        OnMapReadyCallback, OnMapLongClickListener, OnMapClickListener {
+    private static final String TAG = "" ;
     private GoogleMap mMap;
     private SupportMapFragment mMapFragment;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
@@ -33,40 +49,106 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     }
 
     @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        mMap = googleMap;
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+    public void onMapReady(GoogleMap googleMap) {
+        //Configuración del mapa
+        this.mMap = googleMap;
+        this.mMap.setOnMapClickListener(this);
+        this.mMap.setOnMapLongClickListener(this);
+        this.mMap.setOnCameraIdleListener(this);
+        this.mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+        //Controles de zoom
+        mMap.getUiSettings().setZoomControlsEnabled(true);
 
         // Add a marker in Sydney and move the camera
-        LatLng antioquia = new LatLng(6.55, -75.817);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(antioquia, 7.0f));
+        LatLng antioquia = new LatLng(6.55, -75.3900048136111);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(antioquia, 7.5f));
         mMap.addMarker(new MarkerOptions().position(antioquia)
                 .title("Departamento de Antioquia")
                 .snippet("Population: 6680000"));
 
+        //Ocultar los elementos del mapa con los ajustes de diseño
+        try{
+            boolean success= mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.style_json_map));
+            if(!success){
+                Log.e(TAG, "Style parsing failed.");
+            }
+        } catch(Resources.NotFoundException e){
+            Log.e(TAG, "No se puede encontrar el error de estilo: ",e);
+        }
 
         mMap.setMinZoomPreference(5.5f);
-
         LatLngBounds colombia = new LatLngBounds(
                 new LatLng(2, -78), // SW bounds
                 new LatLng(9, -67)  // NE bounds
         );
-
         // Constrain the camera target to the Adelaide bounds.
         mMap.setLatLngBoundsForCameraTarget(colombia);
+        mapaColombia();
+/*
+        TileProvider tileProvider = new UrlTileProvider(256, 256) {
 
-          
-      
-      /* ---------------------------SubRegiones De Antioquia ------------------------**/
-       //Urabá Antioqueño
+            @Override
+            public URL getTileUrl(int x, int y, int zoom) {
+
+
+                String s = String.format("https://www.dogalize.com/wp-content/uploads/2017/06/La-sverminazione-e-la-pulizia-del-cucciolo-del-cane-2-800x400-800x400.jpg", zoom, x, y);
+
+                if (!checkTileExists(zoom)) {
+                    return null;
+                }
+
+                try {
+                    return new URL(s);
+                } catch (MalformedURLException e) {
+                    throw new AssertionError(e);
+                }
+            }
+        };
+        TileOverlay tileOverlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(tileProvider));*/
+
+
+        /*
+
+        //Add Poligono
+        mMap.addPolygon(new PolygonOptions()
+                .add(
+                        new LatLng(3, -77.38),
+                        new LatLng(7.2, -77.80),
+                        new LatLng(10, -75.21),
+                        new LatLng(12, -71.25),
+                        new LatLng(6.9, -67.38),
+                        new LatLng(2, -67.67),
+                        new LatLng(-2.20, -71.32))
+                .strokeColor(Color.RED)
+                .fillColor(Color.TRANSPARENT));
+        ///Nota Los dibujos de los mapas hay que ponerlos en otra clase para ser mas organizados y no enredarnos mucho.
+
+*/
+/*
+        // Add a circle in Sydney
+        Circle circle = mMap.addCircle(new CircleOptions()
+                .center(
+                        new LatLng(7.9737931435139915, -72.4448524788022)
+                )
+                .radius(10000)
+                .strokeColor(Color.RED)
+                .fillColor(Color.BLUE));
+        circle.setClickable(true);
+*/
+    }
+
+    public void subRegionesAntioquia() {
+        /* ---------------------------SubRegiones De Antioquia ------------------------**/
+        //Urabá Antioqueño
         //apartado
-        LatLng urabaAntioqueño=new LatLng(7.883,-76.633);
+        LatLng urabaAntioqueño = new LatLng(7.883, -76.633);
         mMap.addMarker(new MarkerOptions().position(urabaAntioqueño)
-                        .title("Municipio de Apartadó"));
+                .title("Municipio de Apartadó"));
 
         //Suroeste Antioqueño
         //Jeríco
-        LatLng Suroeste=new LatLng( 6.267, -75.783);
+        LatLng Suroeste = new LatLng(6.267, -75.783);
         mMap.addMarker(new MarkerOptions().position(Suroeste)
                 .title("Suroeste Antioqueño"));
 
@@ -75,136 +157,141 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         //Dabeiba
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7, -76.25))
-                .title("OCCIDENTE ANTIOQUEÑO"));
+                .title("OCCIDENTE ANTIOQUEÑO")
+                .zIndex(1.0f));
 
         //NORTE ANTIOQUEÑO
         //Ituango
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.233, -75.15))
-                .title("NORTE ANTIOQUEÑO"));
+                .title("NORTE ANTIOQUEÑO")
+                .zIndex(1.0f));
 
         //VALLE DE ABURRÁ
         //Medellin
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.217, -75.567))
-                .title("VALLE DE ABURRÁ"));
+                .title("VALLE DE ABURRÁ")
+                .zIndex(1.0f));
 
 
         //SubReguiones
         //BAJO CAUCA
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.583, -75.317))
-                .title("BAJO CAUCA"));
+                .title("BAJO CAUCA")
+                .zIndex(1.0f));
 
         //MAGDALENA MEDIO
         //puerto berrio
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.48998, -74.4025))
-                .title("MAGDALENA MEDIO"));
+                .title("MAGDALENA MEDIO")
+                .zIndex(1.0f));
 
 
         //NORDESTE ANTIOQUEÑO
         //Remedios
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.0275, -74.694))
-                .title("NORDESTE ANTIOQUEÑO"));
+                .title("NORDESTE ANTIOQUEÑO")
+                .zIndex(1.0f));
 
         //ORIENTE ANTIOQUEÑO
         //Guatapé
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.233, -75.15))
-                .title("ORIENTE ANTIOQUEÑO"));
+                .title("ORIENTE ANTIOQUEÑO")
+                .zIndex(1.0f));
         /* ---------------------------  ------------------------  ------------------------**/
-
-
-
-
+    }
+    public void municipiosAntioquia() {
         /* ---------------------------Municipios de las Subregiones De Antioquia ------------------------**/
 
         //Urabá Antioqueño
-        LatLng apartado=new LatLng(7.883,-76.633);
+        LatLng apartado = new LatLng(7.883, -76.633);
         mMap.addMarker(new MarkerOptions().position(apartado)
                 .title("Municipio de Apartadó"));
 
-        LatLng turbo=new LatLng(8.0926,-76.7282);
+        LatLng turbo = new LatLng(8.0926, -76.7282);
         mMap.addMarker(new MarkerOptions().position(turbo)
                 .title("Municipio de Turbo"));
 
-        LatLng necocli=new LatLng(8.4357, -76.7767);
+        LatLng necocli = new LatLng(8.4357, -76.7767);
         mMap.addMarker(new MarkerOptions().position(necocli)
                 .title("Municipio de Necoclí"));
 
-        LatLng chigorodo=new LatLng( 7.667, -76.683);
+        LatLng chigorodo = new LatLng(7.667, -76.683);
         mMap.addMarker(new MarkerOptions().position(chigorodo)
                 .title("Municipio de Chigorodó"));
 
-        LatLng sanPedroUraba=new LatLng( 8.283, -76.383);
-        mMap.addMarker(new MarkerOptions().position( sanPedroUraba)
+        LatLng sanPedroUraba = new LatLng(8.283, -76.383);
+        mMap.addMarker(new MarkerOptions().position(sanPedroUraba)
                 .title("Municipio de San Pedro de Urabá"));
 
-        LatLng mutata=new LatLng( 7.233,  -76.433);
-        mMap.addMarker(new MarkerOptions().position( mutata)
+        LatLng mutata = new LatLng(7.233, -76.433);
+        mMap.addMarker(new MarkerOptions().position(mutata)
                 .title("Municipio de Mutatá"));
 
 
         //Suroeste Antioqueño
-        LatLng jerico=new LatLng( 6.267, -75.783);
+        LatLng jerico = new LatLng(6.267, -75.783);
         mMap.addMarker(new MarkerOptions().position(jerico)
                 .title("Municipio de Jericó"));
 
-        LatLng jardin=new LatLng( 5.6, -75.817);
+        LatLng jardin = new LatLng(5.6, -75.817);
         mMap.addMarker(new MarkerOptions().position(jardin)
                 .title("Municipio de Jardín"));
 
-        LatLng amaga=new LatLng( 6.05, -75.683);
+        LatLng amaga = new LatLng(6.05, -75.683);
         mMap.addMarker(new MarkerOptions().position(amaga)
                 .title("Municipio de Amagá"));
 
-        LatLng andes=new LatLng( 5.65, -75.867);
+        LatLng andes = new LatLng(5.65, -75.867);
         mMap.addMarker(new MarkerOptions().position(andes)
                 .title("Municipio de Andes"));
 
-        LatLng betania=new LatLng( 5.733, -75.967);
+        LatLng betania = new LatLng(5.733, -75.967);
         mMap.addMarker(new MarkerOptions().position(betania)
                 .title("Municipio de Betania"));
 
-        LatLng caramanta=new LatLng( 5.617, -75.85);
+        LatLng caramanta = new LatLng(5.617, -75.85);
         mMap.addMarker(new MarkerOptions().position(caramanta)
                 .title("Municipio de Caramanta"));
 
-        LatLng ciudadBolivar=new LatLng( 5.85, -76.017);
+        LatLng ciudadBolivar = new LatLng(5.85, -76.017);
         mMap.addMarker(new MarkerOptions().position(ciudadBolivar)
                 .title("Municipio de Ciudad Bolivar"));
 
-        LatLng concordia=new LatLng( 6.05, -75.9);
+        LatLng concordia = new LatLng(6.05, -75.9);
         mMap.addMarker(new MarkerOptions().position(concordia)
                 .title("Municipio de Concordia"));
 
-        LatLng hispania=new LatLng( 5.8, -75.9);
+        LatLng hispania = new LatLng(5.8, -75.9);
         mMap.addMarker(new MarkerOptions().position(hispania)
                 .title("Municipio de Hispania"));
 
-        LatLng salgar=new LatLng( 5.95, -75.967);
+        LatLng salgar = new LatLng(5.95, -75.967);
         mMap.addMarker(new MarkerOptions().position(salgar)
                 .title("Municipio de Salgar"));
 
-        LatLng tarso=new LatLng( 5.867, -75.817);
+        LatLng tarso = new LatLng(5.867, -75.817);
         mMap.addMarker(new MarkerOptions().position(tarso)
                 .title("Municipio de Tarso"));
 
-        LatLng titiribi=new LatLng( 6.05, -75.783);
+        LatLng titiribi = new LatLng(6.05, -75.783);
         mMap.addMarker(new MarkerOptions().position(titiribi)
                 .title("Municipio de Titiribí"));
 
-        LatLng urrao=new LatLng( 6.317, -76.133);
+        LatLng urrao = new LatLng(6.317, -76.133);
         mMap.addMarker(new MarkerOptions().position(urrao)
                 .title("Municipio de Urrao"));
 
-        LatLng fredonia=new LatLng( 5.917, -75.667);
+        LatLng fredonia = new LatLng(5.917, -75.667);
         mMap.addMarker(new MarkerOptions().position(fredonia)
                 .title("Municipio de Fredonia"));
 
-        LatLng valparaiso=new LatLng(  5.617, -75.633);
+        LatLng valparaiso = new LatLng(5.617, -75.633);
         mMap.addMarker(new MarkerOptions().position(valparaiso)
                 .title("Municipio de Valparaiso"));
 
@@ -222,122 +309,106 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 .title("Municipio de Valparaiso"));
 
         //VALLE DE ABURRÁ
-            //Medellin
+        //Medellin
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.217, -75.567))
                 .title("Municipio de Medellin"));
 
-            //Girardota
+        //Girardota
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.367, -75.433))
                 .title("Municipio de Girardota"));
 
 
         //BAJO CAUCA
-            //El Bagre
+        //El Bagre
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.583, -74.8))
                 .title("Municipio del el Bagre"));
 
-            //Zaragoza
+        //Zaragoza
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.483, -74.867))
                 .title("Municipio de Zaragoza"));
 
-            //Tarazá
+        //Tarazá
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.583, -75.4))
                 .title("Municipio de Tarazá"));
 
-            //Nechí
+        //Nechí
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(8.083, -74.767))
                 .title("Municipio de Nechí"));
 
-            //Caucasia
+        //Caucasia
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.983, -75.2))
                 .title("Municipio de Caucasia"));
 
 
         //MAGDALENA MEDIO
-            //Caracolí
+        //Caracolí
         mMap.addMarker(new MarkerOptions()
-            .position(new LatLng(6.4, -74.767))
-            .title("Municipio de Caracolí"));
+                .position(new LatLng(6.4, -74.767))
+                .title("Municipio de Caracolí"));
 
-            //puerto berrio
+        //puerto berrio
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.48998, -74.4025))
                 .title("Municipio de puerto berrio"));
 
-            //Puerto Nare
+        //Puerto Nare
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.19175, -74.5862))
                 .title("Municipio de Puerto Nare"));
 
         //NORDESTE ANTIOQUEÑO
-            //Anorí
+        //Anorí
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.067, -75.1333))
                 .title("Municipio de Anorí"));
 
-            //Remedios
+        //Remedios
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.03207, -74.5334))
                 .title("Municipio de Remedios"));
 
-            //Amalfi
+        //Amalfi
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.067, -75.1333))
                 .title("Municipio de Amalfi"));
 
-            //San Roque
+        //San Roque
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.467, -75))
                 .title("Municipio de San Roque"));
 
-            //Santo Domingo
+        //Santo Domingo
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.467, -75.167))
                 .title("Municipio de Santo Domingo"));
 
-            //Yolombó
+        //Yolombó
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.583, -75))
                 .title("Municipio de Yolombó"));
 
 
         //ORIENTE ANTIOQUEÑO
-            //Carmen de Viboral
+        //Carmen de Viboral
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.083, -75.333))
                 .title("Municipio de Carmen de Viboral"));
 
-            //Sonsón
+        //Sonsón
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(5.7, -75.3))
                 .title("Municipio de Sonsón"));
 
         /* ---------------------------  ------------------------  ------------------------**/
-
-
-/*
-        //Add Poligono
-        mMap.addPolygon(new PolygonOptions()
-                .add(
-                        new LatLng(3, -77.38),
-                        new LatLng(7.2, -77.80),
-                        new LatLng(10, -75.21),
-                        new LatLng(12, -71.25),
-                        new LatLng(6.9, -67.38),
-                        new LatLng(2, -67.67),
-                        new LatLng(-2.20, -71.32))
-                .strokeColor(Color.RED)
-                .fillColor(Color.TRANSPARENT));
-        ///Nota Los dibujos de los mapas hay que ponerlos en otra clase para ser mas organizados y no enredarnos mucho.
-
-*/
+    }
+    public void mapaColombia() {
         // Add Polyline
         Polyline line = mMap.addPolyline(new PolylineOptions()
                 .add(
@@ -358,7 +429,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.4411259962942837, -78.8294292613864),
                         new LatLng(1.4406738518149733, -78.82521349936724),
                         new LatLng(1.4392161963927543, -78.82270932197571),
-                        new LatLng( 1.4366930325404732, -78.8204673305154),
+                        new LatLng(1.4366930325404732, -78.8204673305154),
 
                         new LatLng(1.4346146379061433, -78.81886135786772),
                         new LatLng(1.4334435500153575, -78.81795812398195),
@@ -367,7 +438,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.4276393829114082, -78.80698051303625),
                         new LatLng(1.4276293277498002, -78.80701571702957),
                         new LatLng(1.4286874656819688, -78.80456484854221),
-                        new LatLng( 1.4284592136066767, -78.80339741706848),
+                        new LatLng(1.4284592136066767, -78.80339741706848),
 
                         new LatLng(1.4278435026825915, -78.80193829536438),
                         new LatLng(1.4270065779883794, -78.80102064460516),
@@ -376,7 +447,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.4242437523374214, -78.79929497802),
                         new LatLng(1.417590567682397, -78.79907436668873),
                         new LatLng(1.4161335679639417, -78.79869617521763),
-                        new LatLng( 1.413511837615847, -78.7978046759963),
+                        new LatLng(1.413511837615847, -78.7978046759963),
 
                         new LatLng(1.41119800914627718, -78.79667446017265),
                         new LatLng(1.4118101580745936, -78.79628587514162),
@@ -385,8 +456,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.4061500619804939, -78.7860395014286),
                         new LatLng(1.4050332580725653, -78.78231927752485),
                         new LatLng(1.404543902050282, -78.78161117434502),
-                        new LatLng( 1.39686468603069, -78.78030326217413),
-                        new LatLng( 1.3956433025791692, -78.78035690635443),
+                        new LatLng(1.39686468603069, -78.78030326217413),
+                        new LatLng(1.3956433025791692, -78.78035690635443),
 
                         new LatLng(1.3915256536432754, -78.77841096371412),
                         new LatLng(1.3907034637022868, -78.77726934850216),
@@ -395,8 +466,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.39046917471026, -78.76690227538347),
                         new LatLng(1.3906501705001375, -78.7658840417862),
                         new LatLng(1.3913614167843535, -78.76522086560726),
-                        new LatLng( 1.39161078866359, -78.76496907323599),
-                        new LatLng( 1.3921360113391108, -78.76456841826439),
+                        new LatLng(1.39161078866359, -78.76496907323599),
+                        new LatLng(1.3921360113391108, -78.76456841826439),
 
                         new LatLng(1.3925533068721883, -78.7639766590049),
                         new LatLng(1.392862675320098, -78.7633966282101),
@@ -405,9 +476,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.389103661581765, -78.75222086906433),
                         new LatLng(1.3880404780103726, -78.75144436955452),
                         new LatLng(1.3786437512710799, -78.74696541577578),
-                        new LatLng( 1.3783102480695761, -78.74596059322357),
-                        new LatLng( 1.3774149844705836, -78.74528400599957),
-                        new LatLng( 1.3772111954800388, -78.74498896300784),
+                        new LatLng(1.3783102480695761, -78.74596059322357),
+                        new LatLng(1.3774149844705836, -78.74528400599957),
+                        new LatLng(1.3772111954800388, -78.74498896300784),
 
                         new LatLng(1.377130752452653, -78.74435126781464),
                         new LatLng(1.3770617055186523, -78.74418497085571),
@@ -416,9 +487,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.3760601895714877, -78.74373637139797),
                         new LatLng(1.3762118384260462, -78.7435697396292),
                         new LatLng(1.3764298924617404, -78.7433809787035),
-                        new LatLng( 1.3765535736515844, -78.74327201396227),
-                        new LatLng( 1.377124384046207, -78.74282844364643),
-                        new LatLng( 1.3772111954800388, -78.74270237982273),
+                        new LatLng(1.3765535736515844, -78.74327201396227),
+                        new LatLng(1.377124384046207, -78.74282844364643),
+                        new LatLng(1.3772111954800388, -78.74270237982273),
 
                         new LatLng(1.3772504114549062, -78.7420690432191),
                         new LatLng(1.3770617055186523, -78.74418497085571),
@@ -427,9 +498,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.3760678986985346, -78.73956587165594),
                         new LatLng(1.374979235642586, -78.73879071325064),
                         new LatLng(1.3739133643124688, -78.73776007443668),
-                        new LatLng( 1.3733720489737014, -78.73735170811415),
-                        new LatLng( 1.37316892999761, -78.73727861791849),
-                        new LatLng( 1.372985217964495, -78.73714216053486),
+                        new LatLng(1.3733720489737014, -78.73735170811415),
+                        new LatLng(1.37316892999761, -78.73727861791849),
+                        new LatLng(1.372985217964495, -78.73714216053486),
 
                         new LatLng(1.3723638278797037, -78.7365118414136),
                         new LatLng(1.370979199082273, -78.73488742858171),
@@ -438,9 +509,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.3704100631206233, -78.73353727161884),
                         new LatLng(1.3702542043089379, -78.7332958728075),
                         new LatLng(1.3699525420639875, -78.73294819146396),
-                        new LatLng( 1.3684133936630425, -78.73174488544464),
-                        new LatLng( 1.368335966964331, -78.73154036700726),
-                        new LatLng( 1.368375183084766, -78.73092144727707),
+                        new LatLng(1.3684133936630425, -78.73174488544464),
+                        new LatLng(1.368335966964331, -78.73154036700726),
+                        new LatLng(1.368375183084766, -78.73092144727707),
 
 
                         new LatLng(1.3684512690602049, -78.73066361993551),
@@ -450,9 +521,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.3696964643062375, -78.73002290725708),
                         new LatLng(1.3700195781217046, -78.7295645879166),
                         new LatLng(1.3701513039696596, -78.72898623347282),
-                        new LatLng( 1.370117526980078, -78.72848633676767),
-                        new LatLng( 1.3700396889386572, -78.72823353856802),
-                        new LatLng( 1.3697045086341177, -78.72822817414999),
+                        new LatLng(1.370117526980078, -78.72848633676767),
+                        new LatLng(1.3700396889386572, -78.72823353856802),
+                        new LatLng(1.3697045086341177, -78.72822817414999),
 
 
                         new LatLng(1.3695127854788631, -78.7283505499363),
@@ -462,9 +533,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.3683198782993469, -78.72880451381207),
                         new LatLng(1.3681030164921013, -78.7286539748311),
                         new LatLng(1.367948163072147, -78.72840218245983),
-                        new LatLng( 1.3678908471934033, -78.72807495296001),
-                        new LatLng( 1.3679019081525685, -78.7276753038168),
-                        new LatLng( 1.3680674873533474, -78.7272026417208),
+                        new LatLng(1.3678908471934033, -78.72807495296001),
+                        new LatLng(1.3679019081525685, -78.7276753038168),
+                        new LatLng(1.3680674873533474, -78.7272026417208),
 
                         new LatLng(1.3689661062578402, -78.7263160943985),
                         new LatLng(1.3691561535548262, -78.72621785849333),
@@ -473,12 +544,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.36919440289402589, -78.72406773269176),
                         new LatLng(1.3692453115407972, -78.72085344046354),
                         new LatLng(1.367948163072147, -78.72840218245983),
-                        new LatLng( 1.3691538072919904, -78.72056342661381),
-                        new LatLng( 1.369024762832593, -78.72037097811699),
-                        new LatLng( 1.3688410839537317, -78.72023485600948),
-                        new LatLng( 1.3685524935700435, -78.7201138213277),
-                        new LatLng( 1.3665524707583472, -78.7193014472723),
-                        new LatLng( 1.366414376277809, -78.71918980032206),
+                        new LatLng(1.3691538072919904, -78.72056342661381),
+                        new LatLng(1.369024762832593, -78.72037097811699),
+                        new LatLng(1.3688410839537317, -78.72023485600948),
+                        new LatLng(1.3685524935700435, -78.7201138213277),
+                        new LatLng(1.3665524707583472, -78.7193014472723),
+                        new LatLng(1.366414376277809, -78.71918980032206),
 
                         new LatLng(1.365809710060827, -78.71855713427067),
                         new LatLng(1.3655197785890691, -78.71846459805965),
@@ -487,12 +558,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.3635492491975707, -78.71783126145601),
                         new LatLng(1.362999887169374, -78.71734108775854),
                         new LatLng(1.3624625915440567, -78.71673692017794),
-                        new LatLng( 1.3619296531572576, -78.71601708233355),
-                        new LatLng( 1.3617996027657397, -78.71572840958834),
-                        new LatLng( 1.3613400689807453, -78.7154283374548),
-                        new LatLng( 1.3612897917560483, -78.71528249233961),
-                        new LatLng( 1.3613025286530722, -78.71511451900005),
-                        new LatLng( 1.3616775967219619, -78.71457673609257),
+                        new LatLng(1.3619296531572576, -78.71601708233355),
+                        new LatLng(1.3617996027657397, -78.71572840958834),
+                        new LatLng(1.3613400689807453, -78.7154283374548),
+                        new LatLng(1.3612897917560483, -78.71528249233961),
+                        new LatLng(1.3613025286530722, -78.71511451900005),
+                        new LatLng(1.3616775967219619, -78.71457673609257),
 
 
                         new LatLng(1.3618451874398552, -78.71443390846251),
@@ -612,8 +683,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(0.3811605472270237, -76.41234621405602),
 
                         //Cola colombia
-
-
 
 
                         new LatLng(0.42071411434517547, -76.3068783441782),
@@ -737,7 +806,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.717461, -69.632283),
 
 
-
                         new LatLng(1.776968, -69.52685),
                         new LatLng(1.7276818809784165, -69.3904547765851),
                         new LatLng(1.719316, -68.172785),
@@ -748,7 +816,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.805793, -67.904994),
                         new LatLng(1.87854, -67.917353),
                         new LatLng(2.021279, -67.763545),
-                        new LatLng(1.984223,-67.639948),
+                        new LatLng(1.984223, -67.639948),
                         new LatLng(2.103623, -67.580897),
                         new LatLng(2.157145, -67.569911),
 
@@ -784,7 +852,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(1.479318, -66.910599),
 
 
-
                         new LatLng(1.932541, -67.076767),
                         new LatLng(1.979206, -67.124832),
                         new LatLng(2.066018, -67.091873),
@@ -793,7 +860,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(2.250246, -67.225769),
                         new LatLng(2.30582, -67.214096),
                         new LatLng(2.338066, -67.189377),
-                        new LatLng( 2.671266, -67.495189),
+                        new LatLng(2.671266, -67.495189),
                         new LatLng(2.668522, -67.563854),
                         new LatLng(2.712419, -67.561107),
                         new LatLng(2.745341, -67.59132),
@@ -809,7 +876,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(2.794846, -67.837489),
                         new LatLng(2.789359, -67.8635852),
                         new LatLng(2.860683, -67.858088),
-                        new LatLng( 3.244658, -67.435115),
+                        new LatLng(3.244658, -67.435115),
                         new LatLng(3.251514, -67.37469),
                         new LatLng(3.29416, -67.377437),
                         new LatLng(3.3845, -67.304652),
@@ -994,7 +1061,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(7.96338406001353, -72.4634898081422),
                         new LatLng(7.963684558801321, -72.46257416903973),
                         new LatLng(7.964109241259769, -72.4621845781803),
-                      new LatLng(7.9663505213719885, -72.4574504792903),
+                        new LatLng(7.9663505213719885, -72.4574504792903),
                         new LatLng(7.96630901629622, -72.45569363236427),
                         new LatLng(7.965855448553943, -72.45423551648855),
                         new LatLng(7.965442721394609, -72.45359245687723),
@@ -1114,14 +1181,15 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(11.848169252005613, -71.32292836904526),
                         new LatLng(11.86374955182363, -71.3183002173006)
 
-                        )
+                )
 
                 .width(10)
                 .color(Color.BLUE));
 
- // Add Polyline
+
+        // Add Polyline
         Polyline line2 = mMap.addPolyline(new PolylineOptions()
-                .add( new LatLng(8.678973577364099, -77.37136434763669),
+                .add(new LatLng(8.678973577364099, -77.37136434763669),
                         new LatLng(8.64233938741097, -77.37324222922325),
                         new LatLng(8.635531610066707, -77.37349234521389),
                         new LatLng(8.650508027591828, -77.39227116107939),
@@ -1163,21 +1231,69 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(7.439701627916182, -77.71004654467106),
                         new LatLng(7.453375566397509, -77.81595256179571),
                         new LatLng(7.226332694276445, -77.8917048498988)
-                        )
+                )
                 .width(10)
                 .color(Color.BLUE));
-
-/*
-        // Add a circle in Sydney
-        Circle circle = mMap.addCircle(new CircleOptions()
-                .center(
-                        new LatLng(7.9737931435139915, -72.4448524788022)
-                )
-                .radius(10000)
-                .strokeColor(Color.RED)
-                .fillColor(Color.BLUE));
-        circle.setClickable(true);
-*/
     }
 
+    boolean departamentos = false;
+    boolean subRegiones = false;
+    boolean municipios = false;
+    @Override
+    public void onCameraIdle() {
+        float zoomMap = mMap.getCameraPosition().zoom;
+            if(zoomMap<=6 && departamentos == false) {
+                mMap.clear();
+                mapaColombia();
+                LatLng antioquia = new LatLng(6.55, -75.817);
+                mMap.addMarker(new MarkerOptions().position(antioquia)
+                        .title("Departamento de Antioquia")
+                        .snippet("Population: 6680000"));
+                departamentos = true;
+                subRegiones = false;
+                municipios = false;
+            }else if(zoomMap >= 6 && zoomMap <= 8 && subRegiones == false){
+                mMap.clear();
+                mapaColombia();
+                subRegionesAntioquia();
+                departamentos = false;
+                subRegiones = true;
+                municipios = false;
+            }else if(zoomMap >= 8 && zoomMap <= 15 && municipios == false){
+                mMap.clear();
+                mapaColombia();
+                municipiosAntioquia();
+                departamentos = false;
+                subRegiones = false;
+                municipios = true;
+            }
+
+
+    }
+
+
+    @Override
+    public void onCameraMove() {
+
+    }
+
+    @Override
+    public void onCameraMoveStarted(int i) {
+
+    }
+
+    @Override
+    public void onCameraMoveCanceled() {
+
+    }
+
+    @Override
+    public void onMapClick(@NonNull LatLng latLng) {
+
+    }
+
+    @Override
+    public void onMapLongClick(@NonNull LatLng latLng) {
+
+    }
 }
