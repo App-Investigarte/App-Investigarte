@@ -86,30 +86,6 @@ public class MapActivity extends AppCompatActivity
         mMap.setLatLngBoundsForCameraTarget(colombia);
         mapaColombia();
 /*
-        TileProvider tileProvider = new UrlTileProvider(256, 256) {
-
-            @Override
-            public URL getTileUrl(int x, int y, int zoom) {
-
-
-                String s = String.format("https://www.dogalize.com/wp-content/uploads/2017/06/La-sverminazione-e-la-pulizia-del-cucciolo-del-cane-2-800x400-800x400.jpg", zoom, x, y);
-
-                if (!checkTileExists(zoom)) {
-                    return null;
-                }
-
-                try {
-                    return new URL(s);
-                } catch (MalformedURLException e) {
-                    throw new AssertionError(e);
-                }
-            }
-        };
-        TileOverlay tileOverlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(tileProvider));*/
-
-
-        /*
-
         //Add Poligono
         mMap.addPolygon(new PolygonOptions()
                 .add(
@@ -144,26 +120,26 @@ public class MapActivity extends AppCompatActivity
         //apartado
         LatLng urabaAntioqueño = new LatLng(7.883, -76.633);
         mMap.addMarker(new MarkerOptions().position(urabaAntioqueño)
-                .title("Municipio de Apartadó"));
+                .title("URABA ANTIOQUEÑO"));
 
         //Suroeste Antioqueño
         //Jeríco
-        LatLng Suroeste = new LatLng(6.267, -75.783);
+        LatLng Suroeste = new LatLng(6, -75.883);
         mMap.addMarker(new MarkerOptions().position(Suroeste)
-                .title("Suroeste Antioqueño"));
+                .title("SUROESTE ANTIOQUEÑO"));
 
 
         //OCCIDENTE ANTIOQUEÑO
         //Dabeiba
         mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(7, -76.25))
+                .position(new LatLng(6.8, -76.15))
                 .title("OCCIDENTE ANTIOQUEÑO")
                 .zIndex(1.0f));
 
         //NORTE ANTIOQUEÑO
         //Ituango
         mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(6.233, -75.15))
+                .position(new LatLng(6.833, -75.55))
                 .title("NORTE ANTIOQUEÑO")
                 .zIndex(1.0f));
 
@@ -178,14 +154,14 @@ public class MapActivity extends AppCompatActivity
         //SubReguiones
         //BAJO CAUCA
         mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(7.583, -75.317))
+                .position(new LatLng(7.583, -75.017))
                 .title("BAJO CAUCA")
                 .zIndex(1.0f));
 
         //MAGDALENA MEDIO
         //puerto berrio
         mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(6.48998, -74.4025))
+                .position(new LatLng(6.49998, -74.5525))
                 .title("MAGDALENA MEDIO")
                 .zIndex(1.0f));
 
@@ -193,14 +169,14 @@ public class MapActivity extends AppCompatActivity
         //NORDESTE ANTIOQUEÑO
         //Remedios
         mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(7.0275, -74.694))
+                .position(new LatLng(6.9595, -74.894))
                 .title("NORDESTE ANTIOQUEÑO")
                 .zIndex(1.0f));
 
         //ORIENTE ANTIOQUEÑO
         //Guatapé
         mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(6.233, -75.15))
+                .position(new LatLng(6.033, -75.15))
                 .title("ORIENTE ANTIOQUEÑO")
                 .zIndex(1.0f));
         /* ---------------------------  ------------------------  ------------------------**/
@@ -1345,8 +1321,6 @@ public class MapActivity extends AppCompatActivity
                 subRegiones = false;
                 municipios = true;
             }
-
-
     }
 
 
