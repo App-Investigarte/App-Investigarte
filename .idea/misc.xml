@@ -10,10 +10,15 @@
         <entry key="..\:/Aprendiendo/App-Investigarte/app/src/main/res/font/helvetica.xml" value="0.396875" />
         <entry key="..\:/Aprendiendo/App-Investigarte/app/src/main/res/layout/activity_map.xml" value="0.1" />
         <entry key="..\:/Aprendiendo/App-Investigarte/app/src/main/res/layout/activity_welcome.xml" value="0.28532608695652173" />
+        <entry key="app/src/main/res/drawable-v24/buton_redondo.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/circle.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/edt_style.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/splash_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/splash_screen_background.xml" value="0.21041666666666667" />
         <entry key="app/src/main/res/drawable/splash_screen_background_night.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19427083333333334" />
+        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.33" />
       </map>
     </option>
   </component>
