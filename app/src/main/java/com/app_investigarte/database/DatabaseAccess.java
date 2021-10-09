@@ -14,7 +14,6 @@ public class DatabaseAccess {
     //private constructor so that  object creation from outside the class is avoided
     //constructor
     private DatabaseAccess(Context context) {
-
         this.openHelper = new DatabaseOpenHelper(context);
     }
 
