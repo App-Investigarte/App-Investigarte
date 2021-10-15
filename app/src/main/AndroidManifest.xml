@@ -11,20 +11,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppInvestigarte">
         <activity
+            android:name=".DescripcionActivity"
+            android:exported="true" />
+        <activity
             android:name=".ListadoArtefactosActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
         <activity
             android:name=".MapActivity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".WelcomeActivity"
             android:exported="true" />
