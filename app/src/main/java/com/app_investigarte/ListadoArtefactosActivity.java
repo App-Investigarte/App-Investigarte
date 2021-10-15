@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.app_investigarte.database.DatabaseAccess;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class ListadoArtefactosActivity extends AppCompatActivity
 
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
-    List<RecyclerViewModel>ArtifactList;
+    ArrayList<RecyclerViewModel>ArtifactList;
     RecyVWAdapter adapter;
 
     @Override
@@ -24,20 +26,28 @@ public class ListadoArtefactosActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_artefactos);
 
-
         initData();
         initRecyclerView();
-
-
     }
+
+
 
     private void initData()
     {
         ArtifactList=new ArrayList<>();
-        ArtifactList.add(new RecyclerViewModel(R.drawable.circle,R.drawable.circle,"Nombre","Nombre"));
-        ArtifactList.add(new RecyclerViewModel(R.drawable.circle,R.drawable.circle,"Nombre","Nombre"));
-        ArtifactList.add(new RecyclerViewModel(R.drawable.circle,R.drawable.circle,"Nombre","Nombre"));
+        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
+        databaseAccess.open();
+        int cantidadDatos = databaseAccess.CantidadArtefactosSubR(8);
+        String [][]consultaregistro = databaseAccess.getArtifactSubregion(8, cantidadDatos);
+        databaseAccess.close();
 
+        for(int i = 0; i < cantidadDatos-1; i=i+2){
+           // if(i==cantidadDatos-1){
+           //     break;
+          //  }else{
+                ArtifactList.add(new RecyclerViewModel(R.drawable.circle, R.drawable.circle, consultaregistro[i][1], consultaregistro[1 + i][1]));
+           // }
+        }
     }
 
     private void initRecyclerView()
@@ -50,4 +60,19 @@ public class ListadoArtefactosActivity extends AppCompatActivity
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
+
+
+/*
+    private void artifactList(int subregion)
+    {
+       DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
+       databaseAccess.open();
+       int cantidadDatos = databaseAccess.CantidadArtefactosSubR(subregion);
+       String [][]consultaregistro = databaseAccess.getArtifactSubregion(subregion, cantidadDatos);
+       databaseAccess.close();
+
+      for(int j = 0; j<= cantidadDatos; j++){
+           ArtifactList.add(new RecyclerViewModel(R.drawable.circle,R.drawable.circle,consultaregistro[j][2],consultaregistro[j][2]));
+       }
+    }*/
 }

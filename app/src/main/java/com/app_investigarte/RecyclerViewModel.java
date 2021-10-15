@@ -9,8 +9,6 @@ public class RecyclerViewModel
     private String texview2;
 
 
-
-
     public RecyclerViewModel(int imageView1, int imageView2, String texview1, String texview2) {
 
         this.imageView1=imageView1;
@@ -29,13 +27,29 @@ public class RecyclerViewModel
         return imageView2;
     }
 
-
     public String getTexview1() {
         return texview1;
     }
 
     public String getTexview2() {
         return texview2;
+    }
+
+
+    public void setImageView1(int imageView1) {
+        this.imageView1 = imageView1;
+    }
+
+    public void setImageView2(int imageView2) {
+        this.imageView2 = imageView2;
+    }
+
+    public void setTexview1(String texview1) {
+        this.texview1 = texview1;
+    }
+
+    public void setTexview2(String texview2) {
+        this.texview2 = texview2;
     }
 
 

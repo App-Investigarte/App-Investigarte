@@ -17,9 +17,9 @@ public class RecyVWAdapter extends RecyclerView.Adapter<RecyVWAdapter.ViewHolder
 {
     private List<RecyclerViewModel> ArtifactList;
 
-    public RecyVWAdapter(List<RecyclerViewModel>userList)
+    public RecyVWAdapter(List<RecyclerViewModel>ArtifactList)
     {
-        this.ArtifactList=userList;
+        this.ArtifactList=ArtifactList;
     }
 
     @NonNull
@@ -37,7 +37,6 @@ public class RecyVWAdapter extends RecyclerView.Adapter<RecyVWAdapter.ViewHolder
         int imagen2=ArtifactList.get(position).getImageView2();
         String name=ArtifactList.get(position).getTexview1();
         String name2=ArtifactList.get(position).getTexview2();
-
 
         holder.setData(imagen,imagen2,name,name2);
     }
