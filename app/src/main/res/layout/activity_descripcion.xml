@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/rectangulo" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtnameartefact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NOMBRE"
@@ -47,21 +47,11 @@
 
     <TextView
 
-        android:id="@+id/textView2"
+        android:id="@+id/txtdescription"
         android:layout_width="233dp"
         android:layout_height="210dp"
         android:layout_margin="25dp"
-        android:text="Escribe algo aqui, Escribe algo aqui
-                        Escribe algo aqui, Escribe algo aqui
-                        Escribe algo aqui, Escribe algo aqui
-                        Escribe algo aqui, Escribe algo aqui
-                        Escribe algo aqui, Escribe algo aqui
-                        Escribe algo aqui, Escribe algo aqui
-                        Escribe algo aqui, Escribe algo aqui
-                        Escribe algo aqui, Escribe algo aqui
-                        Escribe algo aqui, Escribe algo aqui
-                        Escribe algo aqui, Escribe algo aqui
-                        Escribe algo aqui, Escribe algo aqui"
+        android:text="Escribe algo"
         android:textColor="@color/color_text_onsecondary"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
@@ -71,7 +61,7 @@
         app:layout_constraintVertical_bias="0.75" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgartefactodescripcion"
         android:layout_width="153dp"
         android:layout_height="181dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"

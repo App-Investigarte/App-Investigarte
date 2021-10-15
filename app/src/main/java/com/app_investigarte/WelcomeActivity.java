@@ -28,7 +28,7 @@ public class WelcomeActivity extends AppCompatActivity
         btnStart.setOnClickListener(view -> {
 
 
-            intent=new Intent(WelcomeActivity.this,MainActivity.class);
+            intent=new Intent(WelcomeActivity.this,MapActivity.class);
             startActivity(intent);
             //intent.putExtra("user",MainActivity.this.getUser());
             //Toast.makeText(MainActivity.this,"Bienvenido"+inputUser,Toast.LENGTH_LONG).show();

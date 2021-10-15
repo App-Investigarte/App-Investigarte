@@ -8,6 +8,8 @@ import android.util.Log;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.Toast;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -15,6 +17,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -54,6 +57,8 @@ public class MapActivity extends AppCompatActivity
         this.mMap = googleMap;
         this.mMap.setOnMapClickListener(this);
         this.mMap.setOnMapLongClickListener(this);
+        // Set a listener for marker click.
+        this.mMap.setOnMarkerClickListener(this);
         this.mMap.setOnCameraIdleListener(this);
         this.mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
@@ -1348,4 +1353,20 @@ public class MapActivity extends AppCompatActivity
     public void onMapLongClick(@NonNull LatLng latLng) {
 
     }
+
+    /** Called when the user clicks a marker. */
+    @Override
+    public boolean onMarkerClick(final Marker marker) {
+
+        // Retrieve the data from the marker.
+        Integer clickCount = (Integer) marker.getTag();
+
+        Toast.makeText(this,
+                marker.getTitle() +
+                        " has been clicked " + clickCount + " times.",
+                Toast.LENGTH_SHORT).show();
+
+        return false}
+
+
 }
