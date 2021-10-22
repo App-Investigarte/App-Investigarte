@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary brand color. -->
-    <color name="color_primary">#FF6200EE</color>
+    <color name="color_primary">#5B8AD8</color>
     <color name="color_primary_variant">#FF3700B3</color>
-    <color name="color_primary_light">#FFBB86FC</color>
+    <color name="color_primary_light">#5B8AD8</color>
     <color name="color_primary_Dark">#330170</color>
     <color name="color_text_onprimary">#FFFFFFFF</color>
 
