@@ -16,7 +16,7 @@
         <menu>
             <item
                 android:id="@+id/nav_config"
-                android:icon="@drawable/setting"
+                android:icon="@drawable/ic_baseline_miscellaneous_services_24"
                 android:iconTint="@color/color_text_onprimary"
                 android:title="Configuración" />
 

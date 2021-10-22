@@ -17,9 +17,6 @@
             android:name=".LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".MapActivity"
-            android:exported="true" />
-        <activity
             android:name=".WelcomeActivity"
             android:exported="true" />
         <activity
@@ -32,10 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".NavigationDrawerActivity"
-            android:exported="true" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />

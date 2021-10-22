@@ -1,13 +1,18 @@
-package com.app_investigarte;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.app_investigarte.fragments;
 
 import android.content.res.Resources;
-import android.util.Log;
-
 import android.graphics.Color;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.app_investigarte.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -18,42 +23,38 @@ import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
-import com.google.android.gms.maps.model.TileOverlay;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMap.OnCameraIdleListener;
-import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
-import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
 
-public class MapActivity extends AppCompatActivity
-        implements
-        GoogleMap.OnCameraMoveStartedListener,
-        GoogleMap.OnCameraMoveListener,
-        GoogleMap.OnCameraMoveCanceledListener,
-        OnCameraIdleListener,
-        OnMapReadyCallback, OnMapLongClickListener, OnMapClickListener {
-    private static final String TAG = "" ;
+
+public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener,  GoogleMap.OnCameraIdleListener {
     private GoogleMap mMap;
     private SupportMapFragment mMapFragment;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
-
-        mMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mMapFragment.getMapAsync(this);
+    public MapFragment() {
+        // Required empty public constructor
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_map, container, false);
+
+        mMapFragment = (SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.mapa) ;
+        if (mMapFragment != null) {
+            mMapFragment.getMapAsync(this);
+        }
+        //  getMapAsync(this);
+        return view;
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
         //Configuración del mapa
         this.mMap = googleMap;
         this.mMap.setOnMapClickListener(this);
-        this.mMap.setOnMapLongClickListener(this);
         this.mMap.setOnCameraIdleListener(this);
         this.mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
@@ -64,62 +65,70 @@ public class MapActivity extends AppCompatActivity
         LatLng antioquia = new LatLng(6.55, -75.3900048136111);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(antioquia, 7.5f));
         mMap.addMarker(new MarkerOptions().position(antioquia)
-                .title("Departamento de Antioquia")
-                .snippet("Population: 6680000"));
+               .title("Departamento de Antioquia")
+               .snippet("Population: 6680000"));
 
         //Ocultar los elementos del mapa con los ajustes de diseño
         try{
-            boolean success= mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.style_json_map));
+            boolean success= mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.style_json_map));
             if(!success){
-                Log.e(TAG, "Style parsing failed.");
+                Log.e("TAG", "Style parsing failed.");
             }
         } catch(Resources.NotFoundException e){
-            Log.e(TAG, "No se puede encontrar el error de estilo: ",e);
+            Log.e("TAG", "No se puede encontrar el error de estilo: ",e);
         }
 
         mMap.setMinZoomPreference(5.5f);
         LatLngBounds colombia = new LatLngBounds(
                 new LatLng(2, -78), // SW bounds
                 new LatLng(9, -67)  // NE bounds
-        );
+       );
+
         // Constrain the camera target to the Adelaide bounds.
         mMap.setLatLngBoundsForCameraTarget(colombia);
         mapaColombia();
-/*
-        //Add Poligono
-        mMap.addPolygon(new PolygonOptions()
-                .add(
-                        new LatLng(3, -77.38),
-                        new LatLng(7.2, -77.80),
-                        new LatLng(10, -75.21),
-                        new LatLng(12, -71.25),
-                        new LatLng(6.9, -67.38),
-                        new LatLng(2, -67.67),
-                        new LatLng(-2.20, -71.32))
-                .strokeColor(Color.RED)
-                .fillColor(Color.TRANSPARENT));
-        ///Nota Los dibujos de los mapas hay que ponerlos en otra clase para ser mas organizados y no enredarnos mucho.
+    }
 
-*/
-/*
-        // Add a circle in Sydney
-        Circle circle = mMap.addCircle(new CircleOptions()
-                .center(
-                        new LatLng(7.9737931435139915, -72.4448524788022)
-                )
-                .radius(10000)
-                .strokeColor(Color.RED)
-                .fillColor(Color.BLUE));
-        circle.setClickable(true);
-*/
+
+    boolean departamentos = false;
+    boolean subRegiones = false;
+    boolean municipios = false;
+    @Override
+    public void onCameraIdle() {
+        float zoomMap = mMap.getCameraPosition().zoom;
+        if(zoomMap<=6 && departamentos == false) {
+            mMap.clear();
+            mapaColombia();
+            LatLng antioquia = new LatLng(6.55, -75.817);
+            mMap.addMarker(new MarkerOptions().position(antioquia)
+                    .title("Departamento de Antioquia")
+                    .snippet("Population: 6680000"));
+            departamentos = true;
+            subRegiones = false;
+            municipios = false;
+        }else if(zoomMap >= 6 && zoomMap <= 8 && subRegiones == false){
+            mMap.clear();
+            mapaColombia();
+            subRegionesAntioquia();
+            departamentos = false;
+            subRegiones = true;
+            municipios = false;
+        }else if(zoomMap >= 8 && zoomMap <= 15 && municipios == false){
+            mMap.clear();
+            mapaColombia();
+            municipiosAntioquia();
+            departamentos = false;
+            subRegiones = false;
+            municipios = true;
+        }
     }
 
     public void subRegionesAntioquia() {
         /* ---------------------------SubRegiones De Antioquia ------------------------**/
         //Urabá Antioqueño
         //apartado
-        LatLng urabaAntioqueño = new LatLng(7.883, -76.633);
-        mMap.addMarker(new MarkerOptions().position(urabaAntioqueño)
+        LatLng urabaAntioquenio = new LatLng(7.883, -76.633);
+        mMap.addMarker(new MarkerOptions().position(urabaAntioquenio)
                 .title("URABA ANTIOQUEÑO"));
 
         //Suroeste Antioqueño
@@ -1290,62 +1299,8 @@ public class MapActivity extends AppCompatActivity
                 .color(Color.BLUE));
     }
 
-    boolean departamentos = false;
-    boolean subRegiones = false;
-    boolean municipios = false;
-    @Override
-    public void onCameraIdle() {
-        float zoomMap = mMap.getCameraPosition().zoom;
-            if(zoomMap<=6 && departamentos == false) {
-                mMap.clear();
-                mapaColombia();
-                LatLng antioquia = new LatLng(6.55, -75.817);
-                mMap.addMarker(new MarkerOptions().position(antioquia)
-                        .title("Departamento de Antioquia")
-                        .snippet("Population: 6680000"));
-                departamentos = true;
-                subRegiones = false;
-                municipios = false;
-            }else if(zoomMap >= 6 && zoomMap <= 8 && subRegiones == false){
-                mMap.clear();
-                mapaColombia();
-                subRegionesAntioquia();
-                departamentos = false;
-                subRegiones = true;
-                municipios = false;
-            }else if(zoomMap >= 8 && zoomMap <= 15 && municipios == false){
-                mMap.clear();
-                mapaColombia();
-                municipiosAntioquia();
-                departamentos = false;
-                subRegiones = false;
-                municipios = true;
-            }
-    }
-
-
-    @Override
-    public void onCameraMove() {
-
-    }
-
-    @Override
-    public void onCameraMoveStarted(int i) {
-
-    }
-
-    @Override
-    public void onCameraMoveCanceled() {
-
-    }
-
     @Override
     public void onMapClick(@NonNull LatLng latLng) {
-
-    }
-
-    @Override
-    public void onMapLongClick(@NonNull LatLng latLng) {
 
     }
 }

@@ -21,7 +21,7 @@ public class WelcomeActivity extends AppCompatActivity
         //pasar de activity al precionar el boton.
         btnStart=findViewById(R.id.btnStart);
         btnStart.setOnClickListener(view -> {
-            intent=new Intent(this,MapActivity.class);
+            intent=new Intent(this,NavDrawerActivity.class);
             startActivity(intent);
             finish();
             //intent.putExtra("user",MainActivity.this.getUser());

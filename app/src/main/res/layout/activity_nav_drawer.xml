@@ -9,6 +9,11 @@
     tools:openDrawer="start"
     tools:context=".NavDrawerActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/container_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="top"/>
 
     <include
         layout="@layout/app_bar_main"
