@@ -18,24 +18,25 @@ public class WelcomeActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-
-
-
-
-
+        //pasar de activity al precionar el boton.
         btnStart=findViewById(R.id.btnStart);
-
         btnStart.setOnClickListener(view -> {
-
-
-            intent=new Intent(WelcomeActivity.this,MapActivity.class);
+            intent=new Intent(this,NavDrawerActivity.class);
             startActivity(intent);
+            finish();
             //intent.putExtra("user",MainActivity.this.getUser());
             //Toast.makeText(MainActivity.this,"Bienvenido"+inputUser,Toast.LENGTH_LONG).show();
-
-
         });
 
+/*
+        //Si el boton no es precionado esta activity automaticamete pasara a la sigiente
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        startActivity(new Intent(this, MapActivity.class));
+        */
     }
 
 
