@@ -1,5 +1,6 @@
 package com.app_investigarte.fragments;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,7 +12,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.app_investigarte.ListadoArtefactosActivity;
+import com.app_investigarte.NavDrawerActivity;
 import com.app_investigarte.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -20,14 +24,19 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 
-public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener,  GoogleMap.OnCameraIdleListener {
+public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener,  GoogleMap.OnCameraIdleListener,  GoogleMap.OnMarkerClickListener {
     private GoogleMap mMap;
     private SupportMapFragment mMapFragment;
+
+
+
+
     public MapFragment() {
         // Required empty public constructor
     }
@@ -57,7 +66,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         this.mMap.setOnMapClickListener(this);
         this.mMap.setOnCameraIdleListener(this);
         this.mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-
+        this.mMap.setOnMarkerClickListener(this);
         //Controles de zoom
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
@@ -95,6 +104,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     boolean municipios = false;
     @Override
     public void onCameraIdle() {
+
         float zoomMap = mMap.getCameraPosition().zoom;
         if(zoomMap<=6 && departamentos == false) {
             mMap.clear();
@@ -128,14 +138,18 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //Urabá Antioqueño
         //apartado
         LatLng urabaAntioquenio = new LatLng(7.883, -76.633);
-        mMap.addMarker(new MarkerOptions().position(urabaAntioquenio)
-                .title("URABA ANTIOQUEÑO"));
+        mMap.addMarker(new MarkerOptions()
+                .position(urabaAntioquenio)
+                .title("URABA ANTIOQUEÑO")).setTag(8);
+
+
+
 
         //Suroeste Antioqueño
         //Jeríco
         LatLng Suroeste = new LatLng(6, -75.883);
         mMap.addMarker(new MarkerOptions().position(Suroeste)
-                .title("SUROESTE ANTIOQUEÑO"));
+                .title("SUROESTE ANTIOQUEÑO")).setTag(7);
 
 
         //OCCIDENTE ANTIOQUEÑO
@@ -143,21 +157,21 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.8, -76.15))
                 .title("OCCIDENTE ANTIOQUEÑO")
-                .zIndex(1.0f));
+                .zIndex(1.0f)).setTag(5);
 
         //NORTE ANTIOQUEÑO
         //Ituango
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.833, -75.55))
                 .title("NORTE ANTIOQUEÑO")
-                .zIndex(1.0f));
+                .zIndex(1.0f)).setTag(4);
 
         //VALLE DE ABURRÁ
         //Medellin
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.217, -75.567))
                 .title("VALLE DE ABURRÁ")
-                .zIndex(1.0f));
+                .zIndex(1.0f)).setTag(9);
 
 
         //SubReguiones
@@ -165,14 +179,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.583, -75.017))
                 .title("BAJO CAUCA")
-                .zIndex(1.0f));
+                .zIndex(1.0f)).setTag(1);
 
         //MAGDALENA MEDIO
         //puerto berrio
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.49998, -74.5525))
                 .title("MAGDALENA MEDIO")
-                .zIndex(1.0f));
+                .zIndex(1.0f)).setTag(2);
 
 
         //NORDESTE ANTIOQUEÑO
@@ -180,14 +194,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.9595, -74.894))
                 .title("NORDESTE ANTIOQUEÑO")
-                .zIndex(1.0f));
+                .zIndex(1.0f)).setTag(3);
 
         //ORIENTE ANTIOQUEÑO
         //Guatapé
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.033, -75.15))
                 .title("ORIENTE ANTIOQUEÑO")
-                .zIndex(1.0f));
+                .zIndex(1.0f)).setTag(6);
         /* ---------------------------  ------------------------  ------------------------**/
     }
     public void municipiosAntioquia() {
@@ -1302,5 +1316,16 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     @Override
     public void onMapClick(@NonNull LatLng latLng) {
 
+    }
+    Intent intent;
+    @Override
+    public boolean onMarkerClick(@NonNull Marker marker) {
+        Integer subregion = (Integer) marker.getTag();
+
+        Toast.makeText(getContext(),"item Mapa" +subregion, Toast.LENGTH_SHORT).show();
+        intent = new Intent(getContext(), ListadoArtefactosActivity.class);
+        intent.putExtra("subregion",subregion);
+        startActivity(intent);
+        return false;
     }
 }
