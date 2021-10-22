@@ -10,23 +10,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppInvestigarte">
-      
+
         <activity
             android:name=".NavDrawerActivity"
             android:exported="true" />
-      
+
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
-      
+
+        <activity
+            android:name=".DescripcionActivity"
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".ListadoArtefactosActivity"
             android:exported="true"/>
 
+            android:exported="true">
+
+        </activity>
+
         <activity
             android:name=".WelcomeActivity"
             android:exported="true" />
-      
+
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
@@ -36,7 +45,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
