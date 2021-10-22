@@ -1,6 +1,7 @@
 package com.app_investigarte;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,46 +17,45 @@ public class ListadoArtefactosActivity extends AppCompatActivity
 {
 
     RecyclerView recyclerView;
-    LinearLayoutManager layoutManager;
+    GridLayoutManager gridLayoutManager;
     ArrayList<RecyclerViewModel>ArtifactList;
     RecyVWAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_artefactos);
 
-        initData();
+        Bundle parametros = this.getIntent().getExtras();
+        int subregion = parametros.getInt("subregion");
+        initData(subregion);
         initRecyclerView();
     }
 
 
 
-    private void initData()
+    private void initData(int subregion)
     {
         ArtifactList=new ArrayList<>();
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();
-        int cantidadDatos = databaseAccess.CantidadArtefactosSubR(8);
-        String [][]consultaregistro = databaseAccess.getArtifactSubregion(8, cantidadDatos);
+        int cantidadDatos = databaseAccess.CantidadArtefactosSubR(subregion);
+        String [][]consultaregistro = databaseAccess.getArtifactSubregion(subregion, cantidadDatos);
         databaseAccess.close();
 
-        for(int i = 0; i < cantidadDatos-1; i=i+2){
-           // if(i==cantidadDatos-1){
-           //     break;
-          //  }else{
-                ArtifactList.add(new RecyclerViewModel(R.drawable.circle, R.drawable.circle, consultaregistro[i][1], consultaregistro[1 + i][1]));
-           // }
+        for(int i = 0; i < cantidadDatos; i++){
+                ArtifactList.add(new RecyclerViewModel(R.drawable.circle,  consultaregistro[i][1]));
         }
     }
 
     private void initRecyclerView()
     {
         recyclerView=findViewById(R.id.artefactos_recycleryview);
-        layoutManager=new LinearLayoutManager(this);
-        layoutManager.setOrientation(RecyclerView.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
+        gridLayoutManager=new GridLayoutManager(this,2);
+       // layoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(gridLayoutManager);
         adapter=new RecyVWAdapter(ArtifactList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();

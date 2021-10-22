@@ -34,11 +34,11 @@ public class RecyVWAdapter extends RecyclerView.Adapter<RecyVWAdapter.ViewHolder
     public void onBindViewHolder(@NonNull RecyVWAdapter.ViewHolder holder, int position)
     {
         int imagen=ArtifactList.get(position).getImageView1();
-        int imagen2=ArtifactList.get(position).getImageView2();
-        String name=ArtifactList.get(position).getTexview1();
-        String name2=ArtifactList.get(position).getTexview2();
 
-        holder.setData(imagen,imagen2,name,name2);
+        String name=ArtifactList.get(position).getTexview1();
+
+
+        holder.setData(imagen,name);
     }
 
     @Override
@@ -50,28 +50,22 @@ public class RecyVWAdapter extends RecyclerView.Adapter<RecyVWAdapter.ViewHolder
     public class ViewHolder extends  RecyclerView.ViewHolder
     {
         private ImageView imageView1;
-        private ImageView imageView2;
         private TextView textView;
-        private TextView textView2;
 
         public ViewHolder(@NonNull View itemView)
         {
             super(itemView);
 
             imageView1=itemView.findViewById(R.id.artifact1_imagvw);
-            imageView2=itemView.findViewById(R.id.artifact2_imagvw);
             textView=itemView.findViewById(R.id.artifact1_txtvw);
-            textView2=itemView.findViewById(R.id.artifact2_txtvw);
 
         }
 
 
-        public void setData(int imagen, int imagen2, String name, String name2)
+        public void setData(int imagen, String name)
         {
             imageView1.setImageResource(imagen);
-            imageView2.setImageResource(imagen2);
             textView.setText(name);
-            textView2.setText(name2);
         }
     }
 }
