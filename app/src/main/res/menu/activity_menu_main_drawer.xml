@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_baseline_map_24"
+            android:title="Mapa" />
+        <item
+            android:id="@+id/nav_artifact"
+            android:icon="@drawable/ic_pin_drop_24"
+            android:title="Artefactos" />
+
+    </group>
+
+    <item android:title="Opciónes">
+        <menu>
+            <item
+                android:id="@+id/nav_config"
+                android:icon="@drawable/ic_baseline_miscellaneous_services_24"
+                android:iconTint="@color/color_text_onprimary"
+                android:title="Configuración" />
+
+            <item
+                android:id="@+id/nav_info"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:title="información" />
+
+            <item
+                android:id="@+id/nav_salir"
+                android:icon="@drawable/ic_exit_to_app_24"
+                android:title="salir" />
+            <item android:title="" />
+            <item android:title="" />
+        </menu>
+    </item>
+
+    <item  android:title="Version: 1.0.0">
+        <menu>
+            <item android:title="" />
+            <item android:title="" />
+        </menu>
+    </item>
+</menu>

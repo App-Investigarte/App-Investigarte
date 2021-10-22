@@ -10,12 +10,12 @@ class SplashScreenActivity : AppCompatActivity() {
         //El metodo Thread nos permite utilizar ilos este lo nos permite con el metodo sleep detenernos o detener nuestro porgrama en un punto espesifico por milisegundos.
         //Este puede generar error por lo que lo adecuado es colocarlo dentro de un try catch
         try {
-            Thread.sleep(2000) //Para deternerlo durante 2 segundos
+            Thread.sleep(3000) //Para deternerlo durante 3 segundos
         } catch (e: InterruptedException) {
             e.printStackTrace()
         }
 
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
         super.finish()//para finalizar la actividad y no quede en segundo plano avierta por detras luego de abrir la otra actividad.
     }
 }
