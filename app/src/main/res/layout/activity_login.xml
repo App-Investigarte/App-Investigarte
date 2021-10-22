@@ -84,7 +84,8 @@
             android:backgroundTint="@color/color_text_onprimary"
             android:inputType="textPersonName"
             android:paddingTop="0dp"
-            android:paddingBottom="0dp" />
+            android:paddingBottom="0dp"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
