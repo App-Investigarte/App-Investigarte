@@ -355,13 +355,54 @@ VALUES (5, "Accesorios en calceta de plátano", 105, 0, 2, 1, 0 );
 INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (6, "bolsos con zuncho", 108, 0, 3, 1, 0 );
 
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (29, "Joyería en filigrana en oro y plata", 56, 0, 2, 1, 0 );
 
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (30, "Artesanías en barro Vereda Untí", 43, 0, 2, 0, 0 );
 
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (35, "Costura, bordado, tejido", 48, 0, 2, 1, 0 );
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (42, "Atuendo trovador alpargatas fabricadas de cabuya, carriel, poncho o ruana y sombrero", 28, 0, 2, 1, 0 );
 --Consultas
-/*
-SELECT * from Departmen; 
 
-SELECT * from Subregions; 
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (47, "Ropas afro coloridas con musica", 121, 6, 2, 0, 0 );
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (48, "Muleras, Atuendo tradicional", 124, 0, 2, 1, 0 );
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (49, "Peinados afro", 124, 0, 0, 0, 0 );
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (50, "Joyeria en filigrana", 3, 0, 2, 1, 0 );
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (56, "Atuendo del pesacador cotidiano", 2, 0, 2, 1, 0 );
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (59, "Pañoles, mantillas, mantones", 16, 0, 2, 2, 0 );
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (65, "Taller de artesanias, en telares (producion en lana)", 64, 0, 2, 1, 0 );
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (67, "Bisuteria en ceramica", 64, 0, 0, 0, 0 );
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (69, "Ruana Perrileña", 81, 0, 0, 0, 0 );
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (70, "Sombrero aguadeño", 81, 0, 0, 0, 0 );
+
+
+/*
+SELECT * from Departmen;
+
+SELECT * from Subregions;
 
 SELECT * from Municipality; 
 
