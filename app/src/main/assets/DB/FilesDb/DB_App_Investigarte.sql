@@ -326,6 +326,8 @@ INSERT INTO Patrimonial_category(id, name) VALUES (5, "adaptadas o trasladadas")
 
 
 /**ARTEFACTOS**/
+
+
 INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
 VALUES (1, "Prendas en saburete y molas", 114, 0, 1, 1, 0);
 
@@ -341,46 +343,19 @@ VALUES (4, "Joyería", 105, 0, 2, 1, 0 );
 INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
 VALUES (5, "Accesorios en calceta de plátano", 105, 0, 2, 1, 0 );
 
-INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
-VALUES (6, "Accesorios en calceta de plátano", 105, 0, 2, 1, 0 );
 
-/*
-INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
-VALUES (1, "Prendas en saburete y molas");
 
-INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
-VALUES (1, "Prendas en saburete y molas");
 
-INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
-VALUES (1, "Prendas en saburete y molas");
 
-INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
-VALUES (1, "Prendas en saburete y molas");
+-- inserciones nuevas
+-- Uraba Antioquenio
 
-INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
-VALUES (1, "Prendas en saburete y molas");
+-- id, nombre, id_ municipio, id_ comunidad, id_clasificación_artesanal, id_categoría_ropa, id_categoría_patrimonial
 
-INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
-VALUES (1, "Prendas en saburete y molas");
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (6, "bolsos con zuncho", 108, 0, 3, 1, 0 );
 
-INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
-VALUES (1, "Prendas en saburete y molas");
 
-INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
-VALUES (1, "Prendas en saburete y molas");
-
-INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
-VALUES (1, "Prendas en saburete y molas");
-
-INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
-VALUES (1, "Prendas en saburete y molas");
-
-INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
-VALUES (1, "Prendas en saburete y molas");
-
-INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category ) 
-VALUES (1, "Prendas en saburete y molas");
-*/
 
 --Consultas
 /*
