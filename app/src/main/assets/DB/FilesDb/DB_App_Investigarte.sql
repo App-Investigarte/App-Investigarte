@@ -423,7 +423,42 @@ VALUES (69, "Ruana Perrileña", 81, 0, 0, 0, 0 );
 INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (70, "Sombrero aguadeño", 81, 0, 0, 0, 0 );
 
+-- Suroete Antioquenio
 
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (12, "Carriel tradicional de 12 bolsillos", 93, 0, 2, 1, 0 );
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (13, "Accesorios en “chaquiras”", 92, 2, 2, 1, 0 );
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (14, "Técnica de yoyo-ropa hogar”", 92, 3, 2, 2, 0 );
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (16, "Kipará", 83, 0, 1, 1, 0);
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (17, "Tejido en chaquiras", 83, 4, 1, 0, 0);
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (19, "Ruana", 87, 0, 2, 1, 0);
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (20, "Atuendo tradicional arriero y vestuario de la mula", 88, 0, 2, 0, 0);
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (21, "Atuendo tradicional arriero y atuendo trovador alpargatas fabricadas de cabuya, carriel, poncho o ruana y sombrero", 89, 0, 2, 1, 0);
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (26, "Vestuario indígena Emberá, vestidos, collares, pintura corporal, El costurero retazos, Colcha de retazos", 102, 0, 0, 0, 0);
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (27, "Traje de chapolera desde lo tradicional/ desde lo actual gorra (sombrero, pañoleta), botas de caucho, manga larga", 90, 0, 2, 1, 0);
+
+-- Nordeste Antioquenio
+
+INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (61, "bisutería con alusión al tigre", 13, 8, 3, 0, 0);
 
 
 
@@ -457,6 +492,8 @@ INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classif
 VALUES (78, "Carriel femenino", 0, 0, 0, 0, 0 );
 
 
+
+
 --Consultas
 
 /*
@@ -476,3 +513,341 @@ SELECT * from Patrimonial_category;
 
 SELECT * from Artifact;
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
