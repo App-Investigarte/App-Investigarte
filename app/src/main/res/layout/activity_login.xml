@@ -30,7 +30,7 @@
         android:gravity="center"
         android:text="INVESTIGARTE"
         android:textColor="@color/color_text_onsecondary"
-        android:textSize="16sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -75,7 +75,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:startIconDrawable="@drawable/ic_account_circle_24">
+        app:startIconDrawable="@drawable/ic_account_circle_24"
+        app:startIconTint="@color/color_text_onsecondary"
+        android:textColorHint="@color/color_text_onsecondary"
+        android:textColor="@color/color_text_onsecondary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="300dp"
@@ -84,7 +87,9 @@
             android:backgroundTint="@color/color_text_onprimary"
             android:inputType="textPersonName"
             android:paddingTop="0dp"
-            android:paddingBottom="0dp" />
+            android:paddingBottom="0dp"
+            android:textColor="@color/color_text_onsecondary"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,7 +112,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_login"
-        app:startIconDrawable="@drawable/ic_lock_24">
+        app:startIconDrawable="@drawable/ic_lock_24"
+        app:endIconTint="@color/color_text_onsecondary"
+        app:startIconTint="@color/color_text_onsecondary"
+        android:textColorHint="@color/color_text_onsecondary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="300dp"
@@ -116,7 +124,8 @@
             android:backgroundTint="@color/color_text_onprimary"
             android:inputType="textPassword"
             android:paddingTop="0dp"
-            android:paddingBottom="0dp" />
+            android:paddingBottom="0dp"
+            android:textColor="@color/color_text_onsecondary"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
