@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.app_investigarte.DescripcionActivity;
 import com.app_investigarte.ListadoArtefactosActivity;
 import com.app_investigarte.NavDrawerActivity;
 import com.app_investigarte.R;
@@ -1322,10 +1323,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     public boolean onMarkerClick(@NonNull Marker marker) {
         Integer subregion = (Integer) marker.getTag();
 
-        Toast.makeText(getContext(),"item Mapa" +subregion, Toast.LENGTH_SHORT).show();
-        intent = new Intent(getContext(), ListadoArtefactosActivity.class);
-        intent.putExtra("subregion",subregion);
-        startActivity(intent);
+        if(subregion != null){
+            Toast.makeText(getContext(),""+subregion, Toast.LENGTH_SHORT).show();
+            intent = new Intent(getContext(), ListadoArtefactosActivity.class);
+            intent.putExtra("subregion",subregion);
+            startActivity(intent);
+        }else{
+            Toast.makeText(getContext(),"Antioquia", Toast.LENGTH_SHORT).show();
+        }
+
         return false;
     }
 }

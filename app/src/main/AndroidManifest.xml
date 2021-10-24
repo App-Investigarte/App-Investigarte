@@ -21,9 +21,7 @@
 
         <activity
             android:name=".DescripcionActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".ListadoArtefactosActivity"
             android:exported="true"/>

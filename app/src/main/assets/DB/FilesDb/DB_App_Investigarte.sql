@@ -147,7 +147,7 @@ INSERT INTO Subregions(name, id_department) VALUES ("Valle de Aburrá", 1);
 
 /**Municipios**/
 -- sin definir
-INSERT INTO Municipality(id, name, id_subregions) VALUES (0, "sin definir", 1);
+INSERT INTO Municipality(id, name, id_subregions) VALUES (0, "sin definir", 0);
 
 --bajo cauca
 INSERT INTO Municipality(name, id_subregions) VALUES ("Cáceres", 1);
@@ -430,7 +430,7 @@ INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classif
 VALUES (50, "Joyeria en filigrana", 3, 0, 2, 1, 0 );
 
 INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (56, "Atuendo del pesacador cotidiano", 2, 0, 2, 1, 0 );
+VALUES (56, "Atuendo del pesacador cotidiano", 9, 0, 2, 1, 0 );
 
 
 
@@ -467,22 +467,22 @@ VALUES (71, "Tapapinche o delantal tapapinche", 0, 0, 0, 0, 0 );
 
 INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (72, "Alpargatas o cotizas", 0, 0, 0, 0, 0 );
-go
+
 INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (73, "Poncho", 0, 0, 0, 0, 0 );
-go
+
 INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (74, "Pañolones, mantillas, mantones", 0, 0, 0, 0, 0 );
-go
+
 INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (75, "Pantalones 'coje puerco'", 0, 0, 0, 0, 0 );
-go
+
 INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (76, "La mulera", 0, 0, 0, 0, 0 );
-go
+
 INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (77, "El chingue o el camisón", 0, 0, 0, 0, 0 );
-go
+
 INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (78, "Carriel femenino", 0, 0, 0, 0, 0 );
 
@@ -509,335 +509,18 @@ SELECT * from Patrimonial_category;
 SELECT * from Artifact;
 */
 
+/*
 
+SELECT * from Municipality m 
 
+select *
+FROM Artifact a inner join Municipality m on a.id_municipality = m.id 
 
 
 
+select a.id, a.name, a.image, a.id_municipality, m.name, m.id_subregions 
+FROM Artifact a inner join Municipality m on a.id_municipality = m.id WHERE m.id_subregions = "8"
 
+select COUNT(*) FROM Artifact a inner join Municipality m on a.id_municipality = m.id WHERE m.id_subregions = "8"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
