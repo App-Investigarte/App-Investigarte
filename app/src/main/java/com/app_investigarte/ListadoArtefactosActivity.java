@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.app_investigarte.database.DatabaseAccess;
 
@@ -44,9 +45,11 @@ public class ListadoArtefactosActivity extends AppCompatActivity
         int cantidadDatos = databaseAccess.CantidadArtefactosSubR(subregion);
         String [][]consultaregistro = databaseAccess.getArtifactSubregion(subregion, cantidadDatos);
         databaseAccess.close();
-
+        int id;
         for(int i = 0; i < cantidadDatos; i++){
-                ArtifactList.add(new RecyclerViewModel(R.drawable.circle,  consultaregistro[i][1]));
+            id = Integer.parseInt(consultaregistro[i][0]);
+            ArtifactList.add(new RecyclerViewModel( id, null,  consultaregistro[i][1]));
+          //  ArtifactList.add(new RecyclerViewModel(R.drawable.circle,  consultaregistro[i][1]));
         }
     }
 
