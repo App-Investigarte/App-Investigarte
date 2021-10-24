@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary brand color. -->
-    <color name="color_primary">#5B8AD8</color>
-    <color name="color_primary_variant">#FF3700B3</color>
-    <color name="color_primary_light">#5B8AD8</color>
-    <color name="color_primary_Dark">#330170</color>
+    <color name="color_primary">#43AC49</color>
+    <color name="color_primary_variant">#ABD299</color>
+    <color name="color_primary_light">#ABD299</color>
+    <color name="color_primary_Dark">#417E44</color>
     <color name="color_text_onprimary">#FFFFFFFF</color>
 
     <!-- Secondary brand color. -->
-    <color name="color_secondary">#FF03DAC5</color>
-    <color name="color_secondary_variant">#FF018786</color>
-    <color name="color_secondary_light">#70F1E4</color>
-    <color name="color_secondary_dark">#04322D</color>
+    <color name="color_secondary">#D15116</color>
+    <color name="color_secondary_variant">#EE763E</color>
+    <color name="color_secondary_light">#EE763E</color>
+    <color name="color_secondary_dark">#FA996C</color>
     <color name="color_text_onsecondary">#FF000000</color>
 
     <color name="azul">#6498FE</color>
