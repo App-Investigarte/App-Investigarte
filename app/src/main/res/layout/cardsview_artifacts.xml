@@ -6,8 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/color_primary_light"
-    android:layout_marginTop="50dp">
+    android:layout_marginTop="20dp">
 
 
         <androidx.cardview.widget.CardView
@@ -23,25 +22,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="center">
-                //android:src="@drawable/circle">
             </ImageView>
         </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/artifact1_txtvw"
-            android:layout_width="68dp"
-            android:layout_height="19dp"
-            android:layout_below="@+id/cardvw_artifact1"
-            android:layout_alignStart="@+id/cardvw_artifact1"
-            android:layout_alignEnd="@+id/cardvw_artifact1"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="7dp"
-            android:fontFamily="@font/helvetica_boldoblique"
-            android:gravity="center"
-            android:text="Nombre"
-            android:textColor="@color/color_text_onsecondary"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/artifact1_txtvw"
+        android:layout_width="68dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardvw_artifact1"
+        android:layout_alignStart="@+id/cardvw_artifact1"
+        android:layout_alignEnd="@+id/cardvw_artifact1"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="7dp"
+        android:fontFamily="@font/helvetica_boldoblique"
+        android:gravity="center"
+        android:text="Nombre"
+        android:textColor="@color/color_text_onsecondary"
+        android:textStyle="bold" />
 
     </RelativeLayout>
 

@@ -11,10 +11,12 @@ class DescripcionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_descripcion)
 
+        val parametros = this.intent.extras
+        val id: Int = parametros?.getInt("id") ?: 1
 
         val databaseAccess = DatabaseAccess.getInstance(applicationContext)
         databaseAccess.open()
-        val informacionArtefacto = databaseAccess.getDescription(1);
+        val informacionArtefacto = databaseAccess.getDescription(id);
         databaseAccess.close()
 
         val txtdescription =findViewById<TextView>(R.id.txtdescription)
@@ -22,7 +24,7 @@ class DescripcionActivity : AppCompatActivity() {
         val imgartefactodescripcion =findViewById<ImageView>(R.id.imgartefactodescripcion)
 
         txtnameartefact.setText(informacionArtefacto[1])
-        txtdescription.setText(informacionArtefacto[3])
+        txtdescription.setText(informacionArtefacto[1]+"\n"+informacionArtefacto[3])
         //imgartefactodescripcion.setImageDrawable(informacionArtefacto[2])
 
 
