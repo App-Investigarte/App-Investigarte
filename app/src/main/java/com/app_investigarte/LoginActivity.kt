@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
-    /*override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
@@ -17,16 +17,7 @@ class LoginActivity : AppCompatActivity() {
             intent = Intent(this,WelcomeActivity::class.java)
             intent.putExtra("username",username)
             startActivity(intent)
-        }
-    }*/
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
-
-        btn_login.setOnClickListener {
-            startActivity(Intent(this, WelcomeActivity::class.java))
-            finish();
+            super.finish()
         }
     }
 }

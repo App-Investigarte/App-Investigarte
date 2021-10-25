@@ -19,52 +19,24 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        //pasar de activity al precionar el boton.
-        btnStart=findViewById(R.id.btnStart);
-        btnStart.setOnClickListener(view -> {
-            intent=new Intent(this,NavDrawerActivity.class);
-            startActivity(intent);
-            finish();
-            //intent.putExtra("user",MainActivity.this.getUser());
-            //Toast.makeText(MainActivity.this,"Bienvenido"+inputUser,Toast.LENGTH_LONG).show();
-        });
-      /*  super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
-        // SharedPreferences preferencia =
-        //        getSharedPreferences("PREFERENS_USER", Context.MODE_PRIVATE);
+        SharedPreferences preferencia = getSharedPreferences("PREFERENS_USER", Context.MODE_PRIVATE);
 
+        Bundle putExtra = this.getIntent().getExtras();
+        String userName = putExtra.getString("username");
 
-        Bundle username = this.getIntent().getExtras();
-        String objetointent = username.getString("username");
-
-    //    preferencia.edit().putString("NAME_USER",objetointent).apply();
-
-
-
+        preferencia.edit().putString("NAME_USER", userName).apply();
 
         TextView user = findViewById(R.id.txtusername);
-        //user.setText(objetointent);
-
+        user.setText(userName);
 
         //pasar de activity al precionar el boton.
         btnStart = findViewById(R.id.btnStart);
         btnStart.setOnClickListener(view -> {
             intent = new Intent(this, NavDrawerActivity.class);
             startActivity(intent);
-          // intent.putExtra("user",MainActivity.this.getUser());
-           // Toast.makeText(MainActivity.this,"Bienvenido"+inputUser,Toast.LENGTH_LONG).show();
-            finish();
+            super.finish();
+            // intent.putExtra("user",MainActivity.this.getUser());
+            // Toast.makeText(MainActivity.this,"Bienvenido"+inputUser,Toast.LENGTH_LONG).show();
         });
-
-
-        //Si el boton no es precionado esta activity automaticamete pasara a la sigiente
-        //try {
-       //     Thread.sleep(10000);
-       // } catch (InterruptedException e) {
-      //      e.printStackTrace();
-      //  }
-       // startActivity(new Intent(this, MapActivity.class));
-
-        */
     }
 }
