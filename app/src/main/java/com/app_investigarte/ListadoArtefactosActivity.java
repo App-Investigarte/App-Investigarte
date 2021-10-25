@@ -25,17 +25,35 @@ public class ListadoArtefactosActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_artefactos);
 
         Bundle parametros = this.getIntent().getExtras();
-        int subregion = parametros.getInt("subregion");
-        initData(subregion);
+        Integer subregion = parametros.getInt("subregion");
+
+        if(subregion == 0){
+            initAllData();
+        }else{
+            initData(subregion);
+        }
         initRecyclerView();
     }
 
 
+    private void initAllData(){
+        ArtifactList=new ArrayList<>();
+        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
+        databaseAccess.open();
+        int cantidadDatos = databaseAccess.cantidadAllArtefactos();
+        String [][]consultaregistro = databaseAccess.getAllArtifact(cantidadDatos);
+        databaseAccess.close();
+        int id;
+        for(int i = 0; i < cantidadDatos; i++){
+            id = Integer.parseInt(consultaregistro[i][0]);
+            ArtifactList.add(new RecyclerViewModel( id, null,  consultaregistro[i][1]));
+            //  ArtifactList.add(new RecyclerViewModel(R.drawable.circle,  consultaregistro[i][1]));
+        }
+    }
 
     private void initData(int subregion)
     {
