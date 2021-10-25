@@ -58,7 +58,6 @@
         app:layout_constraintVertical_bias="0.505" />
 -->
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edt_login"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -68,7 +67,7 @@
         android:background="@drawable/edt_style"
         android:elevation="2dp"
         android:ems="10"
-        android:hint="Correo/usuario"
+        android:hint="Usuario"
         app:hintTextColor="@color/color_text_onsecondary"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
@@ -82,16 +81,18 @@
         android:textColor="@color/color_text_onsecondary">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et1"
             android:layout_width="300dp"
             android:layout_height="45dp"
-            android:textCursorDrawable="@null"
-            android:textColorHighlight="@color/azul"
             android:background="@drawable/edt_style"
             android:backgroundTint="@color/color_text_onprimary"
             android:inputType="textPersonName"
+            android:maxLength="20"
             android:paddingTop="0dp"
             android:paddingBottom="0dp"
             android:textColor="@color/color_text_onsecondary"
+            android:textColorHighlight="@color/azul"
+            android:textCursorDrawable="@null"
             tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -127,7 +128,8 @@
             android:textColorHighlight="@color/azul"
             android:background="@drawable/edt_style"
             android:backgroundTint="@color/color_text_onprimary"
-            android:inputType="textPassword"
+            android:inputType="numberPassword"
+            android:maxLength="4"
             android:paddingTop="0dp"
             android:paddingBottom="0dp"
             android:textColor="@color/color_text_onsecondary" />
