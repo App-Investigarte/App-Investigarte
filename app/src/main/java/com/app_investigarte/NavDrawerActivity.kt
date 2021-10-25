@@ -1,5 +1,6 @@
 package com.app_investigarte
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -46,7 +47,9 @@ class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItem
         when (item.itemId) {
             itemMapa -> {showFragmentMap()
                 Toast.makeText(this,"item Mapa", Toast.LENGTH_SHORT).show()}
-            itemArtifact -> Toast.makeText(this,"item Artefacto", Toast.LENGTH_SHORT).show()
+            itemArtifact -> { showAllartifat()
+                Toast.makeText(this,"item Artefacto", Toast.LENGTH_SHORT).show()
+            }
             itemConfig -> Toast.makeText(this,"item Config", Toast.LENGTH_SHORT).show()
             itemInfo -> Toast.makeText(this,"item Info", Toast.LENGTH_SHORT).show()
             itemExit ->{
@@ -75,6 +78,14 @@ class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItem
             .replace(R.id.container_fragment, MapFragment())
             .setReorderingAllowed(true).addToBackStack(null)
             .commit()
+    }
+
+    private fun showAllartifat(){
+        var intent: Intent? = null
+        intent = Intent(this, ListadoArtefactosActivity::class.java)
+        var num = 0
+        intent.putExtra("subregion",num)
+        startActivity(intent)
     }
 //Codigo para cuando queremos colocar un fragment dentro de otro fragment
     /*
