@@ -95,9 +95,15 @@ public class DatabaseAccess {
 
     //consulta informacion Artefacto
     public String[] getDescription(int id) {
-        c = db.rawQuery("SELECT id, name, image, description, history from Artifact WHERE id = "+id+";",null);
 
-        int columnas=5;
+        c = db.rawQuery(" SELECT a.id, a.name, a.image, a.description, m.name, s.name, d.name " +
+                " FROM Artifact a " +
+                " INNER JOIN Municipality m on a.id_municipality = m.id " +
+                " INNER JOIN Subregions s  on m.id_subregions = s.id " +
+                " INNER JOIN Departmen d on s.id_department = d.id " +
+                " WHERE a.id = "+id+";",null);
+
+        int columnas=7;
 
         String informacion[]= new String[columnas];
 
