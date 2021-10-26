@@ -3,8 +3,8 @@ package com.app_investigarte
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.TextView
 import com.app_investigarte.database.DatabaseAccess
+import kotlinx.android.synthetic.main.activity_descripcion.*
 
 class DescripcionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,15 +19,15 @@ class DescripcionActivity : AppCompatActivity() {
         val informacionArtefacto = databaseAccess.getDescription(id);
         databaseAccess.close()
 
-        val txtdescription =findViewById<TextView>(R.id.txtdescription)
-        val txtnameartefact =findViewById<TextView>(R.id.txtnameartefact)
-        val imgartefactodescripcion =findViewById<ImageView>(R.id.imgartefactodescripcion)
-
-        txtnameartefact.setText(informacionArtefacto[1])
-        txtdescription.setText(informacionArtefacto[1]+"\n"+informacionArtefacto[3])
-        //imgartefactodescripcion.setImageDrawable(informacionArtefacto[2])
+        val imgartefactodescripcion =findViewById<ImageView>(R.id.img_artefacto_description)
 
 
+        txt_name_artefact.setText(informacionArtefacto[1])
+        //img_artefacto_description.setImageDrawable(informacionArtefacto[2])
+        txt_description_artifact.setText(informacionArtefacto[3]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1])
+        txt_municipio_artifact.setText(informacionArtefacto[4])
+        txt_sup_reguion_artifact.setText(informacionArtefacto[5])
+        txt_departamento_artifact.setText(informacionArtefacto[6])
 
     }
 }
