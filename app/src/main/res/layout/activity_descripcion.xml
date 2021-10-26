@@ -5,60 +5,127 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_descripcion"
-    tools:context=".DescripcionActivity"
+    android:gravity="center"
     android:orientation="vertical"
-    android:gravity="center">
+    tools:context=".DescripcionActivity">
 
     <ImageView
-        android:id="@+id/imgartefactodescripcion"
+        android:id="@+id/img_artefacto_description"
         android:layout_width="153dp"
         android:layout_height="181dp"
-        app:srcCompat="@drawable/sombrero"
-        android:layout_marginBottom="5dp"
-        />
+        android:layout_marginBottom="0dp"
+        app:srcCompat="@drawable/sombrero" />
 
     <TextView
-        android:id="@+id/txtnameartefact"
+        android:id="@+id/txt_name_artefact"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:gravity="center"
         android:text="NOMBRE"
         android:textColor="@color/color_text_onprimary"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"/>
+        android:textStyle="bold" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp">
+        android:layout_marginBottom="40dp">
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="250dp"
-            android:layout_height="300dp"
+            android:layout_height="330dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/rectangulo_texto" />
 
-        <TextView
-            android:id="@+id/txtdescription"
+        <ScrollView
             android:layout_width="220dp"
-            android:layout_height="250dp"
-            android:text="Escribe algo || Escribe algo Escribe algo || Escribe algo Escribe algo || Escribe algo Escribe algo || Escribe algo"
-            android:textColor="@color/color_text_onsecondary"
-            android:textStyle="bold"
+            android:layout_height="300dp"
+            android:paddingTop="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_departamento"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="Departamento:"
+                    android:textColor="@color/color_text_onsecondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_departamento_artifact"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="Departamento"
+                    android:textColor="@color/color_text_onsecondary" />
+
+                <TextView
+                    android:id="@+id/txt_sup_reguion"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="SubRegion:"
+                    android:textColor="@color/color_text_onsecondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_sup_reguion_artifact"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="SubRegion"
+                    android:textColor="@color/color_text_onsecondary" />
+
+                <TextView
+                    android:id="@+id/txt_municipio"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="Municipo:"
+                    android:textColor="@color/color_text_onsecondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_municipio_artifact"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="Municipo"
+                    android:textColor="@color/color_text_onsecondary" />
 
 
+                <TextView
+                    android:id="@+id/txt_description"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="Descripción:"
+                    android:textColor="@color/color_text_onsecondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_description_artifact"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="Descripción"
+                    android:textColor="@color/color_text_onsecondary" />
+
+            </LinearLayout>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </LinearLayout>
