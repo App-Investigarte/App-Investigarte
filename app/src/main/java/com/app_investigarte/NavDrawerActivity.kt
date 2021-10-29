@@ -81,7 +81,7 @@ class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItem
 
 
     private fun showFragmentMap() {
-        supportFragmentManager.beginTransaction()
+             supportFragmentManager.beginTransaction()
             .replace(R.id.container_fragment, MapFragment())
             .setReorderingAllowed(true).addToBackStack(null)
             .commit()
