@@ -4,4 +4,6 @@
 
     <string name="navigation_drawe_open">open</string>
     <string name="navigation_drawer_close">Close</string>
+    <string name="negative_exit_alert">Cancelar</string>
+    <string name="positive_exit_alert">Salir</string>
 </resources>

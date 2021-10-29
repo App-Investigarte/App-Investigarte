@@ -1,5 +1,8 @@
 package com.app_investigarte
 
+import android.app.Activity
+import android.app.PendingIntent.getActivity
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +12,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.app_investigarte.fragments.MapFragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 
 
@@ -78,7 +85,12 @@ class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItem
             .replace(R.id.container_fragment, MapFragment())
             .setReorderingAllowed(true).addToBackStack(null)
             .commit()
+
+
     }
+
+
+
 
     private fun showAllartifat(){
         var intent: Intent? = null
@@ -115,4 +127,20 @@ public class BlankFragment extends Fragment {
         return view;
     }
 }*/
+
+
+        override fun onBackPressed() {
+            val fragment =
+                this.supportFragmentManager.findFragmentById(R.id.container_fragment)
+            (fragment as? IOnBackPressed)?.onBackPressed()?.not()?.let {
+                super.onBackPressed()
+            }
+        }
+
+
+
+
+
+
+
 }
