@@ -32,6 +32,8 @@ import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import java.util.Objects;
+
 
 public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener,  GoogleMap.OnCameraIdleListener,  GoogleMap.OnMarkerClickListener,IOnBackPressed {
     private GoogleMap mMap;
@@ -1360,11 +1362,23 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         new MaterialAlertDialogBuilder(this.getContext())
                 .setTitle(title)
                 .setMessage(message)
-
-                .setNegativeButton(btnNegative, (dialogInterface, i) -> dialogInterface.cancel())
+                //.setNegativeButton(btnNegative, (dialogInterface, i) -> cerrar())
                 .setPositiveButton(btnPositive, (dialogInterface, i) -> getActivity().finishAndRemoveTask())
                 .show();
+
     }
+
+    /*public void cerrar()
+    {
+
+        intent = new Intent(getActivity().getApplicationContext(), ListadoArtefactosActivity.class);
+        intent.putExtra("subregion",8);
+        startActivity(intent);
+
+
+    }*/
+
+
 
 
 
