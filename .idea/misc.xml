@@ -21,6 +21,7 @@
         <entry key="app/src/main/res/drawable/splash_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/splash_screen_background.xml" value="0.21041666666666667" />
         <entry key="app/src/main/res/drawable/splash_screen_background_night.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-land/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2630208333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19427083333333334" />
       </map>
