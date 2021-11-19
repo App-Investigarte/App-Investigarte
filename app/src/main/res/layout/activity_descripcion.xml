@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_descripcion"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".DescripcionActivity">
+
+    <ImageView
+        android:id="@+id/img_artefacto_description"
+        android:layout_width="153dp"
+        android:layout_height="181dp"
+        android:layout_marginBottom="0dp"
+        app:srcCompat="@drawable/sombrero" />
+
+    <TextView
+        android:id="@+id/txt_name_artefact"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="NOMBRE"
+        android:textColor="@color/color_text_onprimary"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="250dp"
+            android:layout_height="330dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/rectangulo_texto" />
+
+        <ScrollView
+            android:layout_width="220dp"
+            android:layout_height="300dp"
+            android:paddingTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_departamento"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="Departamento:"
+                    android:textColor="@color/color_text_onsecondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_departamento_artifact"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="Departamento"
+                    android:textColor="@color/color_text_onsecondary" />
+
+                <TextView
+                    android:id="@+id/txt_sup_reguion"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="SubRegion:"
+                    android:textColor="@color/color_text_onsecondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_sup_reguion_artifact"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="SubRegion"
+                    android:textColor="@color/color_text_onsecondary" />
+
+                <TextView
+                    android:id="@+id/txt_municipio"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="Municipo:"
+                    android:textColor="@color/color_text_onsecondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_municipio_artifact"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="Municipo"
+                    android:textColor="@color/color_text_onsecondary" />
+
+
+                <TextView
+                    android:id="@+id/txt_description"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="Descripción:"
+                    android:textColor="@color/color_text_onsecondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_description_artifact"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="Descripción"
+                    android:textColor="@color/color_text_onsecondary" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
