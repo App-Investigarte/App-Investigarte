@@ -26,7 +26,7 @@
         android:id="@+id/textView2"
         android:layout_width="300dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:text="INVESTIGARTE"
         android:textColor="@color/color_text_onsecondary"
@@ -58,40 +58,56 @@
         app:layout_constraintVertical_bias="0.505" />
 -->
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="350dp"
+        android:layout_height="227dp"
+        android:backgroundTint="@color/color_primary_light"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.61">
+
+    </androidx.cardview.widget.CardView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edt_login"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/edt_style"
         android:elevation="2dp"
         android:ems="10"
-        android:hint="Correo/usuario"
-        app:hintTextColor="@color/color_text_onsecondary"
+        android:hint="Usuario"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
+        android:textColor="@color/color_text_onsecondary"
+        android:textColorHint="@color/color_text_onsecondary"
+        app:hintTextColor="@color/color_text_onsecondary"
         app:layout_constraintBottom_toTopOf="@+id/edt_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
         app:startIconDrawable="@drawable/ic_account_circle_24"
-        app:startIconTint="@color/color_text_onsecondary"
-        android:textColorHint="@color/color_text_onsecondary"
-        android:textColor="@color/color_text_onsecondary">
+        app:startIconTint="@color/color_text_onsecondary">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et1"
             android:layout_width="300dp"
             android:layout_height="45dp"
-            android:textCursorDrawable="@null"
-            android:textColorHighlight="@color/azul"
             android:background="@drawable/edt_style"
             android:backgroundTint="@color/color_text_onprimary"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-"
             android:inputType="textPersonName"
+            android:maxLength="20"
             android:paddingTop="0dp"
             android:paddingBottom="0dp"
             android:textColor="@color/color_text_onsecondary"
+            android:textColorHighlight="@color/azul"
+            android:textCursorDrawable="@null"
             tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -103,34 +119,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="6dp"
         android:background="@drawable/edt_style"
         android:elevation="2dp"
         android:ems="10"
         android:hint="Contraseña"
-        app:hintTextColor="@color/color_text_onsecondary"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
+        android:textColorHint="@color/color_text_onsecondary"
         app:endIconMode="password_toggle"
+        app:endIconTint="@color/color_text_onsecondary"
+        app:hintTextColor="@color/color_text_onsecondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_login"
         app:startIconDrawable="@drawable/ic_lock_24"
-        app:endIconTint="@color/color_text_onsecondary"
-        app:startIconTint="@color/color_text_onsecondary"
-        android:textColorHint="@color/color_text_onsecondary">
+        app:startIconTint="@color/color_text_onsecondary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="300dp"
             android:layout_height="45dp"
-            android:textCursorDrawable="@null"
-            android:textColorHighlight="@color/azul"
             android:background="@drawable/edt_style"
             android:backgroundTint="@color/color_text_onprimary"
-            android:inputType="textPassword"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-"
+            android:inputType="numberPassword"
+            android:maxLength="4"
             android:paddingTop="0dp"
             android:paddingBottom="0dp"
-            android:textColor="@color/color_text_onsecondary" />
+            android:textColor="@color/color_text_onsecondary"
+            android:textColorHighlight="@color/azul"
+            android:textCursorDrawable="@null"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -138,8 +157,8 @@
         android:id="@+id/btn_login"
         android:layout_width="200dp"
         android:layout_height="55dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/color_text_onsecondary"
         android:elevation="2dp"
         android:text="Iniciar sesión"
@@ -147,7 +166,7 @@
         android:textColor="@color/color_primary"
         android:textStyle="bold"
         app:cornerRadius="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_password" />
@@ -156,7 +175,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="60dp"
         android:baselineAligned="false"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -202,40 +221,44 @@
 
     <ImageButton
         android:id="@+id/imageButton8"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toEndOf="@+id/imageButton3"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/imageButton3"
         app:srcCompat="@drawable/instagram"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton8"
-        app:layout_constraintStart_toEndOf="@+id/imageButton9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.353"
         app:srcCompat="@drawable/facebook2"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButton9"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
         app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+        app:layout_constraintHorizontal_bias="0.76"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:srcCompat="@drawable/gorjeo"
+        app:layout_constraintTop_toTopOf="@+id/imageButton3"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/twitter"
         tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
