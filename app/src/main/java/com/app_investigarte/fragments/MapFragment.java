@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.app_investigarte.DescripcionActivity;
+import com.app_investigarte.IOnBackPressed;
 import com.app_investigarte.ListadoArtefactosActivity;
 import com.app_investigarte.NavDrawerActivity;
 import com.app_investigarte.R;
@@ -29,9 +30,12 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
+import java.util.Objects;
 
 
-public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener,  GoogleMap.OnCameraIdleListener,  GoogleMap.OnMarkerClickListener {
+public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener,  GoogleMap.OnCameraIdleListener,  GoogleMap.OnMarkerClickListener,IOnBackPressed {
     private GoogleMap mMap;
     private SupportMapFragment mMapFragment;
 
@@ -1334,4 +1338,50 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
         return false;
     }
+
+
+
+        @Override
+        public boolean onBackPressed()
+        {
+            close();
+
+
+            return true;
+
+
+        }
+
+    public void close()
+    {
+        String title = getString(R.string.title_exit_alert);
+        String message = getString(R.string.message_exit_alert);
+        String btnNegative = getString(R.string.negative_exit_alert);
+        String btnPositive = getString(R.string.positive_exit_alert);
+
+        new MaterialAlertDialogBuilder(this.getContext())
+                .setTitle(title)
+                .setMessage(message)
+                //.setNegativeButton(btnNegative, (dialogInterface, i) -> cerrar())
+                .setPositiveButton(btnPositive, (dialogInterface, i) -> getActivity().finishAndRemoveTask())
+                .show();
+
+    }
+
+    /*public void cerrar()
+    {
+
+        intent = new Intent(getActivity().getApplicationContext(), ListadoArtefactosActivity.class);
+        intent.putExtra("subregion",8);
+        startActivity(intent);
+
+
+    }*/
+
+
+
+
+
 }
+
+
