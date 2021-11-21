@@ -1,4 +1,4 @@
-package com.app_investigarte;
+package com.app_investigarte.ListadoArtefactos;
 
 public class RecyclerViewModel
 
