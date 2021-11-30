@@ -19,6 +19,8 @@
         <entry key="..\:/Aprendiendo/App-Investigarte/app/src/main/res/layout/nav_header_main.xml" value="0.2557291666666667" />
         <entry key="..\:/Aprendiendo/App-Investigarte/app/src/main/res/menu/activity_menu_main_drawer.xml" value="0.2557291666666667" />
         <entry key="app/src/main/res/drawable/fondo_descripcion.xml" value="0.2786458333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_miscellaneous_services_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_exit_to_app_24.xml" value="0.13055555555555556" />
         <entry key="app/src/main/res/drawable/splash_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/splash_screen_background.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/splash_screen_background_night.xml" value="0.1" />
@@ -40,6 +42,7 @@
         <entry key="app/src/main/res/layout/fragment_sub_regiones.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/fragment_sub_regions.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.2625" />
+        <entry key="app/src/main/res/menu/activity_menu_main_drawer.xml" value="0.22" />
       </map>
     </option>
   </component>
