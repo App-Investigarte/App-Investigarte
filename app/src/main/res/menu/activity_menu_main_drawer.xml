@@ -6,6 +6,10 @@
             android:icon="@drawable/ic_baseline_map_24"
             android:title="Mapa" />
         <item
+            android:id="@+id/nav_sub_region"
+            android:icon="@android:drawable/ic_menu_mapmode"
+            android:title="Sub Reguiones" />
+        <item
             android:id="@+id/nav_artifact"
             android:icon="@drawable/ic_pin_drop_24"
             android:title="Artefactos" />
@@ -29,15 +33,17 @@
                 android:id="@+id/nav_salir"
                 android:icon="@drawable/ic_exit_to_app_24"
                 android:title="salir" />
-            <item android:title="" />
-            <item android:title="" />
+            <item android:title=""
+                android:enabled="false"/>
+            <item android:title=""
+                android:enabled="false"/>
         </menu>
     </item>
 
     <item  android:title="Version: 1.0.0">
         <menu>
-            <item android:title="" />
-            <item android:title="" />
+            <item android:title=""
+                android:enabled="false"/>
         </menu>
     </item>
 </menu>

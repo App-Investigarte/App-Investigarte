@@ -14,10 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.app_investigarte.DescripcionActivity;
 import com.app_investigarte.IOnBackPressed;
-import com.app_investigarte.ListadoArtefactosActivity;
-import com.app_investigarte.NavDrawerActivity;
+import com.app_investigarte.ListadoArtefactos.ListadoArtefactosActivity;
 import com.app_investigarte.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -31,8 +29,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-
-import java.util.Objects;
 
 
 public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener,  GoogleMap.OnCameraIdleListener,  GoogleMap.OnMarkerClickListener,IOnBackPressed {

@@ -1,17 +1,15 @@
-package com.app_investigarte;
+package com.app_investigarte.ListadoArtefactos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
+import com.app_investigarte.R;
 import com.app_investigarte.database.DatabaseAccess;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListadoArtefactosActivity extends AppCompatActivity
 
@@ -50,7 +48,7 @@ public class ListadoArtefactosActivity extends AppCompatActivity
         int id;
         for(int i = 0; i < cantidadDatos; i++){
             id = Integer.parseInt(consultaregistro[i][0]);
-            ArtifactList.add(new RecyclerViewModel( id, null,  consultaregistro[i][1]));
+            ArtifactList.add(new RecyclerViewModel( id, consultaregistro[i][2],  consultaregistro[i][1]));
             //  ArtifactList.add(new RecyclerViewModel(R.drawable.circle,  consultaregistro[i][1]));
         }
     }
@@ -66,7 +64,7 @@ public class ListadoArtefactosActivity extends AppCompatActivity
         int id;
         for(int i = 0; i < cantidadDatos; i++){
             id = Integer.parseInt(consultaregistro[i][0]);
-            ArtifactList.add(new RecyclerViewModel( id, null,  consultaregistro[i][1]));
+            ArtifactList.add(new RecyclerViewModel( id, consultaregistro[i][2],  consultaregistro[i][1]));
           //  ArtifactList.add(new RecyclerViewModel(R.drawable.circle,  consultaregistro[i][1]));
         }
     }
