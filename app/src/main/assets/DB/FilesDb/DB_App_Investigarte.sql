@@ -486,11 +486,7 @@ VALUES (77, "El chingue o el camisón", 0, 0, 0, 0, 0 );
 INSERT INTO Artifact(id, name, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (78, "Carriel femenino", 0, 0, 0, 0, 0 );
 
-
-
-
 --Consultas
-
 /*
 SELECT * from Departmen;
 

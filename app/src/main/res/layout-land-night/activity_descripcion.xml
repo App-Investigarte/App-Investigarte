@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="@color/Color_darck"
     tools:context=".DescripcionActivity">
 
     <androidx.cardview.widget.CardView
@@ -62,6 +63,7 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginVertical="20dp"
+                app:cardBackgroundColor="@color/Color_darck"
                 app:cardCornerRadius="40dp"
                 app:cardElevation="5dp">
 
@@ -84,14 +86,12 @@
                             android:layout_height="wrap_content"
                             android:text="Departamento:"
                             android:textSize="16sp"
-                            android:textColor="@color/color_text_onsecondary"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/txt_departamento_artifact"
                             android:layout_width="220dp"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/color_text_onsecondary"
                             android:text="Departamento"
                             />
 
@@ -100,7 +100,6 @@
                             android:layout_width="220dp"
                             android:layout_height="wrap_content"
                             android:text="SubRegion:"
-                            android:textColor="@color/color_text_onsecondary"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -108,15 +107,13 @@
                             android:id="@+id/txt_sup_reguion_artifact"
                             android:layout_width="220dp"
                             android:layout_height="wrap_content"
-                            android:text="SubRegion"
-                            android:textColor="@color/color_text_onsecondary" />
+                            android:text="SubRegion" />
 
                         <TextView
                             android:id="@+id/txt_municipio"
                             android:layout_width="220dp"
                             android:layout_height="wrap_content"
                             android:text="Municipo:"
-                            android:textColor="@color/color_text_onsecondary"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -124,8 +121,7 @@
                             android:id="@+id/txt_municipio_artifact"
                             android:layout_width="220dp"
                             android:layout_height="wrap_content"
-                            android:text="Municipo"
-                            android:textColor="@color/color_text_onsecondary" />
+                            android:text="Municipo" />
 
 
                         <TextView
@@ -133,7 +129,6 @@
                             android:layout_width="220dp"
                             android:layout_height="wrap_content"
                             android:text="Descripción:"
-                            android:textColor="@color/color_text_onsecondary"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -141,8 +136,7 @@
                             android:id="@+id/txt_description_artifact"
                             android:layout_width="220dp"
                             android:layout_height="wrap_content"
-                            android:text="Descripción"
-                            android:textColor="@color/color_text_onsecondary" />
+                            android:text="Descripción"/>
 
                     </LinearLayout>
                 </ScrollView>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/color_primary_light"
-    tools:context=".ListadoArtefactosActivity">
+    tools:context=".ListadoArtefactos.ListadoArtefactosActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/artefactos_recycleryview"

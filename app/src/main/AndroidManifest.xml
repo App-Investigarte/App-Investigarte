@@ -23,7 +23,7 @@
             android:name=".DescripcionActivity"
             android:exported="true"/>
         <activity
-            android:name=".ListadoArtefactosActivity"
+            android:name=".ListadoArtefactos.ListadoArtefactosActivity"
             android:exported="true"/>
 
         <activity
