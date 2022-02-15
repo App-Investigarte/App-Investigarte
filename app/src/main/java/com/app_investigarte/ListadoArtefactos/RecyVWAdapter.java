@@ -1,18 +1,20 @@
-package com.app_investigarte;
+package com.app_investigarte.ListadoArtefactos;
 
-import android.content.Context;
+import static com.app_investigarte.ListadoArtefactos.ConvertirIMGBase64.convertirAimagen;
+
 import android.content.Intent;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.app_investigarte.DescripcionActivity;
+import com.app_investigarte.R;
 
 import java.util.List;
 
@@ -69,7 +71,7 @@ public class RecyVWAdapter extends RecyclerView.Adapter<RecyVWAdapter.ViewHolder
         //ejecuta la activity de la Decripcion de cada artefacto
         public void startDescription(View view){
             view.setOnClickListener( v -> {
-                intent=new Intent(view.getContext(),DescripcionActivity.class);
+                intent=new Intent(view.getContext(), DescripcionActivity.class);
                 intent.putExtra("id",id);
                 view.getContext().startActivity(intent);
             });
@@ -79,7 +81,12 @@ public class RecyVWAdapter extends RecyclerView.Adapter<RecyVWAdapter.ViewHolder
         public void setData(int id, String imagen, String name)
         {
             this.id = id;
-            imageView1.setImageDrawable(null);
+            if(imagen == null){
+                imageView1.setImageBitmap(null);
+            }else{
+                imageView1.setImageBitmap (ConvertirIMGBase64.convertirAimagen(imagen));
+                imageView1.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            }
             textView.setText(name);
         }
     }
