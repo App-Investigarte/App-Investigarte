@@ -68,15 +68,15 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             itemArtifact -> showAllartifat()   // Pasamos a al activity para mostrar todos los artefactos
             itemConfig -> Toast.makeText(this, "item Config", Toast.LENGTH_SHORT).show()
             itemInfo -> Toast.makeText(this, "item Info", Toast.LENGTH_SHORT).show()
-            itemExit -> exitActity()       // Finalizamos la aplicación y deslogeamos al usuario
+            itemExit -> exitActivity()       // Finalizamos la aplicación y deslogeamos al usuario
         }
         drawer.closeDrawer(GravityCompat.START)
 
-        //El método retorna un Buleano asi que devolvemos un verdadero indicado de que realizo la operación exitosamente
+        // El método retorna un Buleano asi que devolvemos un verdadero indicado de que realizo la operación exitosamente
         return true
     }
 
-    //Metodos del Menu lateral generados automáticamente
+    // Metodos del Menu lateral generados automáticamente
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         toggle.syncState()
@@ -100,7 +100,7 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
 
     //Función para cerrar la app y deslogear el usuario.
-    private fun exitActity() {
+    private fun exitActivity() {
 
         //finalizar activity y removerla de la lista de tareas.
         finishAndRemoveTask()
@@ -116,8 +116,7 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
     // Función Para iniciar la activity que muestra todos los artefactos.
     private fun showAllartifat() {
-        var intent: Intent? = null
-        intent = Intent(this, ListadoArtefactosActivity::class.java)
+        val intent = Intent(this, ListadoArtefactosActivity::class.java)
         // Le pasamos como parámetro el cero para indicarle que tiene que mostrar todos los artefactos.
         intent.putExtra("subregion", 0)
         startActivity(intent)
@@ -134,7 +133,7 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     }
 
 
-//Codigo para cuando queremos colocar un fragment dentro de otro fragment
+// Código para cuando queremos colocar un fragment dentro de otro fragment
     /*
 public class BlankFragment extends Fragment {
 
