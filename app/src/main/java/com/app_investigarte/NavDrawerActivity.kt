@@ -23,11 +23,14 @@ class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItem
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //se le pasa la vista que tendrá el menu de navegación lateral y al fragment principal que contendrá las vista.
         setContentView(R.layout.activity_nav_drawer)
 
+        //se hace referencia a el id de la Barra superior
         val toolbar: Toolbar = findViewById(R.id.toolbar_main)
         setSupportActionBar(toolbar)
 
+        //se hase referencia a el id del layout qeu contendrá el menu de navegación lateral y al fragment principal que contendrá las vista.
         drawer = findViewById(R.id.drawer_layout)
 
         toggle = ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawe_open,R.string.navigation_drawer_close)
@@ -35,11 +38,17 @@ class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItem
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
 
+        // Se hace referencia a el id del menu de navegación lateral
         val navigationView: NavigationView = findViewById(R.id.nav_view)
+        // Escuchamos los items seleccionados del menu, haciendo contexto que los items sean escuchados con el contexto de este activity
         navigationView.setNavigationItemSelectedListener(this)
+
+        // Mostramos el Fragment del Mapa con el Fragment Principal.
         showFragmentMap()
     }
 
+
+    // Sobre-escribimos la función para cuando un item del menu Lateral es presionado
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val itemMapa = (R.id.nav_map)
         val itemArtifact = (R.id.nav_artifact)
@@ -47,14 +56,17 @@ class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItem
         val itemInfo = (R.id.nav_info)
         val itemExit= (R.id.nav_salir)
 
+        // Segun el id del item presionado realizamos su acción correspondiente
         when (item.itemId) {
-            itemMapa     ->  showFragmentMap()
-            itemArtifact ->  showAllartifat()
+            itemMapa     ->  showFragmentMap()  // Mostramos el Fragmen
+            itemArtifact ->  showAllartifat()   // Pasamos a al activity para mostrar todos los artefactos
             itemConfig   ->  Toast.makeText(this,"item Config", Toast.LENGTH_SHORT).show()
             itemInfo     ->  Toast.makeText(this,"item Info", Toast.LENGTH_SHORT).show()
-            itemExit     ->  exitActity()
+            itemExit     ->  exitActity()       // Finalizamos la aplicación y deslogeamos al usuario
         }
         drawer.closeDrawer(GravityCompat.START)
+
+        //El método retorna un Buleano asi que devolvemos un verdadero indicado de que realizo la operación exitosamente
         return true
     }
 
@@ -71,6 +83,7 @@ class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItem
     }
 
     private fun showFragmentMap() {
+            //Remplasamos en el Fragment Principal el Fragmen del Mapa
              supportFragmentManager.beginTransaction()
             .replace(R.id.container_fragment, MapFragment())
             .setReorderingAllowed(true).addToBackStack(null)
