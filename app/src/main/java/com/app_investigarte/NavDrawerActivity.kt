@@ -1,6 +1,8 @@
 package com.app_investigarte
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -46,16 +48,11 @@ class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItem
         val itemExit= (R.id.nav_salir)
 
         when (item.itemId) {
-            itemMapa -> {showFragmentMap()
-                Toast.makeText(this,"item Mapa", Toast.LENGTH_SHORT).show()}
-            itemArtifact -> { showAllartifat()
-                Toast.makeText(this,"item Artefacto", Toast.LENGTH_SHORT).show()
-            }
-            itemConfig -> Toast.makeText(this,"item Config", Toast.LENGTH_SHORT).show()
-            itemInfo -> Toast.makeText(this,"item Info", Toast.LENGTH_SHORT).show()
-            itemExit ->{
-                finishAndRemoveTask()
-            }
+            itemMapa     ->  showFragmentMap()
+            itemArtifact ->  showAllartifat()
+            itemConfig   ->  Toast.makeText(this,"item Config", Toast.LENGTH_SHORT).show()
+            itemInfo     ->  Toast.makeText(this,"item Info", Toast.LENGTH_SHORT).show()
+            itemExit     ->  exitActity()
         }
         drawer.closeDrawer(GravityCompat.START)
         return true
@@ -73,19 +70,26 @@ class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItem
         return  super.onOptionsItemSelected(item)
     }
 
-
     private fun showFragmentMap() {
              supportFragmentManager.beginTransaction()
             .replace(R.id.container_fragment, MapFragment())
             .setReorderingAllowed(true).addToBackStack(null)
             .commit()
-
-
     }
 
 
+    //Funcion para cerrar la app y deslogear el usuario.
+    private fun exitActity(){
 
+        //finalizar activity y removerla de la lista de tareas.
+        finishAndRemoveTask()
 
+        //Borrar datos del Usuario
+        val prefs : SharedPreferences.Editor = getSharedPreferences(getString(R.string.PREFERENS),
+            Context.MODE_PRIVATE).edit()
+        prefs.clear()
+        prefs.apply()
+    }
     private fun showAllartifat(){
         var intent: Intent? = null
         intent = Intent(this, ListadoArtefactosActivity::class.java)
