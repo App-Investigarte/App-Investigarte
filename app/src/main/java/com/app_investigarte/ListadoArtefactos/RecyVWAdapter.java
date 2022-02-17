@@ -59,6 +59,7 @@ public class RecyVWAdapter extends RecyclerView.Adapter<RecyVWAdapter.ViewHolder
         private ImageView imageView1;
         private TextView textView;
 
+
         public ViewHolder(@NonNull View itemView)
         {
             super(itemView);
