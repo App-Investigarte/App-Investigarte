@@ -16,7 +16,7 @@ import com.app_investigarte.fragments.MapFragment
 import com.google.android.material.navigation.NavigationView
 
 
-class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItemSelectedListener {
+class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
@@ -33,7 +33,13 @@ class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItem
         //se hase referencia a el id del layout qeu contendrá el menu de navegación lateral y al fragment principal que contendrá las vista.
         drawer = findViewById(R.id.drawer_layout)
 
-        toggle = ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawe_open,R.string.navigation_drawer_close)
+        toggle = ActionBarDrawerToggle(
+            this,
+            drawer,
+            toolbar,
+            R.string.navigation_drawe_open,
+            R.string.navigation_drawer_close
+        )
         drawer.addDrawerListener(toggle)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
@@ -54,15 +60,15 @@ class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItem
         val itemArtifact = (R.id.nav_artifact)
         val itemConfig = (R.id.nav_config)
         val itemInfo = (R.id.nav_info)
-        val itemExit= (R.id.nav_salir)
+        val itemExit = (R.id.nav_salir)
 
-        // Segun el id del item presionado realizamos su acción correspondiente
+        // Según el id del item presionado realizamos su acción correspondiente
         when (item.itemId) {
-            itemMapa     ->  showFragmentMap()  // Mostramos el Fragmen
-            itemArtifact ->  showAllartifat()   // Pasamos a al activity para mostrar todos los artefactos
-            itemConfig   ->  Toast.makeText(this,"item Config", Toast.LENGTH_SHORT).show()
-            itemInfo     ->  Toast.makeText(this,"item Info", Toast.LENGTH_SHORT).show()
-            itemExit     ->  exitActity()       // Finalizamos la aplicación y deslogeamos al usuario
+            itemMapa -> showFragmentMap()  // Mostramos el Fragment
+            itemArtifact -> showAllartifat()   // Pasamos a al activity para mostrar todos los artefactos
+            itemConfig -> Toast.makeText(this, "item Config", Toast.LENGTH_SHORT).show()
+            itemInfo -> Toast.makeText(this, "item Info", Toast.LENGTH_SHORT).show()
+            itemExit -> exitActity()       // Finalizamos la aplicación y deslogeamos al usuario
         }
         drawer.closeDrawer(GravityCompat.START)
 
@@ -70,46 +76,64 @@ class NavDrawerActivity : AppCompatActivity(),   NavigationView.OnNavigationItem
         return true
     }
 
-    override fun onPostCreate(savedInstanceState: Bundle?){
+    //Metodos del Menu lateral generados automáticamente
+    override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         toggle.syncState()
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean{
-        if(toggle.onOptionsItemSelected(item)){
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (toggle.onOptionsItemSelected(item)) {
             return true
         }
-        return  super.onOptionsItemSelected(item)
+        return super.onOptionsItemSelected(item)
     }
 
+    // Función para Mostrar el Fragment del Mapa.
     private fun showFragmentMap() {
-            //Remplasamos en el Fragment Principal el Fragmen del Mapa
-             supportFragmentManager.beginTransaction()
+        //Reemplazamos en el Fragment Principal por el Fragment del Mapa
+        supportFragmentManager.beginTransaction()
             .replace(R.id.container_fragment, MapFragment())
             .setReorderingAllowed(true).addToBackStack(null)
             .commit()
     }
 
 
-    //Funcion para cerrar la app y deslogear el usuario.
-    private fun exitActity(){
+    //Función para cerrar la app y deslogear el usuario.
+    private fun exitActity() {
 
         //finalizar activity y removerla de la lista de tareas.
         finishAndRemoveTask()
 
         //Borrar datos del Usuario
-        val prefs : SharedPreferences.Editor = getSharedPreferences(getString(R.string.PREFERENS),
-            Context.MODE_PRIVATE).edit()
+        val prefs: SharedPreferences.Editor = getSharedPreferences(
+            getString(R.string.PREFERENS),
+            Context.MODE_PRIVATE
+        ).edit()
         prefs.clear()
         prefs.apply()
     }
-    private fun showAllartifat(){
+
+    // Función Para iniciar la activity que muestra todos los artefactos.
+    private fun showAllartifat() {
         var intent: Intent? = null
         intent = Intent(this, ListadoArtefactosActivity::class.java)
-        var num = 0
-        intent.putExtra("subregion",num)
+        // Le pasamos como parámetro el cero para indicarle que tiene que mostrar todos los artefactos.
+        intent.putExtra("subregion", 0)
         startActivity(intent)
     }
+
+
+    // Aun falta Corregir el onBackPressed
+    override fun onBackPressed() {
+        val fragment =
+            this.supportFragmentManager.findFragmentById(R.id.container_fragment)
+        (fragment as? IOnBackPressed)?.onBackPressed()?.not()?.let {
+            super.onBackPressed()
+        }
+    }
+
+
 //Codigo para cuando queremos colocar un fragment dentro de otro fragment
     /*
 public class BlankFragment extends Fragment {
@@ -138,20 +162,4 @@ public class BlankFragment extends Fragment {
         return view;
     }
 }*/
-
-
-        override fun onBackPressed() {
-            val fragment =
-                this.supportFragmentManager.findFragmentById(R.id.container_fragment)
-            (fragment as? IOnBackPressed)?.onBackPressed()?.not()?.let {
-                super.onBackPressed()
-            }
-        }
-
-
-
-
-
-
-
 }
