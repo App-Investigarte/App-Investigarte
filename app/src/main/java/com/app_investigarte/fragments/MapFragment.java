@@ -56,7 +56,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         if (mMapFragment != null) {
             mMapFragment.getMapAsync(this);
         }
-        //  getMapAsync(this);
         return view;
     }
 
@@ -88,6 +87,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
             Log.e("TAG", "No se puede encontrar el error de estilo: ",e);
         }
 
+        //se limita el rango de google map para que solo se vea la region de colombia
         mMap.setMinZoomPreference(5.5f);
         LatLngBounds colombia = new LatLngBounds(
                 new LatLng(2, -78), // SW bounds
@@ -105,9 +105,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     boolean municipios = false;
     @Override
     public void onCameraIdle() {
-
+        //Configuración del mapa para que deacuerdo al zoom
+        //si no tiene zoom y se inicia en la posición inicial se muestra el marcador de antioquía
+        //si el zoom esta entre 6 y 8 se muestran las subregions de antioquía
+        //si el zoom esta entre 8 y 15 se muestran todos los artefactos en el mapa de antioquía deacuerdo asu municipio
         float zoomMap = mMap.getCameraPosition().zoom;
-        if(zoomMap<=6 && departamentos == false) {
+        if(zoomMap<=6 && !departamentos) {
             mMap.clear();
             mapaColombia();
             LatLng antioquia = new LatLng(6.55, -75.817);
@@ -117,14 +120,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
             departamentos = true;
             subRegiones = false;
             municipios = false;
-        }else if(zoomMap >= 6 && zoomMap <= 8 && subRegiones == false){
+        }else if(zoomMap >= 6 && zoomMap <= 8 && !subRegiones){
             mMap.clear();
             mapaColombia();
             subRegionesAntioquia();
             departamentos = false;
             subRegiones = true;
             municipios = false;
-        }else if(zoomMap >= 8 && zoomMap <= 15 && municipios == false){
+        }else if(zoomMap >= 8 && zoomMap <= 15 && !municipios){
             mMap.clear();
             mapaColombia();
             municipiosAntioquia();
@@ -488,7 +491,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     }
     public void mapaColombia() {
         // Add Polyline
-        Polyline line = mMap.addPolyline(new PolylineOptions()
+        mMap.addPolyline(new PolylineOptions()
                 .add(
                         new LatLng(1.4743, -78.8764),
                         new LatLng(1.45720220369382275, -78.85217305272818),
@@ -1266,7 +1269,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
 
         // Add Polyline
-        Polyline line2 = mMap.addPolyline(new PolylineOptions()
+        mMap.addPolyline(new PolylineOptions()
                 .add(new LatLng(8.678973577364099, -77.37136434763669),
                         new LatLng(8.64233938741097, -77.37324222922325),
                         new LatLng(8.635531610066707, -77.37349234521389),
@@ -1360,21 +1363,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                 .show();
 
     }
-
-    /*public void cerrar()
-    {
-
-        intent = new Intent(getActivity().getApplicationContext(), ListadoArtefactosActivity.class);
-        intent.putExtra("subregion",8);
-        startActivity(intent);
-
-
-    }*/
-
-
-
-
-
 }
 
 
