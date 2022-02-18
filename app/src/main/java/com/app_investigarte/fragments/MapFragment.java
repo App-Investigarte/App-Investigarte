@@ -1319,33 +1319,30 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
     }
     Intent intent;
+    //se captura el evento de click en un marcador
     @Override
     public boolean onMarkerClick(@NonNull Marker marker) {
         Integer subregion = (Integer) marker.getTag();
 
+        //de acuerdo a la subregion seleccionada se abre la activity de lista de artefactos y se muestra los artefactos de esa region.
         if(subregion != null){
             Toast.makeText(getContext(),""+subregion, Toast.LENGTH_SHORT).show();
             intent = new Intent(getContext(), ListadoArtefactosActivity.class);
             intent.putExtra("subregion",subregion);
             startActivity(intent);
         }else{
-            Toast.makeText(getContext(),"Antioquia", Toast.LENGTH_SHORT).show();
+            //si la subregion seleccionada es nula es por que se selecciono el marcado de antioquía
+            Toast.makeText(getContext(),"Antioquía", Toast.LENGTH_SHORT).show();
         }
 
         return false;
     }
 
-
-
         @Override
         public boolean onBackPressed()
         {
             close();
-
-
             return true;
-
-
         }
 
     public void close()
