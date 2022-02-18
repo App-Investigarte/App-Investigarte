@@ -98,7 +98,7 @@ public class ListadoArtefactosActivity extends AppCompatActivity
         recyclerView=findViewById(R.id.artefactos_recycleryview);
         //Se utiliza un gridLayoutManager de 2 columnas para poder Mostrar el contenido en dos columnas.
         gridLayoutManager=new GridLayoutManager(this,2);
-       // layoutManager.setOrientation(RecyclerView.VERTICAL);
+        //layoutManager.setOrientation(RecyclerView.VERTICAL);
         //Al recyclerView se Le pasa el layout manager a utilizar que en este caso el el GridLayoutM.
         recyclerView.setLayoutManager(gridLayoutManager);
         //Al el  RecyVWAdapter se le pasa la lista de artefactos a mostrar en el recyclerView.
