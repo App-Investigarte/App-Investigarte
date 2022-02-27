@@ -19,7 +19,7 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        SharedPreferences preferencia = getSharedPreferences("PREFERENS_USER", Context.MODE_PRIVATE);
+        SharedPreferences preferencia = getSharedPreferences(getString(R.string.PREFERENS), Context.MODE_PRIVATE);
 
         Bundle putExtra = this.getIntent().getExtras();
         String userName = putExtra.getString("username");

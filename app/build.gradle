@@ -8,7 +8,7 @@ plugins {
 android {
     compileSdkVersion 31
     buildToolsVersion "30.0.3"
-
+    compileOptions.encoding "ISO-8859-1" // para el español para que el edictor reconosca los asentos
     defaultConfig {
         applicationId "com.app_investigarte"
         minSdkVersion 27

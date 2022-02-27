@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.app_investigarte.R
 import kotlinx.android.synthetic.main.fragment_sub_regions.view.*
 
+//es una función que se esta implementando nueva por ahora ignorar esta clase
 class SubRegionsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
