@@ -47,10 +47,11 @@ public class ListadoArtefactosActivity extends AppCompatActivity
     private void initAllData(){
         //se Crea o instancia un ArrayList
         ArtifactList=new ArrayList<>();
+        //****************************************************************/
         //se instancia la base de datos y se abre para poder escucharla y modificarla.
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();
-
+        //****************************************************************/
         // se guarda en un entero la cantidad de todos los artefacto actuales  consultados en la base de datos
         int cantidadDatos = databaseAccess.cantidadAllArtefactos();
         // se guarda en una matriz los datos obtenidos en al base de datos de todos los artefactos.
