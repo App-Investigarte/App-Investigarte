@@ -10,7 +10,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
+// jbxjkjvjkx ytyutuyrteteytry
         btn_login.setOnClickListener {
             var username: String = et1.text.toString()
             var intent: Intent? = null

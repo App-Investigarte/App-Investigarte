@@ -41,7 +41,7 @@
                         android:id="@+id/img_artefacto_description"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
-                        app:srcCompat="@drawable/sombrero" />
+                        app:srcCompat="@drawable/sombrero1" />
                 </androidx.cardview.widget.CardView>
 
                 <TextView

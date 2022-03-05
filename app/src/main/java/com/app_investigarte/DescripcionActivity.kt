@@ -3,7 +3,6 @@ package com.app_investigarte
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.Toast
 import com.app_investigarte.ListadoArtefactos.ConvertirIMGBase64
 import com.app_investigarte.database.DatabaseAccess
 import kotlinx.android.synthetic.main.activity_descripcion.*
@@ -14,6 +13,7 @@ class DescripcionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_descripcion)
 
         val parametros = this.intent.extras
+        //jaghuagaiuvakuava
         val id: Int = parametros?.getInt("id") ?: 1
 
         val databaseAccess = DatabaseAccess.getInstance(applicationContext)
@@ -26,7 +26,7 @@ class DescripcionActivity : AppCompatActivity() {
 
         txt_name_artefact.setText(informacionArtefacto[1])
         if(informacionArtefacto[2] == null){
-            img_artefacto_description.setImageResource(R.drawable.sombrero)
+            img_artefacto_description.setImageResource(R.drawable.sombrero1)
         }else{
             img_artefacto_description.setImageBitmap (
                 ConvertirIMGBase64.convertirAimagen(

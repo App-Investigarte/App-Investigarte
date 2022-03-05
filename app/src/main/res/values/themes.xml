@@ -23,6 +23,15 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary_Dark</item>
         <!-- Customize your theme here. -->
-        <item name="android:windowBackground">@drawable/splash_screen_background</item>
+        <item name="android:windowBackground">@drawable/background_activity</item>
     </style>
+
+    <style name="Theme.Background" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary_Dark</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/background_activity</item>
+    </style>
+
+
 </resources>

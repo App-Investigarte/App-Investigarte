@@ -7,6 +7,15 @@
     android:background="@color/color_primary"
     tools:context=".LoginActivity">
 
+    <ImageView
+        android:layout_width="146dp"
+        android:layout_height="100dp"
+        android:background="@drawable/ruana"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="540dp">
+
+    </ImageView>
+
     <ImageButton
         android:id="@+id/imageButton11"
         android:layout_width="215dp"
