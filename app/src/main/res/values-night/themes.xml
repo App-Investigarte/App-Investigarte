@@ -21,6 +21,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary_Dark</item>
         <!-- Customize your theme here. -->
-        <item name="android:windowBackground">@drawable/splash_screen_background_night</item>
+        <item name="android:windowBackground">@drawable/background_splashscreen_night</item>
     </style>
 </resources>

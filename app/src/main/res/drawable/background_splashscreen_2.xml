@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--   <item android:drawable="@color/azul"/> -->
+    <item>
+        <shape>
+            <solid android:color="#FFFFFF" />
+
+            <gradient
+                android:angle="270"
+                android:endColor="#A687DD"
+                android:startColor="#FF5D34A6">
+            </gradient>
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/svg_splashscreen"
+        android:bottom="50dp"
+        android:top="50dp"
+        android:right="25dp"
+        android:left="25dp">
+    </item>
+</layer-list>
