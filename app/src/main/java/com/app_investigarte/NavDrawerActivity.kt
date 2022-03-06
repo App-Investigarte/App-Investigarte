@@ -138,7 +138,7 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     fun close() {
         val title = getString(R.string.title_exit_alert)
         val message = getString(R.string.message_exit_alert)
-        val btnNegative = getString(R.string.negative_exit_alert)
+        getString(R.string.negative_exit_alert)
         val btnPositive = getString(R.string.positive_exit_alert)
         MaterialAlertDialogBuilder(this)
             .setTitle(title)
