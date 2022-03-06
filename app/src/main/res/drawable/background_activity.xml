@@ -3,11 +3,13 @@
        <item android:drawable="@color/azul"/>
     <item android:drawable="@color/color_primary_light" />
 
-    <!--jhjkbkjb -->
+<!--
+    &lt;!&ndash;jhjkbkjb &ndash;&gt;
     <item android:gravity="center">
             <bitmap android:src="@drawable/prueba">
             </bitmap>
     </item>
+-->
 
 
     <!-- flor 4-->
