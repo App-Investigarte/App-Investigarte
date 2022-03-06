@@ -26,7 +26,7 @@ class DescripcionActivity : AppCompatActivity() {
 
         txt_name_artefact.setText(informacionArtefacto[1])
         if(informacionArtefacto[2] == null){
-            img_artefacto_description.setImageResource(R.drawable.sombrero1)
+            img_artefacto_description.setImageResource(R.drawable.ic_sombrero)
         }else{
             img_artefacto_description.setImageBitmap (
                 ConvertirIMGBase64.convertirAimagen(

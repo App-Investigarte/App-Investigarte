@@ -12,7 +12,7 @@
         android:layout_width="293dp"
         android:layout_height="399dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/box"
+        android:background="@drawable/shape_box"
         android:elevation="2dp"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -61,7 +61,7 @@
             android:layout_marginRight="15dp"
             android:rotation="-18"
             android:scaleType="centerInside"
-            android:src="@drawable/ruana">
+            android:src="@drawable/ic_ruana">
         </ImageView>
     </androidx.cardview.widget.CardView>
 
@@ -118,7 +118,7 @@
         android:id="@+id/btnStart"
         android:layout_width="293dp"
         android:layout_height="75dp"
-        android:background="@drawable/btn_style"
+        android:background="@drawable/style_btn"
         android:elevation="4dp"
         android:text="Comenzar"
         android:textAllCaps="false"
