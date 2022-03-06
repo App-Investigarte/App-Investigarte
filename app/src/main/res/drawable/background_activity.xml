@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--   <item android:drawable="@color/azul"/> -->
+       <item android:drawable="@color/azul"/>
     <item android:drawable="@color/color_primary_light" />
 
     <!--jhjkbkjb -->
@@ -10,8 +10,8 @@
     </item>
 
 
-   <!-- &lt;!&ndash; flor 4&ndash;&gt;
-    <item android:gravity="bottom|center"
+    <!-- flor 4-->
+    <!--<item android:gravity="bottom|center"
         android:bottom="130dp"
         android:right="185dp"
         android:width="25dp"
