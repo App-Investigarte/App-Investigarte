@@ -1,18 +1,20 @@
 package com.app_investigarte
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.app_investigarte.ListadoArtefactos.ListadoArtefactosActivity
 import com.app_investigarte.fragments.MapFragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 
 
@@ -125,13 +127,27 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
     // Aun falta Corregir el onBackPressed
     override fun onBackPressed() {
-        val fragment =
-            this.supportFragmentManager.findFragmentById(R.id.container_fragment)
-        (fragment as? IOnBackPressed)?.onBackPressed()?.not()?.let {
-            super.onBackPressed()
-        }
+        /*  val fragment =
+              this.supportFragmentManager.findFragmentById(R.id.container_fragment)
+          (fragment as? IOnBackPressed)?.onBackPressed()?.not()?.let {
+              super.onBackPressed()
+          }*/
+        close()
     }
 
+    fun close() {
+        val title = getString(R.string.title_exit_alert)
+        val message = getString(R.string.message_exit_alert)
+        getString(R.string.negative_exit_alert)
+        val btnPositive = getString(R.string.positive_exit_alert)
+        MaterialAlertDialogBuilder(this)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton(
+                btnPositive
+            ) { dialogInterface: DialogInterface?, i: Int -> finishAndRemoveTask() }
+            .show()
+    }
 
 // Código para cuando queremos colocar un fragment dentro de otro fragment
     /*
@@ -161,4 +177,5 @@ public class BlankFragment extends Fragment {
         return view;
     }
 }*/
+
 }

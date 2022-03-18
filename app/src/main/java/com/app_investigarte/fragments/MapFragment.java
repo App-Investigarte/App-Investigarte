@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.app_investigarte.IOnBackPressed;
 import com.app_investigarte.ListadoArtefactos.ListadoArtefactosActivity;
 import com.app_investigarte.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -31,7 +30,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 
-public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener,  GoogleMap.OnCameraIdleListener,  GoogleMap.OnMarkerClickListener,IOnBackPressed {
+public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener,  GoogleMap.OnCameraIdleListener,  GoogleMap.OnMarkerClickListener {
     private GoogleMap mMap;
     private SupportMapFragment mMapFragment;
 
@@ -1341,7 +1340,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         return false;
     }
 
-        @Override
         public boolean onBackPressed()
         {
             close();
