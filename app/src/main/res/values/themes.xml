@@ -10,6 +10,7 @@
         <item name="colorSecondaryVariant">@color/color_secondary_variant</item>
         <item name="colorOnSecondary">@color/color_text_onsecondary</item>
         <!-- Status bar color. -->
+        <!-- No se pudo cambiar la barra del login, entonces cambiamos esto -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary_Dark</item>
 
         <!-- Fuente de texto familia Helvetica. -->
@@ -21,14 +22,14 @@
     <!-- Base application theme. -->
     <style name="Theme.SplashScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">#5D34A6</item>
+        <item name="android:statusBarColor" tools:targetApi="l">#212020</item>
         <!-- Customize your theme here. -->
-        <item name="android:windowBackground">@drawable/background_splashscreen_2</item>
+        <item name="android:windowBackground">@drawable/background_splashscreen_3</item>
     </style>
 
     <style name="Theme.Background" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary_Dark</item>
+        <item name="android:statusBarColor" tools:targetApi="l">#5D34A6</item>
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@drawable/background_activities</item>
     </style>
@@ -38,6 +39,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">#5D34A6</item>
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@drawable/background_activities</item>
+    </style>
+
+    <style name="Theme.Background_light" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/light_purple</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/light_purple</item>
     </style>
 
 
