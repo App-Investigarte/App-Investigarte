@@ -143,7 +143,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         LatLng urabaAntioquenio = new LatLng(7.883, -76.633);
         mMap.addMarker(new MarkerOptions()
                 .position(urabaAntioquenio)
-                .title("URABA ANTIOQUEÑO")).setTag(8);
+                .title(getString(R.string.subregion_uraba))).setTag(8);
 
 
 
@@ -152,28 +152,28 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //Jeríco
         LatLng Suroeste = new LatLng(6, -75.883);
         mMap.addMarker(new MarkerOptions().position(Suroeste)
-                .title("SUROESTE ANTIOQUEÑO")).setTag(7);
+                .title(getString(R.string.subregion_suroeste))).setTag(7);
 
 
         //OCCIDENTE ANTIOQUEÑO
         //Dabeiba
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.8, -76.15))
-                .title("OCCIDENTE ANTIOQUEÑO")
+                .title(getString(R.string.subregion_occidente))
                 .zIndex(1.0f)).setTag(5);
 
         //NORTE ANTIOQUEÑO
         //Ituango
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.833, -75.55))
-                .title("NORTE ANTIOQUEÑO")
+                .title(getString(R.string.subregion_norte))
                 .zIndex(1.0f)).setTag(4);
 
         //VALLE DE ABURRÁ
         //Medellin
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.217, -75.567))
-                .title("VALLE DE ABURRÁ")
+                .title(getString(R.string.subregion_valleaburra))
                 .zIndex(1.0f)).setTag(9);
 
 
@@ -181,14 +181,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //BAJO CAUCA
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.583, -75.017))
-                .title("BAJO CAUCA")
+                .title(getString(R.string.subregion_bajocauca))
                 .zIndex(1.0f)).setTag(1);
 
         //MAGDALENA MEDIO
         //puerto berrio
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.49998, -74.5525))
-                .title("MAGDALENA MEDIO")
+                .title(getString(R.string.subregion_megdalenamedio))
                 .zIndex(1.0f)).setTag(2);
 
 
@@ -196,14 +196,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //Remedios
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.9595, -74.894))
-                .title("NORDESTE ANTIOQUEÑO")
+                .title(getString(R.string.subregion_nordeste))
                 .zIndex(1.0f)).setTag(3);
 
         //ORIENTE ANTIOQUEÑO
         //Guatapé
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.033, -75.15))
-                .title("ORIENTE ANTIOQUEÑO")
+                .title(getString(R.string.subregion_orinete))
                 .zIndex(1.0f)).setTag(6);
         /* ---------------------------  ------------------------  ------------------------**/
     }
@@ -213,145 +213,145 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //Urabá Antioqueño
         LatLng apartado = new LatLng(7.883, -76.633);
         mMap.addMarker(new MarkerOptions().position(apartado)
-                .title("Municipio de Apartadó"));
+                .title(getString(R.string.municipio_apartado)));
 
         LatLng turbo = new LatLng(8.0926, -76.7282);
         mMap.addMarker(new MarkerOptions().position(turbo)
-                .title("Municipio de Turbo"));
+                .title(getString(R.string.municipio_turbo)));
 
         LatLng necocli = new LatLng(8.4357, -76.7767);
         mMap.addMarker(new MarkerOptions().position(necocli)
-                .title("Municipio de Necoclí"));
+                .title(getString(R.string.municipio_necocli)));
 
         LatLng chigorodo = new LatLng(7.667, -76.683);
         mMap.addMarker(new MarkerOptions().position(chigorodo)
-                .title("Municipio de Chigorodó"));
+                .title(getString(R.string.municipio_chigorodo)));
 
         LatLng sanPedroUraba = new LatLng(8.283, -76.383);
         mMap.addMarker(new MarkerOptions().position(sanPedroUraba)
-                .title("Municipio de San Pedro de Urabá"));
+                .title(getString(R.string.municipio_sanpedrodeuraba)));
 
         LatLng mutata = new LatLng(7.233, -76.433);
         mMap.addMarker(new MarkerOptions().position(mutata)
-                .title("Municipio de Mutatá"));
+                .title(getString(R.string.municipio_mutata)));
 
 
         //Suroeste Antioqueño
         LatLng jerico = new LatLng(6.267, -75.783);
         mMap.addMarker(new MarkerOptions().position(jerico)
-                .title("Municipio de Jericó"));
+                .title(getString(R.string.municipio_jerico)));
 
         LatLng jardin = new LatLng(5.6, -75.817);
         mMap.addMarker(new MarkerOptions().position(jardin)
-                .title("Municipio de Jardín"));
+                .title(getString(R.string.municipio_jardin)));
 
         LatLng amaga = new LatLng(6.05, -75.683);
         mMap.addMarker(new MarkerOptions().position(amaga)
-                .title("Municipio de Amagá"));
+                .title(getString(R.string.municipio_amaga)));
 
         LatLng andes = new LatLng(5.65, -75.867);
         mMap.addMarker(new MarkerOptions().position(andes)
-                .title("Municipio de Andes"));
+                .title(getString(R.string.municipio_andes)));
 
         LatLng betania = new LatLng(5.733, -75.967);
         mMap.addMarker(new MarkerOptions().position(betania)
-                .title("Municipio de Betania"));
+                .title(getString(R.string.municipio_betania)));
 
         LatLng caramanta = new LatLng(5.617, -75.85);
         mMap.addMarker(new MarkerOptions().position(caramanta)
-                .title("Municipio de Caramanta"));
+                .title(getString(R.string.municipio_caramanta)));
 
         LatLng ciudadBolivar = new LatLng(5.85, -76.017);
         mMap.addMarker(new MarkerOptions().position(ciudadBolivar)
-                .title("Municipio de Ciudad Bolivar"));
+                .title(getString(R.string.municipio_ciudadbolivar)));
 
         LatLng concordia = new LatLng(6.05, -75.9);
         mMap.addMarker(new MarkerOptions().position(concordia)
-                .title("Municipio de Concordia"));
+                .title(getString(R.string.municipio_concordia)));
 
         LatLng hispania = new LatLng(5.8, -75.9);
         mMap.addMarker(new MarkerOptions().position(hispania)
-                .title("Municipio de Hispania"));
+                .title(getString(R.string.municipio_hispania)));
 
         LatLng salgar = new LatLng(5.95, -75.967);
         mMap.addMarker(new MarkerOptions().position(salgar)
-                .title("Municipio de Salgar"));
+                .title(getString(R.string.municipio_salgar)));
 
         LatLng tarso = new LatLng(5.867, -75.817);
         mMap.addMarker(new MarkerOptions().position(tarso)
-                .title("Municipio de Tarso"));
+                .title(getString(R.string.municipio_tarso)));
 
         LatLng titiribi = new LatLng(6.05, -75.783);
         mMap.addMarker(new MarkerOptions().position(titiribi)
-                .title("Municipio de Titiribí"));
+                .title(getString(R.string.municipio_titiribi)));
 
         LatLng urrao = new LatLng(6.317, -76.133);
         mMap.addMarker(new MarkerOptions().position(urrao)
-                .title("Municipio de Urrao"));
+                .title(getString(R.string.municipio_urrao)));
 
         LatLng fredonia = new LatLng(5.917, -75.667);
         mMap.addMarker(new MarkerOptions().position(fredonia)
-                .title("Municipio de Fredonia"));
+                .title(getString(R.string.municipio_fredonia)));
 
         LatLng valparaiso = new LatLng(5.617, -75.633);
         mMap.addMarker(new MarkerOptions().position(valparaiso)
-                .title("Municipio de Valparaiso"));
+                .title(getString(R.string.municipio_valparaiso)));
 
 
         //OCCIDENTE ANTIOQUEÑO
         //Dabeiba
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7, -76.25))
-                .title("Municipio de Valparaiso"));
+                .title(getString(R.string.municipio_dabeiba)));
 
         //Santa Fé de Antioquia
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng( 6.55, -75.817))
-                .title("Municipio de Santa Fé de Antioquia"));
+                .title(getString(R.string.municipio_santafedeantioquia)));
 
         //Buriticá
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng( 6.717, -75.917))
-                .title("Municipio de Buriticá"));
+                .title(getString(R.string.municipio_buritica)));
 
         //Cañasgordas
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng( 6.74972, -76.0258))
-                .title("Municipio de Cañasgordas"));
+                .title(getString(R.string.municipio_caniasgordas)));
         //Ebéjico
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(  6.317, -75.767))
-                .title("Municipio de Ebéjico"));
+                .title(getString(R.string.municipio_ebejico)));
 
         //Frontino
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(  6.767, -76.117))
-                .title("Municipio de Frontino"));
+                .title(getString(R.string.municipio_frontino)));
 
         //Heliconia
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(  6.2, -75.733))
-                .title("Municipio de Heliconia"));
+                .title(getString(R.string.municipio_heliconia)));
 
         //Peque
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(  7.017, -75.9))
-                .title("Municipio de Peque"));
+                .title(getString(R.string.municipio_peque)));
 
         //Sabanalarga
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(  6.85, -75.817))
-                .title("Municipio de Sabanalarga"));
+                .title(getString(R.string.municipio_sanalarga)));
 
         //San Jerónimo
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(  6.433, -75.717))
-                .title("Municipio de San Jerónimo"));
+                .title(getString(R.string.municipio_sanjeronimo)));
 
         //Abriaquí
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(  6.633, -76.05))
-                .title("Abriaquí"));
+                .title(getString(R.string.municipio_abriqui)));
 
 
 
@@ -361,130 +361,130 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //Ituango
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.233, -75.15))
-                .title("Municipio de Ituango"));
+                .title(getString(R.string.municipio_ituango)));
 
         //Municipio de Carolina del Príncipe
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.7, -75.283))
-                .title("Municipio de Carolina del Príncipe"));
+                .title(getString(R.string.municipio_carolina)));
 
         //Municipio de Don Matías
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.483, -75.417))
-                .title("Municipio de Don Matías"));
+                .title(getString(R.string.municipio_donmatias)));
 
         //Municipio de San Pedro de los Milagros
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.45,  -75.55))
-                .title("Municipio de San Pedro de los Milagros"));
+                .title(getString(R.string.municipio_sanpedrodelosmilagros)));
 
         //Municipio de Santa Rosa de Osos
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng( 6.633,  -75.467))
-                .title("Municipio de Santa Rosa de Osos"));
+                .title(getString(R.string.municipio_santarosa)));
 
         //Municipio de Yarumal
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(  6.95,  -75.417))
-                .title("Municipio de Yarumal"));
+                .title(getString(R.string.municipio_yarumal)));
 
         //VALLE DE ABURRÁ
         //Medellin
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.217, -75.567))
-                .title("Municipio de Medellin"));
+                .title(getString(R.string.municipio_medellin)));
 
         //Girardota
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.367, -75.433))
-                .title("Municipio de Girardota"));
+                .title(getString(R.string.girardota)));
 
 
         //BAJO CAUCA
         //El Bagre
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.583, -74.8))
-                .title("Municipio del el Bagre"));
+                .title(getString(R.string.municipio_delbagre)));
 
         //Zaragoza
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.483, -74.867))
-                .title("Municipio de Zaragoza"));
+                .title(getString(R.string.municipio_zaragoza)));
 
         //Tarazá
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.583, -75.4))
-                .title("Municipio de Tarazá"));
+                .title(getString(R.string.municipio_taraza)));
 
         //Nechí
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(8.083, -74.767))
-                .title("Municipio de Nechí"));
+                .title(getString(R.string.municipio_nechi)));
 
         //Caucasia
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.983, -75.2))
-                .title("Municipio de Caucasia"));
+                .title(getString(R.string.municipio_caucasia)));
 
 
         //MAGDALENA MEDIO
         //Caracolí
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.4, -74.767))
-                .title("Municipio de Caracolí"));
+                .title(getString(R.string.municipio_caracoli)));
 
         //puerto berrio
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.48998, -74.4025))
-                .title("Municipio de puerto berrio"));
+                .title(getString(R.string.municipio_puertoberrio)));
 
         //Puerto Nare
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.19175, -74.5862))
-                .title("Municipio de Puerto Nare"));
+                .title(getString(R.string.municipio_puertonare)));
 
         //NORDESTE ANTIOQUEÑO
         //Anorí
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.067, -75.1333))
-                .title("Municipio de Anorí"));
+                .title(getString(R.string.municipio_anori)));
 
         //Remedios
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.03207, -74.5334))
-                .title("Municipio de Remedios"));
+                .title(getString(R.string.municipio_remedios)));
 
         //Amalfi
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.067, -75.1333))
-                .title("Municipio de Amalfi"));
+                .title(getString(R.string.municipio_amalfi)));
 
         //San Roque
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.467, -75))
-                .title("Municipio de San Roque"));
+                .title(getString(R.string.municipio_sanroque)));
 
         //Santo Domingo
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.467, -75.167))
-                .title("Municipio de Santo Domingo"));
+                .title(getString(R.string.municipio_santodomingo)));
 
         //Yolombó
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.583, -75))
-                .title("Municipio de Yolombó"));
+                .title(getString(R.string.municipio_yolombo)));
 
 
         //ORIENTE ANTIOQUEÑO
         //Carmen de Viboral
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.083, -75.333))
-                .title("Municipio de Carmen de Viboral"));
+                .title(getString(R.string.municipio_carmendeviboral)));
 
         //Sonsón
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(5.7, -75.3))
-                .title("Municipio de Sonsón"));
+                .title(getString(R.string.municipio_sonson)));
 
         /* ---------------------------  ------------------------  ------------------------**/
     }
@@ -1334,33 +1334,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
             startActivity(intent);
         }else{
             //si la subregion seleccionada es nula es por que se selecciono el marcado de antioquía
-            Toast.makeText(getContext(),"Antioquía", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.reguion_antioquia, Toast.LENGTH_SHORT).show();
         }
 
         return false;
     }
 
-        public boolean onBackPressed()
-        {
-            close();
-            return true;
-        }
-
-    public void close()
-    {
-        String title = getString(R.string.title_exit_alert);
-        String message = getString(R.string.message_exit_alert);
-        String btnNegative = getString(R.string.negative_exit_alert);
-        String btnPositive = getString(R.string.positive_exit_alert);
-
-        new MaterialAlertDialogBuilder(this.getContext())
-                .setTitle(title)
-                .setMessage(message)
-                //.setNegativeButton(btnNegative, (dialogInterface, i) -> cerrar())
-                .setPositiveButton(btnPositive, (dialogInterface, i) -> getActivity().finishAndRemoveTask())
-                .show();
-
-    }
 }
 
 
