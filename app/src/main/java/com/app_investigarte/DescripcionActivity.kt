@@ -3,7 +3,6 @@ package com.app_investigarte
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import com.app_investigarte.ListadoArtefactos.ConvertirIMGBase64
 import com.app_investigarte.database.DatabaseAccess
 import kotlinx.android.synthetic.main.activity_descripcion.*
 
@@ -25,16 +24,11 @@ class DescripcionActivity : AppCompatActivity() {
 
 
         txt_name_artefact.setText(informacionArtefacto[1])
-        if(informacionArtefacto[2] == null){
+        if(informacionArtefacto[2].equals("image")){
             img_artefacto_description.setImageResource(R.drawable.ic_sombrero)
-        }else{
-            img_artefacto_description.setImageBitmap (
-                ConvertirIMGBase64.convertirAimagen(
-                    informacionArtefacto[2]
-                )
-            )
-            img_artefacto_description.setScaleType(ImageView.ScaleType.CENTER_CROP)
+            img_artefacto_description.setScaleType(ImageView.ScaleType.CENTER_INSIDE)
         }
+
         txt_description_artifact.setText(informacionArtefacto[3]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1]+"/n"+informacionArtefacto[1])
         txt_municipio_artifact.setText(informacionArtefacto[4])
         txt_sup_reguion_artifact.setText(informacionArtefacto[5])
