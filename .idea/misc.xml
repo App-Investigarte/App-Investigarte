@@ -18,41 +18,66 @@
         <entry key="..\:/Aprendiendo/App-Investigarte/app/src/main/res/layout/fragment_sub_regions.xml" value="0.36666666666666664" />
         <entry key="..\:/Aprendiendo/App-Investigarte/app/src/main/res/layout/nav_header_main.xml" value="0.2557291666666667" />
         <entry key="..\:/Aprendiendo/App-Investigarte/app/src/main/res/menu/activity_menu_main_drawer.xml" value="0.2557291666666667" />
-        <entry key="app/src/main/res/drawable/background_activities.xml" value="0.202" />
-        <entry key="app/src/main/res/drawable/background_description.xml" value="0.202" />
-        <entry key="app/src/main/res/drawable/background_splashscreen.xml" value="0.202" />
-        <entry key="app/src/main/res/drawable/background_splashscreen_1.xml" value="0.202" />
-        <entry key="app/src/main/res/drawable/background_splashscreen_2.xml" value="0.202" />
-        <entry key="app/src/main/res/drawable/background_splashscreen_3.xml" value="0.18" />
-        <entry key="app/src/main/res/drawable/background_splashscreen_night.xml" value="0.202" />
-        <entry key="app/src/main/res/drawable/edt_style.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/box.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable-v24/circle.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable-v24/rectangulo.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable-v24/rectangulo_texto.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable-v24/shape_rectangulo.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable-v24/shape_rectangulo_txt.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/background_activities.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/background_activity.xml" value="0.25" />
+        <entry key="app/src/main/res/drawable/background_description.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/background_splash_2.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/background_splashscreen.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/background_splashscreen_1.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/background_splashscreen_2.xml" value="0.5" />
+        <entry key="app/src/main/res/drawable/background_splashscreen_3.xml" value="0.335" />
+        <entry key="app/src/main/res/drawable/background_splashscreen_night.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/background_welcome.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/boceto_negro.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/btn_style.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/edt_style.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/fondo3_.xml" value="0.335" />
+        <entry key="app/src/main/res/drawable/fondo4.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/fondo_descripcion.xml" value="0.2786458333333333" />
+        <entry key="app/src/main/res/drawable/fondooo.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_account_circle_24.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_baseline_miscellaneous_services_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_exit_to_app_24.xml" value="0.13055555555555556" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_pin_drop_24.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/splash_activity_background.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/splash_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/splash_screen_background.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/splash_screen_background_night.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/svg_splashscreen.xml" value="0.202" />
-        <entry key="app/src/main/res/drawable/svg_splashscreen_2.xml" value="0.22" />
+        <entry key="app/src/main/res/drawable/style_btn.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/style_btn_2.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/style_btn_3.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/svg_splashscreen.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/svg_splashscreen_2.xml" value="0.25" />
         <entry key="app/src/main/res/layout-land-night/activity_descripcion.xml" value="0.18" />
         <entry key="app/src/main/res/layout-land/activity_descripcion.xml" value="0.25" />
         <entry key="app/src/main/res/layout-land/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout-land/activity_welcome.xml" value="0.22" />
         <entry key="app/src/main/res/layout-night/activity_descripcion.xml" value="0.2625" />
-        <entry key="app/src/main/res/layout/activity_descripcion.xml" value="0.2625" />
+        <entry key="app/src/main/res/layout/activity_descripcion.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_listado_artefactos.xml" value="0.2625" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_login2.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/activity_nav_drawer.xml" value="0.2625" />
-        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.6228070175438597" />
+        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.335" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/cardsview_artifacts.xml" value="0.2625" />
+        <entry key="app/src/main/res/layout/dropdownmenu_dias.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_artefactos.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/fragment_sub_regiones.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/fragment_sub_regions.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.2625" />
         <entry key="app/src/main/res/menu/activity_menu_main_drawer.xml" value="0.22" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1605" />
       </map>
     </option>
   </component>
