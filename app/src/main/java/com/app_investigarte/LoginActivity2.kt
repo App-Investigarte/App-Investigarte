@@ -1,17 +1,12 @@
 package com.app_investigarte
 
-import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.icu.text.SimpleDateFormat
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
-import com.app_investigarte.databinding.ActivityLogin2Binding
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.android.synthetic.main.activity_login2.*
+import java.util.*
 
 class LoginActivity2 : AppCompatActivity() {
 
@@ -34,17 +29,24 @@ class LoginActivity2 : AppCompatActivity() {
         btn_back.setOnClickListener {
             startActivity(Intent(this,LoginActivity::class.java))
         }
+
+        val today = MaterialDatePicker.todayInUtcMilliseconds()
+
         val datePicker =
             MaterialDatePicker.Builder.datePicker()
                 .setTitleText("Seleccionar fecha")
+                .setSelection(today)
                 .build()
         btn_date.setOnClickListener {
             datePicker.show(supportFragmentManager, "tag");
         }
         datePicker.addOnPositiveButtonClickListener {
-            var date = datePicker.selection.toString()
-            txt_date.setText(date)
-            // Respond to positive button click.
+            // txt_date.setText(datePicker.headerText)
+
+            val formatter = SimpleDateFormat("dd/MM/yyyy")
+            val calendar = Calendar.getInstance()
+            calendar.timeInMillis = (datePicker.selection?.plus(100000000)!!)
+            txt_date.setText(formatter.format(calendar.timeInMillis))
         }
 
 
