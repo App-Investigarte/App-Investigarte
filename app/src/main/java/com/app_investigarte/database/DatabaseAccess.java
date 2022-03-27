@@ -10,21 +10,27 @@ public class DatabaseAccess {
     private SQLiteDatabase db;
     private static DatabaseAccess instance;
     Cursor c = null;
+    //***********************************************************************************************//
+    //Autor: John Esteban Alvarez Piedrahita
+    //Implementamos el Patrón Singleton
+    //Para garantiza la existencia de una única instancia para la clase de la DatabaseAccess
+    //ya que solo queremos tener una sola instancia y no muchas instancias de la base de datos
 
-    //private constructor so that  object creation from outside the class is avoided
-    //constructor
-    private DatabaseAccess(Context context) {
-        this.openHelper = new DatabaseOpenHelper(context);
-    }
-
-    //to return the single instance of detabase
+    //con getInstance retornamos una instancia unica del objeto
     public static DatabaseAccess getInstance(Context context) {
+        //verificamos si la instancia es nula
+        //si la instancia es nula significa que no se a instanciado aun el objeto y lo tenemos que crear
         if (instance == null) {
+            //Creamos la instancia del objeto
             instance = new DatabaseAccess(context);
         }
         return instance;
     }
-
+    //Se Crea un constructor privado para evitar la creación de objetos desde fuera de la clase
+     private DatabaseAccess(Context context) {
+        this.openHelper = new DatabaseOpenHelper(context);
+     }
+    //***********************************************************************************************//
     //to open the database
     public void open() {
         this.db = openHelper.getWritableDatabase();

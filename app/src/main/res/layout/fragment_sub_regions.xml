@@ -65,7 +65,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/sombrero" />
+                        android:src="@drawable/ic_ruana" />
 
                     <View
                         android:layout_width="match_parent"
@@ -103,7 +103,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/sombrero" />
+                        android:src="@drawable/ic_ruana" />
 
                     <View
                         android:layout_width="match_parent"
@@ -141,7 +141,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/sombrero" />
+                        android:src="@drawable/ic_ruana" />
 
                     <View
                         android:layout_width="match_parent"
@@ -179,7 +179,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/sombrero" />
+                        android:src="@drawable/ic_ruana" />
 
                     <View
                         android:layout_width="match_parent"

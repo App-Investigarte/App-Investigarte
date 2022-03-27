@@ -1,11 +1,14 @@
 package com.app_investigarte.ListadoArtefactos;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 
 import com.app_investigarte.R;
 import com.app_investigarte.database.DatabaseAccess;
@@ -21,12 +24,18 @@ public class ListadoArtefactosActivity extends AppCompatActivity
     // Se Crea un ArrayList Con la estructura de el RecyclerViewModel es decir la estructura qeu tendrían los CartView de los artefactos.
     ArrayList<RecyclerViewModel>ArtifactList;
     RecyVWAdapter adapter;
+    LinearLayoutCompat lyListadoArtefactos;
+/*
+    @Override
+    public void setTheme(int resid){
+        boolean changetheme = true;
+        super.setTheme(changetheme? R.style.Theme_AppCompat_Light_NoActionBar:resid);
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listado_artefactos);
 
         //recuperamos el valor enviado de la activity anterior para saver qeu subregion fue seleccionada
         Bundle parametros = this.getIntent().getExtras();
@@ -38,8 +47,57 @@ public class ListadoArtefactosActivity extends AppCompatActivity
         }else{ // si la subregion no es 0 se inicializa la data de los artefactos de la subregion especifica
             // inicializa la data y se le pasa la subregion a consultar.
             initData(subregion);
+            switch (subregion){
+                case 1:
+                    // 1 = Bajo Cauca
+                    //se asigna un nuevo tema a la actividad.
+                    super.setTheme((R.style.Theme_Background_colors_warm));
+                    break;
+                case 2:
+                    // 2 = Magdalena medio
+                    //se asigna un nuevo tema a la actividad.
+                    super.setTheme((R.style.Theme_Background_colors_cold));
+                    break;
+                case 3:
+                    // 3 = Nordeste antioqueño
+                    //se asigna un nuevo tema a la actividad.
+                    super.setTheme((R.style.Theme_Background_colors_warm));
+                    break;
+                case 4:
+                    // 4 = Norte Antioqueño
+                    //se asigna un nuevo tema a la actividad.
+                    super.setTheme((R.style.Theme_Background_colors_cold));
+                    break;
+                case 5:
+                    // 5 = occidente antioqueño
+                    //se asigna un nuevo tema a la actividad.
+                    super.setTheme((R.style.Theme_Background_colors_warm));
+                    break;
+                case 6:
+                    // 6 = Oriente Antioqueño
+                    //se asigna un nuevo tema a la actividad.
+                    super.setTheme((R.style.Theme_Background_colors_warm));
+                    break;
+                case 7:
+                    // 7 = Suroeste antioqueño
+                    //se asigna un nuevo tema a la actividad.
+                    super.setTheme((R.style.Theme_Background_colors_cold));
+                    break;
+                case 8:
+                    // 8 = Uraba antioqueño
+                    //se asigna un nuevo tema a la actividad.
+                    super.setTheme((R.style.Theme_Background_colors_cold));
+                    break;
+                case 9:
+                    // 9 = Valle de Aburrá
+                    //se asigna un nuevo tema a la actividad.
+                    super.setTheme((R.style.Theme_Background_colors_warm));
+                    break;
+                default:
+                    break;
+            }
         }
-
+        setContentView(R.layout.activity_listado_artefactos);
         initRecyclerView();
     }
 
@@ -47,10 +105,11 @@ public class ListadoArtefactosActivity extends AppCompatActivity
     private void initAllData(){
         //se Crea o instancia un ArrayList
         ArtifactList=new ArrayList<>();
+        //****************************************************************/
         //se instancia la base de datos y se abre para poder escucharla y modificarla.
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();
-
+        //****************************************************************/
         // se guarda en un entero la cantidad de todos los artefacto actuales  consultados en la base de datos
         int cantidadDatos = databaseAccess.cantidadAllArtefactos();
         // se guarda en una matriz los datos obtenidos en al base de datos de todos los artefactos.

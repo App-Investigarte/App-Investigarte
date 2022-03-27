@@ -1,14 +1,95 @@
 <resources>
     <string name="app_name">App-Investigarte</string>
 
+    <!-- Peferencias del usuario -->
+    <string name="PREFERENS">PREFERENS_USER</string>
+
+    <!-- Region -->
+    <string name="reguion_antioquia">Antioquía</string>
+
+    <!-- Subregion -->
+    <string name="subregion_uraba">URABA ANTIOQUEÑO</string>
+    <string name="subregion_suroeste">SUROESTE ANTIOQUEÑO</string>
+    <string name="subregion_occidente">OCCIDENTE ANTIOQUEÑO</string>
+    <string name="subregion_norte">NORTE ANTIOQUEÑO</string>
+    <string name="subregion_valleaburra">VALLE DE ABURRÁ</string>
+    <string name="subregion_bajocauca">BAJO CAUCA ANTIOQUEÑO</string>
+    <string name="subregion_megdalenamedio">MAGDALENA MEDIO</string>
+    <string name="subregion_nordeste">NORDESTE ANTIOQUEÑO</string>
+    <string name="subregion_orinete">ORIENTE ANTIOQUEÑO</string>
+
+    <!-- AlerDialog close-->
     <string name="navigation_drawe_open">open</string>
     <string name="navigation_drawer_close">Close</string>
     <string name="title_exit_alert">"Aviso "</string>
     <string name="message_exit_alert">¿Desas salir de la aplicación?</string>
     <string name="negative_exit_alert">Cancelar</string>
     <string name="positive_exit_alert">Salir</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- DropdownMenu LoginActivity2 -->
+    <string-array name="dias">
+        <item>1</item><item>2</item><item>3</item><item>4</item><item>5</item><item>6</item><item>7</item><item>8</item><item>9</item><item>10</item><item>11</item><item>12</item><item>13</item><item>14</item><item>15</item><item>16</item><item>17</item><item>18</item><item>19</item><item>20</item><item>21</item><item>22</item><item>23</item><item>24</item><item>25</item><item>26</item><item>27</item><item>28</item><item>29</item><item>30</item><item>31</item>
+    </string-array>
+
+
+    <string name="registrarse"><u>Registrarse</u></string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="PREFERENS">PREFERENS_USER</string>
+    <string name="municipio_apartado">Municipio de Apartadó</string>
+    <string name="municipio_turbo">Municipio de Turbo</string>
+    <string name="municipio_necocli">Municipio de Necoclí</string>
+    <string name="municipio_chigorodo">Municipio de Chigorodó</string>
+    <string name="municipio_sanpedrodeuraba">Municipio de San Pedro de Urabá</string>
+    <string name="municipio_mutata">Municipio de Mutatá</string>
+    <string name="municipio_jerico">Municipio de Jericó</string>
+    <string name="municipio_jardin">Municipio de Jardín</string>
+    <string name="municipio_amaga">Municipio de Amagá</string>
+    <string name="municipio_andes">Municipio de Andes</string>
+    <string name="municipio_betania">Municipio de Betania</string>
+    <string name="municipio_caramanta">Municipio de Caramanta</string>
+    <string name="municipio_ciudadbolivar">Municipio de Ciudad Bolivar</string>
+    <string name="municipio_concordia">Municipio de Concordia</string>
+    <string name="municipio_hispania">Municipio de Hispania</string>
+    <string name="municipio_salgar">Municipio de Salgar</string>
+    <string name="municipio_tarso">Municipio de Tarso</string>
+    <string name="municipio_titiribi">Municipio de Titiribí</string>
+    <string name="municipio_urrao">Municipio de Urrao</string>
+    <string name="municipio_fredonia">Municipio de Fredonia</string>
+    <string name="municipio_valparaiso">Municipio de Valparaiso</string>
+    <string name="municipio_dabeiba">Municipio de Dabeiba</string>
+    <string name="municipio_santafedeantioquia">Municipio de Santa Fé de Antioquia</string>
+    <string name="municipio_buritica">Municipio de Buriticá</string>
+    <string name="municipio_caniasgordas">Municipio de Cañasgordas</string>
+    <string name="municipio_ebejico">Municipio de Ebéjico</string>
+    <string name="municipio_frontino">Municipio de Frontino</string>
+    <string name="municipio_heliconia">Municipio de Heliconia</string>
+    <string name="municipio_peque">Municipio de Peque</string>
+    <string name="municipio_sanalarga">Municipio de Sabanalarga</string>
+    <string name="municipio_sanjeronimo">Municipio de San Jerónimo</string>
+    <string name="municipio_abriqui">Abriquí</string>
+    <string name="municipio_ituango">Municipio de Ituango</string>
+    <string name="municipio_carolina">Municipio de Carolina del Príncipe</string>
+    <string name="municipio_donmatias">Municipio de Don Matías</string>
+    <string name="municipio_sanpedrodelosmilagros">Municipio de San Pedro de los Milagros</string>
+    <string name="municipio_santarosa">Municipio de Santa Rosa de Osos</string>
+    <string name="municipio_yarumal">Municipio de Yarumal</string>
+    <string name="municipio_medellin">Municipio de Medellin</string>
+    <string name="girardota">Municipio de Girardota</string>
+    <string name="municipio_delbagre">Municipio del el Bagre</string>
+    <string name="municipio_zaragoza">Municipio de Zaragoza</string>
+    <string name="municipio_taraza">Municipio de Tarazá</string>
+    <string name="municipio_nechi">Municipio de Nechí</string>
+    <string name="municipio_caucasia">Municipio de Caucasia</string>
+    <string name="municipio_caracoli">Municipio de Caracolí</string>
+    <string name="municipio_puertoberrio">Municipio de puerto berrio</string>
+    <string name="municipio_puertonare">Municipio de Puerto Nare</string>
+    <string name="municipio_anori">Municipio de Anorí</string>
+    <string name="municipio_remedios">Municipio de Remedios</string>
+    <string name="municipio_amalfi">Municipio de Amalfi</string>
+    <string name="municipio_sanroque">Municipio de San Roque</string>
+    <string name="municipio_santodomingo">Municipio de Santo Domingo</string>
+    <string name="municipio_yolombo">Municipio de Yolombó</string>
+    <string name="municipio_carmendeviboral">Municipio de Carmen de Viboral</string>
+    <string name="municipio_sonson">Municipio de Sonsón</string>
+
 
 </resources>

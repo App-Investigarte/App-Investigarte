@@ -99,11 +99,9 @@ public class RecyVWAdapter extends RecyclerView.Adapter<RecyVWAdapter.ViewHolder
             this.id = id;
 
             //se le asigna la imagen del artefacto al CardView
-            if(imagen == null){
-                IMAGEVIEW1.setImageBitmap(null);
-            }else{
-                IMAGEVIEW1.setImageBitmap (ConvertirIMGBase64.convertirAimagen(imagen));
-                IMAGEVIEW1.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            if(imagen.equals("image")){
+                IMAGEVIEW1.setImageResource(R.drawable.ic_sombrero);
+                IMAGEVIEW1.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             }
 
             //se asigna el texto del artefacto al CardView
