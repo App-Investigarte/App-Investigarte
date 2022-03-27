@@ -40,8 +40,15 @@
     <color name="light_purple">#FFA687DD</color>
     <color name="Dark_purple">#FF5D34A6</color>
 
-
-
-
+    <!--   Colors by subregions -->
+    <color name="color_uraba">#3778bc</color>
+    <color name="color_occidente_antioqueño">#f2b704</color>
+    <color name="color_suroeste_antioqueño">#03a65a</color>
+    <color name="color_norte_antioqueño">#70b52c</color>
+    <color name="color_valle_aburra">#730237</color>
+    <color name="color_bajo_cauca">#f25c05</color>
+    <color name="color_magdalena_medio">#2eaae2</color>
+    <color name="color_nordeste_antioqueño">#ea574a</color>
+    <color name="color_oriente_antioqueño">#df1c48</color>
 
 </resources>
