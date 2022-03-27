@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- **************** Base Colors ******************-->
     <!-- Primary brand color. -->
-    <color name="color_primary">#43AC49</color>
+    <color name="color_primary">#EFB506</color>
     <color name="color_primary_variant">#ABD299</color>
     <color name="color_primary_light">#ABD299</color>
-    <color name="color_primary_Dark">#417E44</color>
     <color name="color_text_onprimary">#FFFFFFFF</color>
-
     <!-- Secondary brand color. -->
-    <color name="color_secondary">#D15116</color>
-    <color name="color_secondary_variant">#EE763E</color>
-    <color name="color_secondary_light">#EE763E</color>
-    <color name="color_secondary_dark">#FA996C</color>
+    <color name="color_secondary">#30A8E0</color>
+    <color name="color_secondary_variant">#3778BA</color>
     <color name="color_text_onsecondary">#FF000000</color>
+    <!-- ***********************************************************-->
 
+
+    <!-- **************** Warm colors ******************-->
+    <!-- Primary brand color. -->
+    <color name="color_primary_warm">#EFB506</color>
+    <color name="color_primary_variant_warm">#ABD299</color>
+    <color name="color_primary_light_warm">#ABD299</color>
+    <!-- Secondary brand color. -->
+    <color name="color_secondary_warm">#30A8E0</color>
+    <color name="color_secondary_variant_warm">#3778BA</color>
+    <!-- ***********************************************************-->
+
+
+    <!-- ***************** Colors cold ******************-->
+    <!-- Primary brand color. -->
+    <color name="color_primary_cold">#6EB32C</color>
+    <color name="color_primary_variant_cold">#0BA45A</color>
+    <!-- Secondary brand color. -->
+    <color name="color_secondary_cold">#30A8E0</color>
+    <color name="color_secondary_variant_cold">#3778BA</color>
+    <!-- ***********************************************************-->
+
+    <!-- Colors Resourses -->
     <color name="azul">#6498FE</color>
     <color name="Transparente">#BFFFFFFF</color>
     <color name="Color_darck">#15182C</color>
     <color name="light_purple">#FFA687DD</color>
     <color name="Dark_purple">#FF5D34A6</color>
+
 
 
 
