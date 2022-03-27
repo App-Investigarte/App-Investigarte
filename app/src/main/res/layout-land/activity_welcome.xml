@@ -40,7 +40,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/color_primary_Dark"
+                        android:background="@color/color_primary"
                         android:backgroundTint="@color/color_text_onsecondary" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>

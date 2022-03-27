@@ -13,7 +13,7 @@
         <activity
             android:name=".LoginActivity2"
             android:exported="false"
-            android:theme="@style/Theme.Background_light" />
+            android:theme="@style/Theme.Background" />
 
         <activity
             android:name=".NavDrawerActivity"
