@@ -39,6 +39,7 @@
     <color name="Color_darck">#15182C</color>
     <color name="light_purple">#FFA687DD</color>
     <color name="Dark_purple">#FF5D34A6</color>
+    <color name="Background_dark">#212020</color>
 
     <!--   Colors by subregions -->
     <color name="color_uraba">#3778bc</color>
