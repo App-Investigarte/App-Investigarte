@@ -42,22 +42,21 @@
 
     </TextView>
 
-    <ImageView
+    <!--<ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="4dp"
         android:alpha="0.5"
         android:background="@drawable/ic_flor"
         android:rotation="-9"
         android:rotationX="10"
         android:rotationY="@integer/material_motion_duration_long_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_back">
-    </ImageView>
+        app:layout_constraintTop_toBottomOf="@+id/btn_back"></ImageView>-->
 
-    <ImageView
+<!--    <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginBottom="44dp"
@@ -70,8 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.928"
         app:layout_constraintStart_toStartOf="parent">
-
-    </ImageView>
+    </ImageView>-->
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView"
@@ -190,7 +188,8 @@
         android:layout_marginTop="144dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/style_btn_2"
-        android:gravity="center"
+        android:gravity="center|left"
+        android:padding="10dp"
         android:text="Fecha"
         app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
         app:layout_constraintTop_toTopOf="@+id/shapeableImageView" />
@@ -205,8 +204,8 @@
         app:layout_constraintStart_toStartOf="@+id/shapeableImageView"
         app:layout_constraintTop_toTopOf="@+id/shapeableImageView"
         android:text="Seleccionar fecha"
-        android:textSize="11dp">
-    </Button>
+        android:textSize="11dp"/>
+
 
     <TextView
         android:layout_width="150dp"
