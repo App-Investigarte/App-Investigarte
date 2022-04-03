@@ -41,7 +41,7 @@
         <item name="colorOnSecondary">@color/color_text_onsecondary</item>
         <!-- Status bar color. -->
         <!-- No se pudo cambiar la barra del login, entonces cambiamos esto -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/color_secondary_variant_warm</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary</item>
 
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@drawable/background_activities_colors_warm</item>
