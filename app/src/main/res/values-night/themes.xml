@@ -2,7 +2,7 @@
 
 
     <!-- theme. SplashScreen -->
-    <style name="Theme.SplashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.SplashScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">#212020</item>
         <!-- Customize your theme here. -->
@@ -11,15 +11,15 @@
 
 
     <!-- Base application theme. -->
-    <style name="Theme.AppInvestigarte" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.AppInvestigarte" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryVariant">@color/color_primary_light</item>
-        <item name="colorOnPrimary">@color/color_text_onsecondary</item>
+        <item name="colorOnPrimary">@color/color_text_onprimary</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/color_secondary_cold</item>
         <item name="colorSecondaryVariant">@color/color_secondary_variant_cold</item>
-        <item name="colorOnSecondary">@color/color_text_onprimary</item>
+        <item name="colorOnSecondary">@color/color_text_onsecondary</item>
         <!-- Status bar color. -->
         <!-- No se pudo cambiar la barra del login, entonces cambiamos esto -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary_variant_cold</item>
@@ -29,8 +29,26 @@
 
     </style>
 
+    <!-- Theme colors warm-->
+    <style name="Theme.Background_colors_warm" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_primary_warm</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant_warm</item>
+        <item name="colorOnPrimary">@color/color_text_onprimary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/color_secondary_warm</item>
+        <item name="colorSecondaryVariant">@color/color_secondary_variant_warm</item>
+        <item name="colorOnSecondary">@color/color_text_onsecondary</item>
+        <!-- Status bar color. -->
+        <!-- No se pudo cambiar la barra del login, entonces cambiamos esto -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/color_secondary_variant_warm</item>
+
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/background_activities_colors_warm</item>
+    </style>
+
     <!-- Theme colors cold -->
-    <style name="Theme.Background_colors_cold" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Background_colors_cold" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/color_primary_cold</item>
         <item name="colorPrimaryVariant">@color/color_primary_variant_cold</item>
@@ -47,18 +65,35 @@
         <item name="android:windowBackground">@drawable/background_activities_colors_cold</item>
     </style>
 
-    <style name="Theme.Background" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Background" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">#5D34A6</item>
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@drawable/background_activities</item>
     </style>
 
-    <style name="Theme.Background_welcome" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="Theme.Background_welcome" parent="Theme.AppCompat.NoActionBar">
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">#5D34A6</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/Background_dark</item>
         <!-- Customize your theme here. -->
-        <item name="android:windowBackground">@drawable/background_activities</item>
+        <item name="android:windowBackground">@color/Background_dark</item>
+    </style>
+
+    <style name="Theme.Registro" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#EF0650</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant_warm</item>
+        <item name="colorOnPrimary">@color/color_text_onprimary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/color_secondary_warm</item>
+        <item name="colorSecondaryVariant">@color/color_secondary_variant_warm</item>
+        <item name="colorOnSecondary">@color/color_text_onsecondary</item>
+        <!-- Status bar color. -->
+        <!-- No se pudo cambiar la barra del login, entonces cambiamos esto -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/color_secondary_variant_warm</item>
+
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/background_activities_colors_warm</item>
     </style>
 
 </resources>

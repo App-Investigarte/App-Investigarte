@@ -151,11 +151,9 @@
 
                     <ImageView
                         android:id="@+id/img_artefacto_description"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:src="@drawable/ic_sombrero"
-                        android:scaleType="centerInside"
-                        app:tint="@color/color_secondary_variant"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:tintMode="multiply"
                         />
                 </androidx.cardview.widget.CardView>
             </androidx.cardview.widget.CardView>
