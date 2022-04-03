@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppInvestigarte">
+
         <activity
             android:name=".LoginActivity2"
             android:exported="false"
@@ -18,22 +19,27 @@
         <activity
             android:name=".NavDrawerActivity"
             android:exported="true" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.Background" />
+
         <activity
             android:name=".DescripcionActivity"
             android:exported="true"
             android:theme="@style/Theme.Background_welcome" />
+
         <activity
             android:name=".ListadoArtefactos.ListadoArtefactosActivity"
             android:exported="true"
             android:theme="@style/Theme.Background_welcome" />
+
         <activity
             android:name=".WelcomeActivity"
             android:exported="true"
             android:theme="@style/Theme.Background_welcome" />
+
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
