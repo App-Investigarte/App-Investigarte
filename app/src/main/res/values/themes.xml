@@ -8,7 +8,12 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@drawable/background_splashscreen_3</item>
     </style>
-
+    <style name="Theme.Background" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/Background_dark</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/Background_dark</item>
+    </style>
 
     <!-- Base application theme. -->
     <style name="Theme.AppInvestigarte" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -22,9 +27,12 @@
         <item name="colorOnSecondary">@color/color_text_onsecondary</item>
         <!-- Status bar color. -->
         <!-- No se pudo cambiar la barra del login, entonces cambiamos esto -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary_variant_warm</item>
-
+   <!--     <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary_variant_warm</item> -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/Background_dark</item>
+        <!-- Customize your theme here. -->
         <!-- Fuente de texto familia Helvetica. -->
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/Background_dark</item>
         <item name="android:fontFamily">@font/helvetica_boldoblique</item>
 
     </style>
@@ -63,13 +71,6 @@
 
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@drawable/background_activities_colors_cold</item>
-    </style>
-
-    <style name="Theme.Background" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">#5D34A6</item>
-        <!-- Customize your theme here. -->
-        <item name="android:windowBackground">@drawable/background_activities</item>
     </style>
 
     <style name="Theme.Background_welcome" parent="Theme.AppCompat.NoActionBar">

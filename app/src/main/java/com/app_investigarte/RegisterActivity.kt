@@ -79,15 +79,28 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun validacionCamposVacidos() {
+
+        //validacion de la identificacion
+        if(edt_id.text.toString().isEmpty()){
+            lyt_id.error = getString(R.string.edt_id_error)
+            edt_id.height = 5
+            edt_id.setPaddingRelative(20, 7, 7, -7)
+            emptyData++
+        }else{
+            edt_id.setPaddingRelative(20, 7, 7, 7)
+            edt_id.height = 35
+            lyt_id.error = null
+            lyt_id.isErrorEnabled = false
+        }
+
         //Validaciones del Correo Electronico
-        val correo = edt_correo.text.toString()
-        if (correo.isEmpty()) {
+        if (edt_correo.text.toString().isEmpty()) {
             lyt_correo.error = "Por Favor Ingrese el Correo"
             edt_correo.height = 5
             edt_correo.setPaddingRelative(20, 7, 7, -7)
             emptyData++
 
-        } else if (!PatternsCompat.EMAIL_ADDRESS.matcher(correo).matches()) {
+        } else if (!PatternsCompat.EMAIL_ADDRESS.matcher(edt_correo.text.toString()).matches()) {
             //se verifica qeuse aya escrito un correo electronico valido
             lyt_correo.error = "Por Favor Ingrese un Correo valido"
             edt_correo.height = 5
@@ -133,14 +146,14 @@ class RegisterActivity : AppCompatActivity() {
         edt_name1.setText("")
         // edt_apellido.setText("")
         //edt_avatar.setText("")
-        edt_direccion.setText("")
+        edt_id.setText("")
         edt_telefono.text?.clear()
     }
 
     fun AlertRegistroexitoso() {
         MaterialAlertDialogBuilder(this)
             .setTitle("Felicidades")
-            .setMessage("El registro del nuevo Cliente a sido exitoso.")
+            .setMessage("El registro del nuevo jugador a sido exitoso.")
             .setPositiveButton("Aceptar") { dialog, which -> }
             .show()
     }

@@ -12,19 +12,15 @@
         android:theme="@style/Theme.AppInvestigarte">
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/Theme.Background"
+            android:theme="@style/Theme.AppInvestigarte"
             android:exported="false" />
-        <activity
-            android:name=".LoginActivity2"
-            android:exported="false"
-          />
         <activity
             android:name=".NavDrawerActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.Background" />
+            android:theme="@style/Theme.AppInvestigarte" />
         <activity
             android:name=".DescripcionActivity"
             android:exported="true"
