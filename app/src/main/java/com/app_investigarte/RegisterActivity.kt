@@ -1,5 +1,6 @@
 package com.app_investigarte
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -7,23 +8,41 @@ import android.text.InputType
 import android.text.TextWatcher
 import android.view.KeyEvent
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.util.PatternsCompat
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputLayout
-import kotlinx.android.synthetic.main.activity_login2.*
+import kotlinx.android.synthetic.main.activity_register.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class RegisterActivity : AppCompatActivity() {
-
     var emptyData: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        controlFlujoedt()
+        val today = MaterialDatePicker.todayInUtcMilliseconds()
+        val datePicker =
+            MaterialDatePicker.Builder.datePicker()
+                .setTitleText("Selecionar fecha")
+                .setSelection(today)
+                .build()
 
+        btn_date.setOnClickListener {showDatePicker(datePicker)}
+
+        controlFlujoEdt()
+
+        datePicker.addOnPositiveButtonClickListener {
+            val formatter = SimpleDateFormat("dd/MM/yyyy")
+            val calendar = Calendar.getInstance()
+            calendar.timeInMillis = (datePicker.selection?.plus(100000000)!!)
+            txt_date.setText(formatter.format(calendar.timeInMillis))
+        }
         btn_register.setOnClickListener {
             emptyData = 0
             validacionCamposVacidos()
@@ -35,20 +54,28 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-
-    fun controlFlujoedt() {
-
-        edt_estado_civil.setOnKeyListener(View.OnKeyListener { view, keyCode, keyEvent ->
+    private fun controlFlujoEdt() {
+        //ocular el teclado cunado se precione enter
+        edt_name1.setOnKeyListener(View.OnKeyListener { view, keyCode, keyEvent ->
             if (keyCode == KeyEvent.KEYCODE_ENTER) {
-                if (!edt_estado_civil.text.toString().isEmpty()) {
-                    edt_telefono.requestFocus()
+                if(!edt_name1.text?.isEmpty()!!){
+                    view.hideKeyboard()
                 }
                 return@OnKeyListener true
             }
             false
         })
+    }
+
+    fun View.hideKeyboard() {
+        val inputManager = this.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputManager.hideSoftInputFromWindow(windowToken, 0)
+    }
 
 
+
+    fun showDatePicker(datePicker: MaterialDatePicker<Long>) {
+        datePicker.show(supportFragmentManager, "tag")
     }
 
     fun validacionCamposVacidos() {
@@ -104,8 +131,8 @@ class RegisterActivity : AppCompatActivity() {
     fun clearDataEdt() {
         edt_correo.setText("")
         edt_name1.setText("")
-       // edt_apellido.setText("")
-        edt_estado_civil.setText("")
+        // edt_apellido.setText("")
+        //edt_avatar.setText("")
         edt_direccion.setText("")
         edt_telefono.text?.clear()
     }
