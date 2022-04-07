@@ -74,9 +74,9 @@
 
     <style name="Theme.Background_welcome" parent="Theme.AppCompat.NoActionBar">
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/Background_dark</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/color_background_dark</item>
         <!-- Customize your theme here. -->
-        <item name="android:windowBackground">@color/Background_dark</item>
+        <item name="android:windowBackground">@color/color_background_dark</item>
     </style>
 
     <style name="Theme.Registro" parent="Theme.MaterialComponents.Light.NoActionBar">

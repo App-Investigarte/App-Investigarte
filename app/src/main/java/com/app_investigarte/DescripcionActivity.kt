@@ -1,11 +1,8 @@
 package com.app_investigarte
 
-import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.Toast
-import androidx.annotation.ColorRes
 import com.app_investigarte.database.DatabaseAccess
 import kotlinx.android.synthetic.main.activity_descripcion.*
 
@@ -32,7 +29,7 @@ class DescripcionActivity : AppCompatActivity() {
         if (informacionArtefacto[2].equals("image")) {
             img_artefacto_description.setImageResource(R.drawable.ic_sombrero)
             img_artefacto_description.setScaleType(ImageView.ScaleType.CENTER_INSIDE)
-            img_artefacto_description.setColorFilter(R.color.Background_dark)
+            img_artefacto_description.setColorFilter(R.color.color_background_dark)
         }
 
         txt_municipio_artifact.setText(informacionArtefacto[4])
