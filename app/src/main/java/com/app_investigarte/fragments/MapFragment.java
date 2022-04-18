@@ -70,8 +70,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
         // Add a marker in Sydney and move the camera
+        LatLng colombiaPoint = new LatLng(5.5, -72.9);
         LatLng antioquia = new LatLng(6.55, -75.4900048136111);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(antioquia, 7.7f));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(antioquia, 7.7f));
         mMap.addMarker(new MarkerOptions().position(antioquia)
                .title("Departamento de Antioquia")
                .snippet("Population: 6680000"));
@@ -96,7 +97,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
         // Constrain the camera target to the Adelaide bounds.
         mMap.setLatLngBoundsForCameraTarget(colombia);
-        mapaColombia();
+        //mapaColombia();
+
+
+
+
     }
 
 
@@ -110,7 +115,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //si el zoom esta entre 6 y 8 se muestran las subregions de antioquía
         //si el zoom esta entre 8 y 15 se muestran todos los artefactos en el mapa de antioquía deacuerdo asu municipio
         float zoomMap = mMap.getCameraPosition().zoom;
-        if(zoomMap<=7 && !departamentos) {
+        if(zoomMap <7 && !departamentos) {
             mMap.clear();
             mapaColombia();
             LatLng antioquia = new LatLng(6.55, -75.817);
@@ -120,7 +125,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
             departamentos = true;
             subRegiones = false;
             municipios = false;
-        }else if(zoomMap >= 7 && zoomMap <= 8 && !subRegiones){
+        }else if(zoomMap >= 7 && zoomMap < 8 && !subRegiones){
             mMap.clear();
             mapaColombia();
             subRegionesAntioquia();
@@ -135,6 +140,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
             subRegiones = false;
             municipios = true;
         }
+
+        // Add a marker in Sydney and move the camera
+        LatLng colombiaPoint = new LatLng(5.5, -72.9);
+        LatLng antioquia = new LatLng(6.55, -75.4900048136111);
+
+        //animacion del zoom de la camara colombia
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(colombiaPoint, 4f), 4000, null);
+        //animacion del zoom de la camara Antioquia
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(antioquia, 7.7f),3000, null);
     }
 
 
