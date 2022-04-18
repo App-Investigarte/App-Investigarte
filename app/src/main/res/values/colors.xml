@@ -2,9 +2,9 @@
 <resources>
     <!-- **************** Base Colors ******************-->
     <!-- Primary brand color. -->
-    <color name="color_primary">#EFB506</color>
-    <color name="color_primary_variant">#ABD299</color>
-    <color name="color_primary_light">#ABD299</color>
+    <color name="color_primary">#df1c48</color>
+    <color name="color_primary_variant">#730237</color>
+    <color name="color_primary_light">#ea574a</color>
     <color name="color_text_onprimary">#FFFFFFFF</color>
     <!-- Secondary brand color. -->
     <color name="color_secondary">#30A8E0</color>
@@ -15,12 +15,14 @@
 
     <!-- **************** Warm colors ******************-->
     <!-- Primary brand color. -->
-    <color name="color_primary_warm">#EFB506</color>
-    <color name="color_primary_variant_warm">#ABD299</color>
-    <color name="color_primary_light_warm">#ABD299</color>
+    <color name="color_primary_warm">#df1c48</color>
+    <color name="color_primary_variant_warm">#730237</color>
+    <color name="color_primary_light_warm">#ea574a</color>
+
     <!-- Secondary brand color. -->
-    <color name="color_secondary_warm">#30A8E0</color>
-    <color name="color_secondary_variant_warm">#3778BA</color>
+    <color name="color_secondary_warm">#EFB506</color>
+    <color name="color_secondary_variant_warm">#03a65a</color>
+    <color name="color_secondary_light_warm">#70b52c</color>
     <!-- ***********************************************************-->
 
 
@@ -36,19 +38,20 @@
     <!-- Colors Resourses -->
     <color name="azul">#6498FE</color>
     <color name="Transparente">#BFFFFFFF</color>
-    <color name="Color_darck">#15182C</color>
+    <color name="Color_darck">#3015182C</color>
     <color name="light_purple">#FFA687DD</color>
     <color name="Dark_purple">#FF5D34A6</color>
+    <color name="color_background_dark">#212020</color>
 
     <!--   Colors by subregions -->
     <color name="color_uraba">#3778bc</color>
-    <color name="color_occidente_antioqueño">#f2b704</color>
-    <color name="color_suroeste_antioqueño">#03a65a</color>
-    <color name="color_norte_antioqueño">#70b52c</color>
+    <color name="color_occidente">#f2b704</color>
+    <color name="color_suroeste">#03a65a</color>
+    <color name="color_norte">#70b52c</color>
     <color name="color_valle_aburra">#730237</color>
     <color name="color_bajo_cauca">#f25c05</color>
     <color name="color_magdalena_medio">#2eaae2</color>
-    <color name="color_nordeste_antioqueño">#ea574a</color>
-    <color name="color_oriente_antioqueño">#df1c48</color>
+    <color name="color_nordeste">#ea574a</color>
+    <color name="color_oriente">#df1c48</color>
 
 </resources>

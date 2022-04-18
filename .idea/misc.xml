@@ -63,6 +63,7 @@
         <entry key="app/src/main/res/drawable/style_btn.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/style_btn_2.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/style_btn_3.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/style_btn_4.xml" value="0.131" />
         <entry key="app/src/main/res/drawable/svg_splashscreen.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/svg_splashscreen_2.xml" value="0.25" />
         <entry key="app/src/main/res/layout-land-night/activity_descripcion.xml" value="0.18" />
@@ -70,13 +71,14 @@
         <entry key="app/src/main/res/layout-land/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout-land/activity_welcome.xml" value="0.22" />
         <entry key="app/src/main/res/layout-night/activity_descripcion.xml" value="0.2625" />
-        <entry key="app/src/main/res/layout/activity_descripcion.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_listado_artefactos.xml" value="0.2625" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_descripcion.xml" value="0.203125" />
+        <entry key="app/src/main/res/layout/activity_listado_artefactos.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.48451730418943534" />
         <entry key="app/src/main/res/layout/activity_login2.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/activity_nav_drawer.xml" value="0.2625" />
-        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.4585987261146497" />
+        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.5563480741797432" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/cardsview_artifacts.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/dropdownmenu_dias.xml" value="0.3098958333333333" />

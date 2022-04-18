@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -25,9 +26,8 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 
 
 public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener,  GoogleMap.OnCameraIdleListener,  GoogleMap.OnMarkerClickListener {
@@ -70,8 +70,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
         // Add a marker in Sydney and move the camera
-        LatLng antioquia = new LatLng(6.55, -75.3900048136111);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(antioquia, 7.5f));
+        LatLng antioquia = new LatLng(6.55, -75.4900048136111);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(antioquia, 7.7f));
         mMap.addMarker(new MarkerOptions().position(antioquia)
                .title("Departamento de Antioquia")
                .snippet("Population: 6680000"));
@@ -85,6 +85,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         } catch(Resources.NotFoundException e){
             Log.e("TAG", "No se puede encontrar el error de estilo: ",e);
         }
+
 
         //se limita el rango de google map para que solo se vea la region de colombia
         mMap.setMinZoomPreference(5.5f);
@@ -109,7 +110,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //si el zoom esta entre 6 y 8 se muestran las subregions de antioquía
         //si el zoom esta entre 8 y 15 se muestran todos los artefactos en el mapa de antioquía deacuerdo asu municipio
         float zoomMap = mMap.getCameraPosition().zoom;
-        if(zoomMap<=6 && !departamentos) {
+        if(zoomMap<=7 && !departamentos) {
             mMap.clear();
             mapaColombia();
             LatLng antioquia = new LatLng(6.55, -75.817);
@@ -119,7 +120,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
             departamentos = true;
             subRegiones = false;
             municipios = false;
-        }else if(zoomMap >= 6 && zoomMap <= 8 && !subRegiones){
+        }else if(zoomMap >= 7 && zoomMap <= 8 && !subRegiones){
             mMap.clear();
             mapaColombia();
             subRegionesAntioquia();
@@ -136,13 +137,21 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         }
     }
 
+
     public void subRegionesAntioquia() {
+
+
+
         /* ---------------------------SubRegiones De Antioquia ------------------------**/
         //Urabá Antioqueño
         //apartado
+        int colorUraba = ContextCompat.getColor(getContext(), R.color.color_uraba);
+        BitmapDescriptor iconUraba = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_flor, colorUraba, 80);
+
         LatLng urabaAntioquenio = new LatLng(7.883, -76.633);
         mMap.addMarker(new MarkerOptions()
                 .position(urabaAntioquenio)
+                .icon(iconUraba)
                 .title(getString(R.string.subregion_uraba))).setTag(8);
 
 
@@ -150,60 +159,93 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
         //Suroeste Antioqueño
         //Jeríco
+        int colorSuroeste = ContextCompat.getColor(getContext(), R.color.color_suroeste);
+        BitmapDescriptor iconSuroeste = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_carriel, colorSuroeste, 80);
+
         LatLng Suroeste = new LatLng(6, -75.883);
         mMap.addMarker(new MarkerOptions().position(Suroeste)
-                .title(getString(R.string.subregion_suroeste))).setTag(7);
+                .icon(iconSuroeste)
+                .title(getString(R.string.subregion_suroeste)))
+                .setTag(7);
 
 
         //OCCIDENTE ANTIOQUEÑO
         //Dabeiba
+        int colorOccidente = ContextCompat.getColor(getContext(), R.color.color_occidente);
+        BitmapDescriptor iconOccidente = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_sombrero, colorOccidente, 80);
+
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.8, -76.15))
                 .title(getString(R.string.subregion_occidente))
+                .icon(iconOccidente)
                 .zIndex(1.0f)).setTag(5);
 
         //NORTE ANTIOQUEÑO
         //Ituango
+        int colorNorte = ContextCompat.getColor(getContext(), R.color.color_norte);
+        BitmapDescriptor iconNorte = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_ruana, colorNorte, 80);
+
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.833, -75.55))
                 .title(getString(R.string.subregion_norte))
+                .icon(iconNorte)
                 .zIndex(1.0f)).setTag(4);
 
         //VALLE DE ABURRÁ
         //Medellin
+        int colorValleAburra = ContextCompat.getColor(getContext(), R.color.color_valle_aburra);
+        BitmapDescriptor iconValleAburra = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_flor, colorValleAburra, 80);
+
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.217, -75.567))
                 .title(getString(R.string.subregion_valleaburra))
+                .icon(iconValleAburra)
                 .zIndex(1.0f)).setTag(9);
 
 
         //SubReguiones
         //BAJO CAUCA
+        int colorBajoCauca= ContextCompat.getColor(getContext(), R.color.color_bajo_cauca);
+        BitmapDescriptor iconBajoCauca = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_sombrero, colorBajoCauca, 80);
+
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.583, -75.017))
                 .title(getString(R.string.subregion_bajocauca))
+                .icon(iconBajoCauca)
                 .zIndex(1.0f)).setTag(1);
 
         //MAGDALENA MEDIO
         //puerto berrio
+        int colorMagdalenaMedio= ContextCompat.getColor(getContext(), R.color.color_magdalena_medio);
+        BitmapDescriptor iconMagdalenaMedio = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_ruana, colorMagdalenaMedio, 80);
+
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.49998, -74.5525))
                 .title(getString(R.string.subregion_megdalenamedio))
+                .icon(iconMagdalenaMedio)
                 .zIndex(1.0f)).setTag(2);
 
 
         //NORDESTE ANTIOQUEÑO
         //Remedios
+        int colorNordeste= ContextCompat.getColor(getContext(), R.color.color_nordeste);
+        BitmapDescriptor iconNordeste = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_carriel, colorNordeste, 80);
+
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.9595, -74.894))
                 .title(getString(R.string.subregion_nordeste))
+                .icon(iconNordeste)
                 .zIndex(1.0f)).setTag(3);
 
         //ORIENTE ANTIOQUEÑO
         //Guatapé
+        int colorOriente= ContextCompat.getColor(getContext(), R.color.color_oriente);
+        BitmapDescriptor iconOriente = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_flor, colorOriente, 80);
+
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.033, -75.15))
                 .title(getString(R.string.subregion_orinete))
+                .icon(iconOriente)
                 .zIndex(1.0f)).setTag(6);
         /* ---------------------------  ------------------------  ------------------------**/
     }
