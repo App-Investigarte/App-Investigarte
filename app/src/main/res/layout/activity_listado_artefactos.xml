@@ -7,11 +7,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ListadoArtefactos.ListadoArtefactosActivity">
-
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="60dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="#B0FFFFFF"
+    app:cardCornerRadius="40dp">
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginVertical="30dp"
         android:id="@+id/artefactos_recycleryview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp"/>
+</androidx.cardview.widget.CardView>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

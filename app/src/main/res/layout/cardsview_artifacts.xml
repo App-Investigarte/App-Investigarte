@@ -14,14 +14,15 @@
             android:id="@+id/cardvw_artifact1"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:cardBackgroundColor="@color/color_primary"
+            app:cardBackgroundColor="@color/color_text_onprimary"
             app:cardCornerRadius="100dp">
 
             <ImageView
                 android:id="@+id/artifact1_imagvw"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="center">
+                android:scaleType="center"
+                app:tint="#212020">
             </ImageView>
         </androidx.cardview.widget.CardView>
 

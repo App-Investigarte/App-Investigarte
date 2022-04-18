@@ -1,5 +1,6 @@
 package com.app_investigarte.ListadoArtefactos;
 
+import androidx.annotation.ContentView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -7,10 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
 import com.app_investigarte.R;
+import com.app_investigarte.SetThemeActivity;
 import com.app_investigarte.database.DatabaseAccess;
 
 import java.util.ArrayList;
@@ -47,55 +50,8 @@ public class ListadoArtefactosActivity extends AppCompatActivity
         }else{ // si la subregion no es 0 se inicializa la data de los artefactos de la subregion especifica
             // inicializa la data y se le pasa la subregion a consultar.
             initData(subregion);
-            switch (subregion){
-                case 1:
-                    // 1 = Bajo Cauca
-                    //se asigna un nuevo tema a la actividad.
-                    super.setTheme((R.style.Theme_Background_colors_warm));
-                    break;
-                case 2:
-                    // 2 = Magdalena medio
-                    //se asigna un nuevo tema a la actividad.
-                    super.setTheme((R.style.Theme_Background_colors_cold));
-                    break;
-                case 3:
-                    // 3 = Nordeste antioqueño
-                    //se asigna un nuevo tema a la actividad.
-                    super.setTheme((R.style.Theme_Background_colors_warm));
-                    break;
-                case 4:
-                    // 4 = Norte Antioqueño
-                    //se asigna un nuevo tema a la actividad.
-                    super.setTheme((R.style.Theme_Background_colors_cold));
-                    break;
-                case 5:
-                    // 5 = occidente antioqueño
-                    //se asigna un nuevo tema a la actividad.
-                    super.setTheme((R.style.Theme_Background_colors_warm));
-                    break;
-                case 6:
-                    // 6 = Oriente Antioqueño
-                    //se asigna un nuevo tema a la actividad.
-                    super.setTheme((R.style.Theme_Background_colors_warm));
-                    break;
-                case 7:
-                    // 7 = Suroeste antioqueño
-                    //se asigna un nuevo tema a la actividad.
-                    super.setTheme((R.style.Theme_Background_colors_cold));
-                    break;
-                case 8:
-                    // 8 = Uraba antioqueño
-                    //se asigna un nuevo tema a la actividad.
-                    super.setTheme((R.style.Theme_Background_colors_cold));
-                    break;
-                case 9:
-                    // 9 = Valle de Aburrá
-                    //se asigna un nuevo tema a la actividad.
-                    super.setTheme((R.style.Theme_Background_colors_warm));
-                    break;
-                default:
-                    break;
-            }
+            ListadoArtefactosActivity activity = this;
+            SetThemeActivity.setTheme(activity,subregion );
         }
         setContentView(R.layout.activity_listado_artefactos);
         initRecyclerView();
