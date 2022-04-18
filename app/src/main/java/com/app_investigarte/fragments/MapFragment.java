@@ -79,7 +79,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
         //Ocultar los elementos del mapa con los ajustes de diseño
         try{
-            boolean success= mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.style_json_map));
+            boolean success= mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.style_json_map_night));
             if(!success){
                 Log.e("TAG", "Style parsing failed.");
             }
