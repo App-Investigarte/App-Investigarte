@@ -31,7 +31,7 @@
         "color": "#00a6ff"
       },
       {
-        "weight": 2
+        "weight": 1
       }
     ]
   },
@@ -137,6 +137,24 @@
     "stylers": [
       {
         "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#0e1426"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#0e1626"
       }
     ]
   }

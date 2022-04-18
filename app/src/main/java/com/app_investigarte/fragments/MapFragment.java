@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -79,6 +80,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
         //Ocultar los elementos del mapa con los ajustes de diseño
         try{
+
             boolean success= mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.style_json_map_night));
             if(!success){
                 Log.e("TAG", "Style parsing failed.");
@@ -1320,7 +1322,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                 )
 
                 .width(10)
-                .color(Color.BLUE));
+                .color(ContextCompat.getColor(getContext(), R.color.mapa_colombia)));
 
 
         // Add Polyline
@@ -1369,7 +1371,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                         new LatLng(7.226332694276445, -77.8917048498988)
                 )
                 .width(10)
-                .color(Color.BLUE));
+                .color(ContextCompat.getColor(getContext(), R.color.mapa_colombia)));
     }
 
     @Override

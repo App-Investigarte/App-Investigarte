@@ -54,4 +54,11 @@
     <color name="color_nordeste">#ea574a</color>
     <color name="color_oriente">#df1c48</color>
 
+
+    <!-- Mapa colombia -->
+    <color name="mapa_colombia">#00a6ff</color>
+
+
+
+
 </resources>
