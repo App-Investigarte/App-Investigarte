@@ -13,7 +13,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.app_investigarte.ListadoArtefactos.ListadoArtefactosActivity
-import com.app_investigarte.fragments.MapFragment
+import com.app_investigarte.fragments.Map.MapFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 
@@ -95,7 +95,9 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     private fun showFragmentMap() {
         //Reemplazamos en el Fragment Principal por el Fragment del Mapa
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container_fragment, MapFragment())
+            .replace(R.id.container_fragment,
+                MapFragment()
+            )
             .setReorderingAllowed(true).addToBackStack(null)
             .commit()
     }
