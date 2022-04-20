@@ -161,7 +161,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(antioquia, 7.7f),3000, null);
     }
 
-
     public void subRegionesAntioquia() {
 
 
@@ -554,7 +553,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
         /* ---------------------------  ------------------------  ------------------------**/
     }
-
 
     @Override
     public void onMapClick(@NonNull LatLng latLng) {

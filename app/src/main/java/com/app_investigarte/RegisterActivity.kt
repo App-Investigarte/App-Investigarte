@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.util.PatternsCompat
+import com.app_investigarte.database.DatabaseAccess
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputLayout
@@ -33,7 +34,7 @@ class RegisterActivity : AppCompatActivity() {
                 .setSelection(today)
                 .build()
 
-        btn_date.setOnClickListener {showDatePicker(datePicker)}
+        btn_date.setOnClickListener { showDatePicker(datePicker) }
 
         controlFlujoEdt()
 
@@ -48,17 +49,17 @@ class RegisterActivity : AppCompatActivity() {
             validacionCamposVacidos()
             //Registro de usuario
             if (emptyData == 0) {
-                AlertRegistroexitoso()
-                clearDataEdt()
+                registerUser()
             }
         }
     }
 
     private fun controlFlujoEdt() {
+
         //ocular el teclado cunado se precione enter
         edt_name1.setOnKeyListener(View.OnKeyListener { view, keyCode, keyEvent ->
             if (keyCode == KeyEvent.KEYCODE_ENTER) {
-                if(!edt_name1.text?.isEmpty()!!){
+                if (edt_name1.text?.isNotEmpty()!!) {
                     view.hideKeyboard()
                 }
                 return@OnKeyListener true
@@ -68,11 +69,10 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun View.hideKeyboard() {
-        val inputManager = this.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val inputManager =
+            this.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputManager.hideSoftInputFromWindow(windowToken, 0)
     }
-
-
 
     fun showDatePicker(datePicker: MaterialDatePicker<Long>) {
         datePicker.show(supportFragmentManager, "tag")
@@ -81,12 +81,12 @@ class RegisterActivity : AppCompatActivity() {
     fun validacionCamposVacidos() {
 
         //validacion de la identificacion
-        if(edt_id.text.toString().isEmpty()){
+        if (edt_id.text.toString().isEmpty()) {
             lyt_id.error = getString(R.string.edt_id_error)
             edt_id.height = 5
             edt_id.setPaddingRelative(20, 7, 7, -7)
             emptyData++
-        }else{
+        } else {
             edt_id.setPaddingRelative(20, 7, 7, 7)
             edt_id.height = 35
             lyt_id.error = null
@@ -125,29 +125,14 @@ class RegisterActivity : AppCompatActivity() {
             lyt_name1.error = null
             lyt_name1.isErrorEnabled = false
         }
-/*
-        //Validaciones del Apellido
-        if (edt_apellido.text.toString().isEmpty()) {
-            lyt_apellido.error = "Ingrese el Apellido completo"
-            edt_apellido.height = 5
-            edt_apellido.setPaddingRelative(20, 7, 7, -7)
-            emptyData++
-        } else {
-            edt_apellido.setPaddingRelative(20, 7, 7, 7)
-            edt_apellido.height = 35
-            lyt_apellido.error = null
-            lyt_apellido.isErrorEnabled = false
-        }
-*/
     }
 
     fun clearDataEdt() {
         edt_correo.setText("")
         edt_name1.setText("")
-        // edt_apellido.setText("")
-        //edt_avatar.setText("")
         edt_id.setText("")
         edt_telefono.text?.clear()
+        txt_date.setText("")
     }
 
     fun AlertRegistroexitoso() {
@@ -156,6 +141,56 @@ class RegisterActivity : AppCompatActivity() {
             .setMessage("El registro del nuevo jugador a sido exitoso.")
             .setPositiveButton("Aceptar") { dialog, which -> }
             .show()
+    }
+
+    fun AlertRegistroUserExiste() {
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Error")
+            .setMessage("El Usurio ingresado ya esta registrado.")
+            .setPositiveButton("Aceptar") { dialog, which -> }
+            .show()
+    }
+
+    fun registerUser() {
+
+        val id: String = edt_id.text.toString()
+        val email: String = edt_correo.text.toString()
+        val name: String = edt_name1.text.toString()
+        var phone: String = "0"
+        var date: String = " "
+
+        if(edt_telefono.text?.isNotEmpty()!!){
+            phone = edt_telefono.text.toString()
+        }
+
+        if(txt_date.text.isNotEmpty()){
+            date = txt_date.text.toString()
+        }
+
+        val databaseAcces: DatabaseAccess = DatabaseAccess.getInstance(this)
+        databaseAcces.open()
+
+        val userExiste: Int = databaseAcces.getUserExistencia(id.toLong())
+        if (userExiste == 0) {
+            val emailexiste: Int = databaseAcces.getUserCorreoExiste(email)
+            if(emailexiste == 0){
+                databaseAcces.addUser(id, email, name, phone, date)
+                clearDataEdt()
+                AlertRegistroexitoso()
+            }else{
+                //el usuario ya existe en la base de datos
+                AlertRegistroUserExiste()
+                lyt_correo.error = getString(R.string.correo_existe)
+                edt_correo.setPaddingRelative(20, 7, 7, -7)
+            }
+        } else {
+            //el usuario ya existe en la abse de datos
+            AlertRegistroUserExiste()
+            lyt_id.error = getString(R.string.user_existe)
+            edt_id.setPaddingRelative(20, 7, 7, -7)
+
+        }
+        databaseAcces.close()
     }
 
 }

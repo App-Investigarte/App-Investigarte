@@ -90,5 +90,7 @@
     <string name="municipio_yolombo">Municipio de Yolombó</string>
     <string name="municipio_carmendeviboral">Municipio de Carmen de Viboral</string>
     <string name="municipio_sonson">Municipio de Sonsón</string>
+    <string name="user_existe">El usuario ya esta registrado</string>
+    <string name="correo_existe">El Correo lectronico ya esta registrado.</string>
 
 </resources>

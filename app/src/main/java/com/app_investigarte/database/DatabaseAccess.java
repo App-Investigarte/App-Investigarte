@@ -121,5 +121,29 @@ public class DatabaseAccess {
         return informacion;
     }
 
+    public int getUserCorreoExiste(String email){
+        c = db.rawQuery("select count(*) from Users where  email= '"+email+"'",null);
+        int cantidad = 0;
+        while (c.moveToNext()){
+            cantidad = c.getInt(0);
+        }
+        return cantidad;
+    }
+
+    public int getUserExistencia(long id){
+        c = db.rawQuery("select count(*) from Users where  id="+id,null);
+        int cantidad = 0;
+        while (c.moveToNext()){
+            cantidad = c.getInt(0);
+        }
+        return cantidad;
+    }
+
+    public void addUser(String id, String email, String name, String phone_number, String date_user){
+        //INSERT INTO Users  (id, password , email , name  , phone_number, image, date_user) values (1017272663, 12345678 , "esteban.ea145@gmail.com", "John Esteban", 3215801523, null, "25/06/1999");
+     //   c = db.rawQuery("INSERT INTO Users  (id, email , name  , phone_number, image, date_user) values (1017272661, 'esteban.ea145@gmail.com', 'John Esteban', 3215801523, null, '25/06/1999');",new String[]{});
+        db.execSQL("INSERT INTO Users  (id, email , name  , phone_number, image, date_user)" +
+                "VALUES(" + id + ", '" + email + "', '" + name + "', " + phone_number + ", null , '" + date_user +"');");
+    }
 
 }
