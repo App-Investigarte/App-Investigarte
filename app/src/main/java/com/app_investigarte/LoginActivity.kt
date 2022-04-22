@@ -35,7 +35,11 @@ class LoginActivity : AppCompatActivity() {
 
         //funcion para logiar al usuario
         //login por medio del correo y la contraseña
-        login()
+        //val email = binding.edtUser?.text.toString()
+        binding.btnLogin.setOnClickListener {
+            login()
+        }
+
 
         //with(){
         binding.imgBtnGoogle?.setOnClickListener {
@@ -49,22 +53,17 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun login() {
-
-        with(binding) {
-
-            val email = edtUser?.text.toString()
-
-            btnLogin.setOnClickListener {
-                if (TextUtils.isEmpty(email)) {
-                    verificacion()
-                    //ponemos el foco en el editex de user
-                    edtUser?.requestFocus()
-                } else {
-                    showWelcome(email, ProviderType.BASIC)
-                }
-            }
+        val email = binding.edtUser?.text.toString()
+        Toast.makeText(this, "hola $email", Toast.LENGTH_SHORT).show()
+        if (TextUtils.isEmpty(email)) {
+            showAlerVerificacion()
+            //ponemos el foco en el editex de user
+            binding.edtUser?.requestFocus()
+        } else {
+            showWelcome(email, ProviderType.BASIC)
         }
     }
+
 
     fun loginGoogle() {
         //configuracion
@@ -132,7 +131,7 @@ class LoginActivity : AppCompatActivity() {
         super.finish()
     }
 
-    private fun verificacion() {
+    private fun showAlerVerificacion() {
         val title = "Advertencia"
         val message = "\nPor favor ingresa tu usuario."
         val btnPositive = "aceptar"

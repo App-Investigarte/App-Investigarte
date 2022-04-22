@@ -12,8 +12,8 @@ class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val sharedPref: SharedPreferences = getSharedPreferences("PREFERENS_USER", Context.MODE_PRIVATE)
-        val username = sharedPref.getString("NAME_USER", null)
+        val sharedPref: SharedPreferences = getSharedPreferences(getString(R.string.PREFERENS), Context.MODE_PRIVATE)
+        val email = sharedPref.getString("email", null)
 
 
         //El metodo Thread nos permite utilizar ilos este lo nos permite con el metodo sleep detenernos o detener nuestro porgrama en un punto espesifico por milisegundos.
@@ -24,7 +24,7 @@ class SplashScreenActivity : AppCompatActivity() {
             e.printStackTrace()
         }
 
-        if (username != null) {
+        if (email != null) {
             startActivity(Intent(this, WelcomeActivity::class.java))
             super.finish()//para finalizar la actividad y no quede en segundo plano avierta por detras luego de abrir la otra actividad.
 
