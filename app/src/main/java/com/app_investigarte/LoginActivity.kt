@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
@@ -43,7 +45,16 @@ class LoginActivity : AppCompatActivity() {
 
         //with(){
         binding.imgBtnGoogle?.setOnClickListener {
-            loginGoogle()
+            //verificacion de la conectividad de internet
+            val cm = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
+            val isConnected: Boolean = activeNetwork?.isConnectedOrConnecting == true
+
+            if (isConnected) {
+                loginGoogle()
+            }else{
+                showAlertNotInternet()
+            }
         }
 
         binding.btnRegister?.setOnClickListener {
@@ -78,7 +89,8 @@ class LoginActivity : AppCompatActivity() {
         databaseAcces.close()
 
         //recupero el nombre del usuario
-        val prefs2: SharedPreferences.Editor = getSharedPreferences(getString(R.string.PREFERENS), Context.MODE_PRIVATE).edit()
+        val prefs2: SharedPreferences.Editor =
+            getSharedPreferences(getString(R.string.PREFERENS), Context.MODE_PRIVATE).edit()
         prefs2.putString("name", userExiste[1])
         prefs2.apply()
 
@@ -180,6 +192,19 @@ class LoginActivity : AppCompatActivity() {
             .setPositiveButton(
                 btnPositive
             ) { dialogInterface: DialogInterface?, i: Int -> }
+            .show()
+    }
+
+    private fun showAlertNotInternet() {
+        val title = "Error"
+        val message = "\nEn este momento el dispositivo no tienen connexion a internet, registrate para poder ingresar"
+        val btnPositive = "Aceptar"
+        MaterialAlertDialogBuilder(this)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton(
+                btnPositive
+            ) { dialogInterface: DialogInterface?, i: Int -> startActivity(Intent(this, RegisterActivity::class.java))}
             .show()
     }
 }

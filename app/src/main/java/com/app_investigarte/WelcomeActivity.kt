@@ -18,12 +18,20 @@ class WelcomeActivity : AppCompatActivity() {
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        //se recuperan los datos de usuario logeado
         val pref = getSharedPreferences(getString(R.string.PREFERENS), MODE_PRIVATE)
         val email = pref.getString("email","")
         val name = pref.getString("name", "")
+        val provider = pref.getString("provider", "")
 
-        binding.txtusername.text = name
+        if (provider != null) {
+            if(provider.equals(ProviderType.GOOGLE.toString())){
+                binding.txtusername.text = email
+            }else{
+                binding.txtusername.text = name
+            }
+        }
+
 
 
         //pasar de activity al precionar el boton.
