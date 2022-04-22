@@ -33,7 +33,7 @@
     <string name="negative_exit_alert">Cancelar</string>
     <string name="positive_exit_alert">Salir</string>
 
-   <!--  municipality  -->
+    <!--  municipality  -->
     <string name="municipio_apartado">Municipio de Apartadó</string>
     <string name="municipio_turbo">Municipio de Turbo</string>
     <string name="municipio_necocli">Municipio de Necoclí</string>

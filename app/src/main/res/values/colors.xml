@@ -37,7 +37,8 @@
 
     <!-- Colors Resourses -->
     <color name="azul">#6498FE</color>
-    <color name="Transparente">#BFFFFFFF</color>
+    <color name="color_transparente_white">#BFFFFFFF</color>
+    <color name="color_transparente">#00FFFFFF</color>
     <color name="Color_darck">#3015182C</color>
     <color name="light_purple">#FFA687DD</color>
     <color name="Dark_purple">#FF5D34A6</color>

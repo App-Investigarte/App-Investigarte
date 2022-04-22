@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.app_investigarte">
+    package="com.app_investigarte" >
 
     <application
         android:allowBackup="true"
@@ -9,11 +9,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppInvestigarte">
+        android:theme="@style/Theme.AppInvestigarte" >
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListadoArtefactos.WelcomeActivitykt"
+            android:exported="false" />
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/Theme.AppInvestigarte"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppInvestigarte" />
         <activity
             android:name=".NavDrawerActivity"
             android:exported="true" />
@@ -30,13 +36,13 @@
             android:exported="true"
             android:theme="@style/Theme.Background_welcome" />
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".WelcomeActivity22"
             android:exported="true"
             android:theme="@style/Theme.Background_welcome" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/Theme.SplashScreen">
+            android:theme="@style/Theme.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
