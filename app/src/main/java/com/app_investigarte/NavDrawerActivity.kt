@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +14,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.app_investigarte.ListadoArtefactos.ListadoArtefactosActivity
-import com.app_investigarte.fragments.MapFragment
+import com.app_investigarte.fragments.Map.MapFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 
@@ -25,6 +26,12 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //se recuperan los datos del usuario logeado
+        val pref = getSharedPreferences(getString(R.string.PREFERENS), MODE_PRIVATE)
+        val email = pref.getString("email","")
+        val name = pref.getString("name", "")
+
         //se le pasa la vista que tendrá el menu de navegación lateral y al fragment principal que contendrá las vista.
         setContentView(R.layout.activity_nav_drawer)
 
@@ -51,6 +58,11 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         // Escuchamos los items seleccionados del menu, haciendo contexto que los items sean escuchados con el contexto de este activity
         navigationView.setNavigationItemSelectedListener(this)
 
+        val headerTvCorreo = navigationView.getHeaderView(0).findViewById<TextView>(R.id.nav_header_tv_correo)
+        val headerTvName = navigationView.getHeaderView(0).findViewById<TextView>(R.id.nav_header_tv_name)
+        //personalizamos la cabecera del navigationView con el Correo y el nombre del usuari@ logeado
+        headerTvCorreo.text = email
+        headerTvName.text = name
         // Mostramos el Fragment del Mapa con el Fragment Principal.
         showFragmentMap()
     }
@@ -95,7 +107,9 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     private fun showFragmentMap() {
         //Reemplazamos en el Fragment Principal por el Fragment del Mapa
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container_fragment, MapFragment())
+            .replace(R.id.container_fragment,
+                MapFragment()
+            )
             .setReorderingAllowed(true).addToBackStack(null)
             .commit()
     }

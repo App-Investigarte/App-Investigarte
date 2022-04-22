@@ -77,12 +77,12 @@ FOREIGN KEY (id_patrimonial_category) REFERENCES Patrimonial_category(id)
 
 CREATE TABLE Users(
 id INTEGER UNIQUE NOT NULL,
-name TEXT NOT NULL,
 password TEXT NOT NULL DEFAULT 1017,
-last_name TEXT,
-phone_number INTEGER,
 email TEXT,
+name TEXT NOT NULL,
+phone_number INTEGER,
 image TEXT,
+date_user TEXT,
 PRIMARY KEY (id)
 );
 

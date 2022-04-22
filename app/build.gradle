@@ -2,15 +2,19 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
-    id 'kotlin-android-extensions'
+    //deprecated
+    //id 'kotlin-android-extensions'
+    id 'com.google.gms.google-services'
 }
 
 android {
     compileSdk 32
     buildToolsVersion '32.0.0'
-    compileOptions.encoding "ISO-8859-1" // para el español para que el edictor reconosca los asentos
+    compileOptions.encoding "ISO-8859-1" // para el español para que el editor reconosca los asentos
     
-    buildFeatures{viewBinding true}
+    buildFeatures{
+        viewBinding true
+    }
 
     defaultConfig {
         applicationId "com.app_investigarte"
@@ -39,18 +43,32 @@ android {
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.21"
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
-    implementation 'com.google.android.gms:play-services-maps:18.0.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
     implementation 'androidx.drawerlayout:drawerlayout:1.1.1'
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
 
+
+    //********************* autenticacion por gmail *********************/
+    //Autenticacion con Firebase
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.3'
+
+    //********************* autenticacion por google *********************/
+    //autenticacion por medio de google
+    implementation 'com.google.android.gms:play-services-auth:20.1.0'
+    implementation 'com.firebaseui:firebase-ui-auth:8.0.1'
+
+    //************* Implementacion del mapa de google Map ****************/
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+
+    //Conecion con la base de datos local
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
 }
