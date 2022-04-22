@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/color_primary"
     android:gravity="center"
-    tools:context=".WelcomeActivity">
+    tools:context=".WelcomeActivity22">
     <!--  android:background="#5B8AD8" -->
     <androidx.cardview.widget.CardView
         android:layout_marginHorizontal="150dp"

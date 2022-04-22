@@ -1,6 +1,8 @@
 package com.app_investigarte.ListadoArtefactos;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,7 +86,7 @@ public class RecyVWAdapter extends RecyclerView.Adapter<RecyVWAdapter.ViewHolder
 
         //ejecuta la activity de la descripción de cada artefacto
         public void startDescription(View view){
-            //Se controla el evento de click en la vista ene ste caso el CardView
+            //Se controla el evento de click en la vista en este caso el CardView
             view.setOnClickListener( v -> {
                 intent=new Intent(view.getContext(), DescripcionActivity.class);
                 intent.putExtra("id",id);
@@ -101,6 +103,7 @@ public class RecyVWAdapter extends RecyclerView.Adapter<RecyVWAdapter.ViewHolder
             //se le asigna la imagen del artefacto al CardView
             if(imagen.equals("image")){
                 IMAGEVIEW1.setImageResource(R.drawable.ic_sombrero);
+                IMAGEVIEW1.setColorFilter(R.color.Color_darck);
                 IMAGEVIEW1.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             }
 

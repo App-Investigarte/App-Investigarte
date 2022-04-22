@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nav_header"
     android:layout_width="match_parent"
-    android:layout_height="190dp"
-    android:background="@color/color_primary"
+    android:layout_height="wrap_content"
+    android:background="@color/color_background_dark"
     android:clickable="true"
     android:focusable="true"
     android:gravity="bottom"
@@ -29,7 +29,13 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/nav_header_tvcorreo"
+        android:id="@+id/nav_header_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hola Compañer@" />
+
+    <TextView
+        android:id="@+id/nav_header_tv_correo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hola Compañer@" />

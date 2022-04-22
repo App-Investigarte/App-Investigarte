@@ -102,14 +102,14 @@ public class DatabaseAccess {
     //consulta informacion Artefacto
     public String[] getDescription(int id) {
 
-        c = db.rawQuery(" SELECT a.id, a.name, a.image, a.description, m.name, s.name, d.name " +
+        c = db.rawQuery(" SELECT a.id, a.name, a.image, a.description, m.name, s.name, d.name, s.id " +
                 " FROM Artifact a " +
                 " INNER JOIN Municipality m on a.id_municipality = m.id " +
                 " INNER JOIN Subregions s  on m.id_subregions = s.id " +
                 " INNER JOIN Departmen d on s.id_department = d.id " +
                 " WHERE a.id = "+id+";",null);
 
-        int columnas=7;
+        int columnas=8;
 
         String informacion[]= new String[columnas];
 
@@ -121,5 +121,33 @@ public class DatabaseAccess {
         return informacion;
     }
 
+    public String[] getUserCorreoExiste(String email){
+        //c = db.rawQuery("select count(*) , name from Users where  email= 'esteban.ea145@gmail.com'",null);
+
+        c = db.rawQuery("select count(*) , name from Users where  email= '"+email+"'",null);
+        String[] informacion = new String[2];
+        for (int i = 0; i < 2; i++) {
+            c.moveToFirst();
+            informacion[i] = c.getString(i);
+        }
+        return informacion;
+    }
+
+    public int getUserExistencia(long id){
+        c = db.rawQuery("select count(*) from Users where  id="+id,null);
+        int cantidad = 0;
+        while (c.moveToNext()){
+            cantidad = c.getInt(0);
+        }
+        return cantidad;
+    }
+
+
+    public void addUser(String id, String email, String name, String phone_number, String date_user){
+        //INSERT INTO Users  (id, password , email , name  , phone_number, image, date_user) values (1017272663, 12345678 , "esteban.ea145@gmail.com", "John Esteban", 3215801523, null, "25/06/1999");
+     //   c = db.rawQuery("INSERT INTO Users  (id, email , name  , phone_number, image, date_user) values (1017272661, 'esteban.ea145@gmail.com', 'John Esteban', 3215801523, null, '25/06/1999');",new String[]{});
+        db.execSQL("INSERT INTO Users  (id, email , name  , phone_number, image, date_user)" +
+                "VALUES(" + id + ", '" + email + "', '" + name + "', " + phone_number + ", null , '" + date_user +"');");
+    }
 
 }

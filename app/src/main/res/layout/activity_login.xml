@@ -12,7 +12,7 @@
         android:layout_marginTop="40dp"
         android:alpha="0.2"
         android:elevation="4dp"
-        app:cardBackgroundColor="@color/Color_darck"
+        app:cardBackgroundColor="@color/color_secondary"
         app:cardCornerRadius="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -27,7 +27,7 @@
         android:layout_height="170dp"
         android:layout_marginTop="70dp"
         android:elevation="4dp"
-        app:cardBackgroundColor="#A687DD"
+        app:cardBackgroundColor="@color/color_primary"
         app:cardCornerRadius="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -50,16 +50,15 @@
 
     <EditText
         android:id="@+id/edt_user"
-        android:layout_width="235dp"
-        android:layout_height="70dp"
-        android:background="@drawable/style_btn_2"
-        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-"
-        android:drawableStart="@drawable/ic_account_circle_24"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="75dp"
+        android:layout_height="60dp"
+        android:background="@drawable/style_btn_4"
+         android:drawableStart="@drawable/ic_account_circle_24"
         android:elevation="2dp"
         android:ems="10"
-        android:hint="Introduzca su usuario"
-        android:inputType="textPersonName"
-        android:maxLength="20"
+        android:hint="Introduzca su email"
+        android:inputType="textAutoComplete"
         android:paddingStart="10dp"
         android:drawablePadding="10dp"
         android:textColor="@color/color_text_onsecondary"
@@ -73,10 +72,10 @@
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="294dp"
+        android:layout_width="match_parent"
         android:layout_height="62dp"
+        android:layout_marginHorizontal="50dp"
         android:layout_marginTop="40dp"
-        android:backgroundTint="@color/color_text_onsecondary"
         android:elevation="2dp"
         android:text="Iniciar sesión"
         android:textAllCaps="false"
@@ -89,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_user" />
 
     <Button
-        android:id="@+id/btn_login_2"
+        android:id="@+id/btn_register"
         android:layout_width="86dp"
         android:layout_height="26dp"
         android:alpha="0"
@@ -107,7 +106,8 @@
         app:layout_constraintVertical_bias="0.077" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="90dp"
+        android:gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:text="@string/registrarse"
         android:textAllCaps="false"
@@ -115,12 +115,12 @@
         android:textSize="13dp"
         android:textStyle="bold"
         android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_login_2"
-        app:layout_constraintEnd_toEndOf="@+id/btn_login_2"
-        app:layout_constraintStart_toStartOf="@+id/btn_login_2"
-        app:layout_constraintTop_toTopOf="@+id/btn_login_2" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_register"
+        app:layout_constraintEnd_toEndOf="@+id/btn_register"
+        app:layout_constraintStart_toStartOf="@+id/btn_register"
+        app:layout_constraintTop_toTopOf="@+id/btn_register" />
 
-    <ImageButton
+    <!-- <ImageButton
         android:id="@+id/imageButton8"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -132,36 +132,38 @@
         app:layout_constraintStart_toEndOf="@+id/imageButton3"
         app:layout_constraintTop_toTopOf="@+id/imageButton3"
         app:srcCompat="@drawable/ic_instagram"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck" />  -->
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/imgBtnFacebook"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="#00FFFFFF"
+        android:backgroundTint="@color/color_transparente"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login_2"
+        app:layout_constraintStart_toEndOf="@+id/img_btn_google"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register"
         app:layout_constraintVertical_bias="0.919"
         app:srcCompat="@drawable/ic_facebook"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton9"
+        android:id="@+id/img_btn_google"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:backgroundTint="#00FFFFFF"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/color_transparente"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtnFacebook"
         app:layout_constraintHorizontal_bias="0.758"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton3"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_twitter"
+        app:layout_constraintTop_toTopOf="@+id/imgBtnFacebook"
+        app:srcCompat="@drawable/ic_google1"
+        app:tint="@color/color_text_onprimary"
         tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

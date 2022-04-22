@@ -8,10 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.app_investigarte.R
-import kotlinx.android.synthetic.main.fragment_sub_regions.view.*
+import com.app_investigarte.databinding.FragmentSubRegionsBinding
 
 //es una función que se esta implementando nueva por ahora ignorar esta clase
 class SubRegionsFragment : Fragment() {
+
+    private var _binding: FragmentSubRegionsBinding? = null
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +27,9 @@ class SubRegionsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        var root = inflater.inflate(R.layout.fragment_sub_regions, container, false)
+        _binding = FragmentSubRegionsBinding.inflate(inflater, container, false)
+        var view = binding.root
+        var root = binding
 
         root.cardViecardViewVerAlertas.setOnClickListener() {
          /*   val intent = Intent(activity, AlertasActivity::class.java)
@@ -48,7 +54,12 @@ class SubRegionsFragment : Fragment() {
             startActivity(intent)  */
             Toast.makeText(context, "new Activity", Toast.LENGTH_SHORT).show()
         }
-        return root
+
+        return view
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
