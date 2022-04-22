@@ -2,6 +2,8 @@ package com.app_investigarte
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
@@ -42,7 +44,7 @@ class RegisterActivity : AppCompatActivity() {
             val formatter = SimpleDateFormat("dd/MM/yyyy")
             val calendar = Calendar.getInstance()
             calendar.timeInMillis = (datePicker.selection?.plus(100000000)!!)
-            binding.txtDate.setText(formatter.format(calendar.timeInMillis))
+            binding.txtDate.text = formatter.format(calendar.timeInMillis)
         }
         binding.btnRegister.setOnClickListener {
             emptyData = 0
@@ -70,17 +72,17 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    fun View.hideKeyboard() {
+    private fun View.hideKeyboard() {
         val inputManager =
             this.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputManager.hideSoftInputFromWindow(windowToken, 0)
     }
 
-    fun showDatePicker(datePicker: MaterialDatePicker<Long>) {
+    private fun showDatePicker(datePicker: MaterialDatePicker<Long>) {
         datePicker.show(supportFragmentManager, "tag")
     }
 
-    fun validacionCamposVacidos() {
+    private fun validacionCamposVacidos() {
 
         with(binding) {
             //validacion de la identificacion
@@ -133,7 +135,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    fun clearDataEdt() {
+    private fun clearDataEdt() {
         with(binding) {
             edtCorreo.setText("")
             edtName1.setText("")
@@ -143,15 +145,15 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    fun AlertRegistroexitoso() {
+    private fun AlertRegistroexitoso(email:String, name:String) {
         MaterialAlertDialogBuilder(this)
             .setTitle("Felicidades")
             .setMessage("El registro del nuevo jugador a sido exitoso.")
-            .setPositiveButton("Aceptar") { dialog, which -> }
+            .setPositiveButton("Aceptar") { dialog, which -> showWelcome(email,name,ProviderType.BASIC)}
             .show()
     }
 
-    fun AlertRegistroUserExiste() {
+    private fun AlertRegistroUserExiste() {
         MaterialAlertDialogBuilder(this)
             .setTitle("Error")
             .setMessage("El Usurio ingresado ya esta registrado.")
@@ -159,7 +161,7 @@ class RegisterActivity : AppCompatActivity() {
             .show()
     }
 
-    fun registerUser() {
+    private fun registerUser() {
 
         val databaseAcces: DatabaseAccess = DatabaseAccess.getInstance(this)
         databaseAcces.open()
@@ -184,7 +186,7 @@ class RegisterActivity : AppCompatActivity() {
                 if (emailexiste[0].toInt() == 0) {
                     databaseAcces.addUser(id, email, name, phone, date)
                     clearDataEdt()
-                    AlertRegistroexitoso()
+                    AlertRegistroexitoso(email,name)
                 } else {
                     //el usuario ya existe en la base de datos
                     AlertRegistroUserExiste()
@@ -200,6 +202,19 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
         databaseAcces.close()
+    }
+
+    private fun showWelcome(email: String, name: String, provider: ProviderType) {
+        //Guardado de datos
+        val prefs: SharedPreferences.Editor =
+            getSharedPreferences(getString(R.string.PREFERENS), Context.MODE_PRIVATE).edit()
+        prefs.putString("email", email)
+        prefs.putString("provider", provider.name)
+        prefs.putString("name", name)
+        prefs.apply()
+
+        startActivity(Intent(this, WelcomeActivity::class.java))
+        super.finish()
     }
 
 }
