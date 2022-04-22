@@ -121,13 +121,16 @@ public class DatabaseAccess {
         return informacion;
     }
 
-    public int getUserCorreoExiste(String email){
-        c = db.rawQuery("select count(*) from Users where  email= '"+email+"'",null);
-        int cantidad = 0;
-        while (c.moveToNext()){
-            cantidad = c.getInt(0);
+    public String[] getUserCorreoExiste(String email){
+        //c = db.rawQuery("select count(*) , name from Users where  email= 'esteban.ea145@gmail.com'",null);
+
+        c = db.rawQuery("select count(*) , name from Users where  email= '"+email+"'",null);
+        String[] informacion = new String[2];
+        for (int i = 0; i < 2; i++) {
+            c.moveToFirst();
+            informacion[i] = c.getString(i);
         }
-        return cantidad;
+        return informacion;
     }
 
     public int getUserExistencia(long id){
@@ -138,6 +141,7 @@ public class DatabaseAccess {
         }
         return cantidad;
     }
+
 
     public void addUser(String id, String email, String name, String phone_number, String date_user){
         //INSERT INTO Users  (id, password , email , name  , phone_number, image, date_user) values (1017272663, 12345678 , "esteban.ea145@gmail.com", "John Esteban", 3215801523, null, "25/06/1999");

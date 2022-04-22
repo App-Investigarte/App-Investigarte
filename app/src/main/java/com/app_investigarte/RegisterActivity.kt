@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.PatternsCompat
 import com.app_investigarte.database.DatabaseAccess
@@ -179,8 +180,8 @@ class RegisterActivity : AppCompatActivity() {
 
             val userExiste: Int = databaseAcces.getUserExistencia(id.toLong())
             if (userExiste == 0) {
-                val emailexiste: Int = databaseAcces.getUserCorreoExiste(email)
-                if (emailexiste == 0) {
+                val emailexiste = databaseAcces.getUserCorreoExiste(email)
+                if (emailexiste[0].toInt() == 0) {
                     databaseAcces.addUser(id, email, name, phone, date)
                     clearDataEdt()
                     AlertRegistroexitoso()

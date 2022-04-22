@@ -35,10 +35,6 @@
             android:exported="true"
             android:theme="@style/Theme.Background_welcome" />
         <activity
-            android:name=".WelcomeActivity22"
-            android:exported="true"
-            android:theme="@style/Theme.Background_welcome" />
-        <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
             android:theme="@style/Theme.SplashScreen" >

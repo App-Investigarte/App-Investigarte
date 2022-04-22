@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.app_investigarte.database.DatabaseAccess
 import com.app_investigarte.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -40,7 +41,6 @@ class LoginActivity : AppCompatActivity() {
             login()
         }
 
-
         //with(){
         binding.imgBtnGoogle?.setOnClickListener {
             loginGoogle()
@@ -52,20 +52,45 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    fun login() {
+    private fun login() {
         val email = binding.edtUser?.text.toString()
-        Toast.makeText(this, "hola $email", Toast.LENGTH_SHORT).show()
         if (TextUtils.isEmpty(email)) {
             showAlerVerificacion()
             //ponemos el foco en el editex de user
             binding.edtUser?.requestFocus()
         } else {
-            showWelcome(email, ProviderType.BASIC)
+            if (validacionUser(email)) {
+                showWelcome(email, ProviderType.BASIC)
+            } else {
+                showAlert()
+            }
         }
     }
 
 
-    fun loginGoogle() {
+    private fun validacionUser(email: String): Boolean {
+
+        val databaseAcces: DatabaseAccess = DatabaseAccess.getInstance(this)
+        databaseAcces.open()
+
+        val userExiste = databaseAcces.getUserCorreoExiste(email)
+
+        databaseAcces.close()
+
+        //recupero el nombre del usuario
+        val prefs2: SharedPreferences.Editor = getSharedPreferences(getString(R.string.PREFERENS), Context.MODE_PRIVATE).edit()
+        prefs2.putString("name", userExiste[1])
+        prefs2.apply()
+
+        if (userExiste[0].toInt() > 0) {
+            return true
+        }
+        return false
+
+    }
+
+
+    private fun loginGoogle() {
         //configuracion
         val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build()

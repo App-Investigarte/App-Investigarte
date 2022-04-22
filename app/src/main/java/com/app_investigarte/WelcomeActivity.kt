@@ -21,8 +21,10 @@ class WelcomeActivity : AppCompatActivity() {
 
         val pref = getSharedPreferences(getString(R.string.PREFERENS), MODE_PRIVATE)
         val email = pref.getString("email","")
+        val name = pref.getString("name", "")
 
-        binding.txtusername.setText(email)
+        binding.txtusername.text = name
+
 
         //pasar de activity al precionar el boton.
         binding.btnStart.setOnClickListener { view: View? ->
