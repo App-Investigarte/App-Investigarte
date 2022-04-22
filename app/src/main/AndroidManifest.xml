@@ -12,10 +12,9 @@
         android:theme="@style/Theme.AppInvestigarte" >
         <activity
             android:name=".WelcomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ListadoArtefactos.WelcomeActivitykt"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Background_welcome"/>
+
         <activity
             android:name=".RegisterActivity"
             android:exported="false"
