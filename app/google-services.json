@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "784640476703-ocna3hvr1er1f4516mvoc5489hbggr6j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app_investigarte",
+            "certificate_hash": "e145e9321dd3f2b2f25ad8a7c636a698787d3c09"
+          }
+        },
+        {
           "client_id": "784640476703-gv8opn1a0enesiifr63rvpfaf36ud8l0.apps.googleusercontent.com",
           "client_type": 3
         }
