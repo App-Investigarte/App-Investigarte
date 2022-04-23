@@ -169,7 +169,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //Urabá Antioqueño
         //apartado
         int colorUraba = ContextCompat.getColor(getContext(), R.color.color_uraba);
-        BitmapDescriptor iconUraba = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_flor, colorUraba, 80);
+        BitmapDescriptor iconUraba = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_uraba, colorUraba, 80);
 
         LatLng urabaAntioquenio = new LatLng(7.883, -76.633);
         mMap.addMarker(new MarkerOptions()
@@ -183,7 +183,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //Suroeste Antioqueño
         //Jeríco
         int colorSuroeste = ContextCompat.getColor(getContext(), R.color.color_suroeste);
-        BitmapDescriptor iconSuroeste = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_carriel, colorSuroeste, 80);
+        BitmapDescriptor iconSuroeste = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_suroeste_antioqueno, colorSuroeste, 80);
 
         LatLng Suroeste = new LatLng(6, -75.883);
         mMap.addMarker(new MarkerOptions().position(Suroeste)
@@ -195,7 +195,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //OCCIDENTE ANTIOQUEÑO
         //Dabeiba
         int colorOccidente = ContextCompat.getColor(getContext(), R.color.color_occidente);
-        BitmapDescriptor iconOccidente = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_sombrero, colorOccidente, 80);
+        BitmapDescriptor iconOccidente = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_occidente_antioqueno, colorOccidente, 80);
 
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.8, -76.15))
@@ -206,7 +206,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //NORTE ANTIOQUEÑO
         //Ituango
         int colorNorte = ContextCompat.getColor(getContext(), R.color.color_norte);
-        BitmapDescriptor iconNorte = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_ruana, colorNorte, 80);
+        BitmapDescriptor iconNorte = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_norte_antioqueno, colorNorte, 80);
 
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.833, -75.55))
@@ -217,7 +217,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //VALLE DE ABURRÁ
         //Medellin
         int colorValleAburra = ContextCompat.getColor(getContext(), R.color.color_valle_aburra);
-        BitmapDescriptor iconValleAburra = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_flor, colorValleAburra, 80);
+        BitmapDescriptor iconValleAburra = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_valle_de_aburra, colorValleAburra, 80);
 
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.217, -75.567))
@@ -229,7 +229,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //SubReguiones
         //BAJO CAUCA
         int colorBajoCauca= ContextCompat.getColor(getContext(), R.color.color_bajo_cauca);
-        BitmapDescriptor iconBajoCauca = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_sombrero, colorBajoCauca, 80);
+        BitmapDescriptor iconBajoCauca = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_bajo_cauca, colorBajoCauca, 80);
 
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(7.583, -75.017))
@@ -240,7 +240,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //MAGDALENA MEDIO
         //puerto berrio
         int colorMagdalenaMedio= ContextCompat.getColor(getContext(), R.color.color_magdalena_medio);
-        BitmapDescriptor iconMagdalenaMedio = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_ruana, colorMagdalenaMedio, 80);
+        BitmapDescriptor iconMagdalenaMedio = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_magdalena_medio, colorMagdalenaMedio, 80);
 
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.49998, -74.5525))
@@ -252,7 +252,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //NORDESTE ANTIOQUEÑO
         //Remedios
         int colorNordeste= ContextCompat.getColor(getContext(), R.color.color_nordeste);
-        BitmapDescriptor iconNordeste = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_carriel, colorNordeste, 80);
+        BitmapDescriptor iconNordeste = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_nordeste_antioqueno, colorNordeste, 80);
 
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.9595, -74.894))
@@ -263,7 +263,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         //ORIENTE ANTIOQUEÑO
         //Guatapé
         int colorOriente= ContextCompat.getColor(getContext(), R.color.color_oriente);
-        BitmapDescriptor iconOriente = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_flor, colorOriente, 80);
+        BitmapDescriptor iconOriente = CreateIcon.INSTANCE.vectorToBitmap(getContext(), R.drawable.ic_oriente_antioqueno, colorOriente, 80);
 
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.033, -75.15))
