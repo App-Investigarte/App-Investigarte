@@ -30,7 +30,7 @@ object CreateIcon {
         )
         val canvas = Canvas(bitmap)
         vectorDrawable.setBounds(0, 0, canvas.width, canvas.height)
-        DrawableCompat.setTint(vectorDrawable, color)
+//        DrawableCompat.setTint(vectorDrawable, color)
         vectorDrawable.draw(canvas)
         return BitmapDescriptorFactory.fromBitmap(bitmap)
     }
