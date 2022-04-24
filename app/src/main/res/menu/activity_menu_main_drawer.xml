@@ -26,18 +26,13 @@
                 android:title="Configuración" />
 
             <item
-                android:id="@+id/nav_info"
-                android:icon="@android:drawable/ic_dialog_info"
-                android:title="información" />
-
-            <item
                 android:id="@+id/nav_salir"
                 android:icon="@drawable/ic_exit_to_app_24"
                 android:title="salir" />
         </menu>
     </item>
 
-    <item  android:title="Version: 1.0.0">
+    <item  android:title="Version: 1.0.2">
         <menu>
             <item android:title=""
                 android:enabled="false"/>

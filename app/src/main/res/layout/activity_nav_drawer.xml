@@ -22,54 +22,69 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-<com.google.android.material.navigation.NavigationView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:headerLayout="@layout/nav_header_main"
-    app:drawerLayoutCornerSize="30dp"
-    android:layout_gravity="start"
-    app:menu="@menu/activity_menu_main_drawer">
-
-    <LinearLayout
+    <com.google.android.material.navigation.NavigationView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <!-- Incluimos el Menu de navegacion lateral -->
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nav_view"
+        android:layout_gravity="start">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:drawerLayoutCornerSize="30dp"
-            app:headerLayout="@layout/nav_header_main"
-            app:menu="@menu/activity_menu_main_drawer">
-        </com.google.android.material.navigation.NavigationView>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="100">
+            <!-- Incluimos el Menu de navegacion lateral -->
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="82"
+                android:layout_gravity="start"
+                app:elevation="0dp"
+                app:headerLayout="@layout/nav_header_main"
+                app:menu="@menu/activity_menu_main_drawer" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginTop="690dp"
-            android:layout_gravity="bottom"
-            android:src="@drawable/ic_minciencias">
-        </ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="18"
+                android:orientation="vertical"
+                android:gravity="bottom"
+                android:layout_gravity="bottom">
 
-        <ImageView
-            android:layout_width="251dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="630dp"
-            android:src="@drawable/icono_lila">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
 
-        </ImageView>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="65dp"
+                        android:contentDescription="TODO"
+                        android:paddingStart="-80dp"
+                        android:paddingEnd="-235dp"
+                        android:src="@drawable/icono_lila" />
 
-        <ImageView
-            android:layout_width="251dp"
-            android:layout_height="62dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="630dp"
-            android:src="@drawable/ic_iupb"></ImageView>
-    </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="62dp"
+                        android:contentDescription="TODO"
+                        android:paddingStart="-212dp"
+                        android:paddingEnd="-220dp"
+                        android:src="@drawable/ic_iupb" />
+                </LinearLayout>
 
-</com.google.android.material.navigation.NavigationView>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/ic_minciencias" />
 
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.navigation.NavigationView>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

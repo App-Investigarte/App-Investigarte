@@ -73,7 +73,6 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         val itemMapa = (R.id.nav_map)
         val itemArtifact = (R.id.nav_artifact)
         val itemConfig = (R.id.nav_config)
-        val itemInfo = (R.id.nav_info)
         val itemExit = (R.id.nav_salir)
 
         // Según el id del item presionado realizamos su acción correspondiente
@@ -81,7 +80,6 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             itemMapa -> showFragmentMap()  // Mostramos el Fragment
             itemArtifact -> showAllartifat()   // Pasamos a al activity para mostrar todos los artefactos
             itemConfig -> Toast.makeText(this, "item Config", Toast.LENGTH_SHORT).show()
-            itemInfo -> Toast.makeText(this, "item Info", Toast.LENGTH_SHORT).show()
             itemExit -> exitActivity()       // Finalizamos la aplicación y deslogeamos al usuario
         }
         drawer.closeDrawer(GravityCompat.START)
