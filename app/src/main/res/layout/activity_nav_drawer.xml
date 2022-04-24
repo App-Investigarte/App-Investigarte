@@ -39,8 +39,8 @@
             android:id="@+id/nav_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:headerLayout="@layout/nav_header_main"
             app:drawerLayoutCornerSize="30dp"
+            app:headerLayout="@layout/nav_header_main"
             app:menu="@menu/activity_menu_main_drawer">
         </com.google.android.material.navigation.NavigationView>
 
@@ -48,6 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:layout_marginTop="690dp"
+            android:layout_gravity="bottom"
             android:src="@drawable/ic_minciencias">
         </ImageView>
 
@@ -56,14 +57,15 @@
             android:layout_height="62dp"
             android:layout_marginTop="630dp"
             android:src="@drawable/icono_lila">
+
         </ImageView>
+
         <ImageView
             android:layout_width="251dp"
             android:layout_height="62dp"
-            android:layout_marginTop="630dp"
             android:layout_marginLeft="80dp"
-            android:src="@drawable/ic_iupb">
-        </ImageView>
+            android:layout_marginTop="630dp"
+            android:src="@drawable/ic_iupb"></ImageView>
     </LinearLayout>
 
 </com.google.android.material.navigation.NavigationView>

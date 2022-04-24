@@ -34,8 +34,6 @@
                 android:id="@+id/nav_salir"
                 android:icon="@drawable/ic_exit_to_app_24"
                 android:title="salir" />
-            <item android:title=""
-                android:enabled="false"/>
         </menu>
     </item>
 
