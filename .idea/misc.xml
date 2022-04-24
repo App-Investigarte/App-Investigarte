@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.221875" />
         <entry key="..\:/Aprendiendo/App-Investigarte/app/src/main/res/drawable-v24/box.xml" value="0.3828125" />
         <entry key="..\:/Aprendiendo/App-Investigarte/app/src/main/res/drawable-v24/circle.xml" value="0.3828125" />
         <entry key="..\:/Aprendiendo/App-Investigarte/app/src/main/res/drawable/splash_screen_background.xml" value="0.3828125" />
@@ -56,6 +57,7 @@
         <entry key="app/src/main/res/drawable/ic_lock_24.xml" value="0.129" />
         <entry key="app/src/main/res/drawable/ic_logo.xml" value="0.129" />
         <entry key="app/src/main/res/drawable/ic_pin_drop_24.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/prueba.xml" value="0.202" />
         <entry key="app/src/main/res/drawable/splash_activity_background.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/splash_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/splash_screen_background.xml" value="0.25" />
@@ -64,6 +66,8 @@
         <entry key="app/src/main/res/drawable/style_btn_2.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/style_btn_3.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/style_btn_4.xml" value="0.131" />
+        <entry key="app/src/main/res/drawable/style_facebook.xml" value="0.142" />
+        <entry key="app/src/main/res/drawable/style_google.xml" value="0.142" />
         <entry key="app/src/main/res/drawable/svg_splashscreen.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/svg_splashscreen_2.xml" value="0.25" />
         <entry key="app/src/main/res/layout-land-night/activity_descripcion.xml" value="0.18" />

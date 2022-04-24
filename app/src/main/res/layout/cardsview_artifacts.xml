@@ -14,6 +14,7 @@
             android:id="@+id/cardvw_artifact1"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             app:cardBackgroundColor="@color/color_text_onprimary"
             app:cardCornerRadius="100dp">
 

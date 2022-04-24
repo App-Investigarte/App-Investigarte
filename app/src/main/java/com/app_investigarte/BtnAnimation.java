@@ -25,7 +25,7 @@ public class BtnAnimation extends androidx.appcompat.widget.AppCompatButton impl
     public boolean onTouch(View view, MotionEvent motionEvent) {
         switch (motionEvent.getAction()) {
             case MotionEvent.ACTION_DOWN: {
-                view.setAlpha(0.8f);
+                view.setAlpha(0.7f);
                 break;
             }
             case MotionEvent.ACTION_CANCEL:

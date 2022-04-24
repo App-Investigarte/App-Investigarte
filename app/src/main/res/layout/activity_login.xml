@@ -134,10 +134,10 @@
         app:srcCompat="@drawable/ic_instagram"
         tools:ignore="SpeakableTextPresentCheck" />  -->
 
-    <com.app_investigarte.BtnAnimation
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/imgBtnFacebook"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -145,16 +145,16 @@
         app:layout_constraintStart_toEndOf="@+id/img_btn_google"
         app:layout_constraintTop_toBottomOf="@+id/btn_register"
         app:layout_constraintVertical_bias="0.919"
-        android:background="@drawable/ic_facebook"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:background="@drawable/style_facebook"
+        tools:ignore="SpeakableTextPresentCheck"/>
 
-    <com.app_investigarte.BtnAnimation
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/img_btn_google"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="60dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/ic_google1"
+        android:background="@drawable/style_google"
         android:backgroundTint="@color/color_text_onprimary"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -163,5 +163,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imgBtnFacebook"
         app:layout_constraintVertical_bias="0.0"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
