@@ -140,7 +140,7 @@ class RegisterActivity : AppCompatActivity() {
             edtCorreo.setText("")
             edtName1.setText("")
             edtId.setText("")
-            edtTelefono.text?.clear()
+            //edtTelefono.text?.clear()
             txtDate.setText("")
         }
     }
@@ -171,10 +171,10 @@ class RegisterActivity : AppCompatActivity() {
             val name: String = edtName1.text.toString()
             var phone = "0"
             var date = " "
-
+            /*
             if (edtTelefono.text?.isNotEmpty()!!) {
                 phone = edtTelefono.text.toString()
-            }
+            }*/
 
             if (txtDate.text.isNotEmpty()) {
                 date = txtDate.text.toString()

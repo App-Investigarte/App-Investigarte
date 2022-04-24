@@ -566,7 +566,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
         //de acuerdo a la subregion seleccionada se abre la activity de lista de artefactos y se muestra los artefactos de esa region.
         if(subregion != null){
-            Toast.makeText(getContext(),""+subregion, Toast.LENGTH_SHORT).show();
             intent = new Intent(getContext(), ListadoArtefactosActivity.class);
             intent.putExtra("subregion",subregion);
             startActivity(intent);
