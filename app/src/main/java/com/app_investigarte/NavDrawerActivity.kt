@@ -15,6 +15,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.app_investigarte.ListadoArtefactos.ListadoArtefactosActivity
 import com.app_investigarte.fragments.Map.MapFragment
+import com.app_investigarte.fragments.SubRegionsFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 
@@ -72,6 +73,7 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val itemMapa = (R.id.nav_map)
         val itemArtifact = (R.id.nav_artifact)
+        val itemSubregions = (R.id.nav_sub_region)
         val itemConfig = (R.id.nav_config)
         val itemExit = (R.id.nav_salir)
 
@@ -79,6 +81,7 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         when (item.itemId) {
             itemMapa -> showFragmentMap()  // Mostramos el Fragment
             itemArtifact -> showAllartifat()   // Pasamos a al activity para mostrar todos los artefactos
+            itemSubregions -> showAllSubregions()
             itemConfig -> Toast.makeText(this, "item Config", Toast.LENGTH_SHORT).show()
             itemExit -> exit()       // Finalizamos la aplicación y deslogeamos al usuario
         }
@@ -86,6 +89,16 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         // El método retorna un Buleano asi que devolvemos un verdadero indicado de que realizo la operación exitosamente
         return true
+    }
+
+    private fun showAllSubregions() {
+        //Reemplazamos en el Fragment Principal por el Fragment de las subregiones
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container_fragment,
+                SubRegionsFragment()
+            )
+            .setReorderingAllowed(true).addToBackStack(null)
+            .commit()
     }
 
     // Metodos del Menu lateral generados automáticamente

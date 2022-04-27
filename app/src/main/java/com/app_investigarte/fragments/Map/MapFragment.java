@@ -2,11 +2,9 @@ package com.app_investigarte.fragments.Map;
 
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -28,7 +26,6 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 
 
@@ -267,7 +264,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(6.033, -75.15))
-                .title(getString(R.string.subregion_orinete))
+                .title(getString(R.string.subregion_oriente))
                 .icon(iconOriente)
                 .zIndex(1.0f)).setTag(6);
         /* ---------------------------  ------------------------  ------------------------**/

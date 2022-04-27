@@ -2,12 +2,12 @@ package com.app_investigarte.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.app_investigarte.R
+import androidx.fragment.app.Fragment
+import com.app_investigarte.ListadoArtefactos.ListadoArtefactosActivity
 import com.app_investigarte.databinding.FragmentSubRegionsBinding
 
 //es una función que se esta implementando nueva por ahora ignorar esta clase
@@ -31,29 +31,23 @@ class SubRegionsFragment : Fragment() {
         var view = binding.root
         var root = binding
 
-        root.cardViecardViewVerAlertas.setOnClickListener() {
-         /*   val intent = Intent(activity, AlertasActivity::class.java)
-            startActivity(intent)*/
-            Toast.makeText(context, "new Activity", Toast.LENGTH_SHORT).show()
-        }
+        root.cvUraba.setOnClickListener() { showSubregions(8)}
 
-        root.cardViewCalendarioComida.setOnClickListener() {
-           /* val intent = Intent(activity, CalendarioActivity::class.java)
-            startActivity(intent)*/
-            Toast.makeText(context, "new Activity", Toast.LENGTH_SHORT).show()
-        }
+        root.cvOccidente.setOnClickListener() { showSubregions(5)}
 
-        root.cardViewBaseDatos.setOnClickListener() {
-            /*val intent = Intent(activity, BaseDatosActivity::class.java)
-            startActivity(intent)*/
-            Toast.makeText(context, "new Activity", Toast.LENGTH_SHORT).show()
-        }
+        root.cvSuroeste.setOnClickListener() { showSubregions(7)}
 
-        root.cardViewEscanearProducto.setOnClickListener() {
-           /* val intent = Intent(activity, BarrasActivity::class.java)
-            startActivity(intent)  */
-            Toast.makeText(context, "new Activity", Toast.LENGTH_SHORT).show()
-        }
+        root.cvNorte.setOnClickListener() { showSubregions(4)}
+
+        root.cvValleAburra.setOnClickListener() { showSubregions(9)}
+
+        root.cvBajoCauca.setOnClickListener() { showSubregions(1)}
+
+        root.cvMagdalenaMedio.setOnClickListener() { showSubregions(2)}
+
+        root.cvNordeste.setOnClickListener() { showSubregions(3)}
+
+        root.cvOriente.setOnClickListener() { showSubregions(6)}
 
         return view
     }
@@ -61,5 +55,12 @@ class SubRegionsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun showSubregions(subregion: Int){
+
+        val intent = Intent(context, ListadoArtefactosActivity::class.java)
+        intent.putExtra("subregion", subregion)
+        startActivity(intent)
     }
 }
