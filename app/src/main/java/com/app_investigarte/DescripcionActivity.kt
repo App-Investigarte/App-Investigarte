@@ -46,7 +46,11 @@ class DescripcionActivity : AppCompatActivity() {
             txtMunicipioArtifact.text = informacionArtefacto[4]
             txtSupReguionArtifact.text = informacionArtefacto[5]
             txtDepartamentoArtifact.text = (informacionArtefacto[6])
-            txtDescriptionArtifact.text = (informacionArtefacto[3] + "/n" + informacionArtefacto[1] + "/n" + informacionArtefacto[1])
+            txtCommunityArtifact!!.text = informacionArtefacto[8]
+            txtArtisanClassificationArtifact!!.text = informacionArtefacto[9]
+            txtClothingCategoryArtifact!!.text = informacionArtefacto[10]
+            txtPatrimonialCategoryArtifact!!.text = informacionArtefacto[11]
+            txtDescriptionArtifact.text = informacionArtefacto[3]
         }
     }
 }
