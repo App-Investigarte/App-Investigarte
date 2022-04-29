@@ -87,7 +87,11 @@ public class RecyVWAdapter extends RecyclerView.Adapter<RecyVWAdapter.ViewHolder
         //ejecuta la activity de la descripción de cada artefacto
         public void startDescription(View view){
             //Se controla el evento de click en la vista en este caso el CardView
+
             view.setOnClickListener( v -> {
+                //reducionmos la opacida como si el elemento ya uviera sido selecionado
+
+                //view.setAlpha(0.7f);
                 intent=new Intent(view.getContext(), DescripcionActivity.class);
                 intent.putExtra("id",id);
                 view.getContext().startActivity(intent);

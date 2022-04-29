@@ -102,14 +102,18 @@ public class DatabaseAccess {
     //consulta informacion Artefacto
     public String[] getDescription(int id) {
 
-        c = db.rawQuery(" SELECT a.id, a.name, a.image, a.description, m.name, s.name, d.name, s.id " +
-                " FROM Artifact a " +
-                " INNER JOIN Municipality m on a.id_municipality = m.id " +
-                " INNER JOIN Subregions s  on m.id_subregions = s.id " +
-                " INNER JOIN Departmen d on s.id_department = d.id " +
-                " WHERE a.id = "+id+";",null);
+        c = db.rawQuery("SELECT a.id, a.name, a.image, a.description, m.name, s.name, d.name, s.id, c.name, ac.name, cc.name, pc.name "+
+        "FROM Artifact a "+
+        "INNER JOIN Municipality m on a.id_municipality = m.id "+
+        "INNER JOIN Subregions s  on m.id_subregions = s.id " +
+        "INNER JOIN Departmen d on s.id_department = d.id " +
+        "INNER JOIN Community c on a.id_community = c.id " +
+        "INNER JOIN Artisan_classification ac on a.id_artisan_classification  = ac.id " +
+        "INNER JOIN Clothing_category cc on a.id_clothing_category  = cc.id " +
+        "INNER JOIN Patrimonial_category pc on a.id_patrimonial_category  = pc.id " +
+        "WHERE a.id =  "+id+";",null);
 
-        int columnas=8;
+        int columnas=12;
 
         String informacion[]= new String[columnas];
 

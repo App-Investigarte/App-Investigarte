@@ -8,12 +8,11 @@
     tools:context=".NavDrawerActivity"
     tools:openDrawer="start">
 
-
-
     <!-- agremamos un Fragmen que sera el que contega los
     fragmentos como el mapa o listado de artefactos -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/container_fragment"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:foregroundGravity="top" />
@@ -24,14 +23,69 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-
-    <!-- Incluimos el Menu de navegacion lateral -->
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_menu_main_drawer" />
+        android:layout_gravity="start">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="100">
+            <!-- Incluimos el Menu de navegacion lateral -->
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="82"
+                android:layout_gravity="start"
+                app:elevation="0dp"
+                app:headerLayout="@layout/nav_header_main"
+                app:menu="@menu/activity_menu_main_drawer" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="18"
+                android:orientation="vertical"
+                android:gravity="bottom"
+                android:layout_gravity="bottom">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="65dp"
+                        android:contentDescription="TODO"
+                        android:paddingStart="-80dp"
+                        android:paddingEnd="-235dp"
+                        android:src="@drawable/icono_lila" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="62dp"
+                        android:contentDescription="TODO"
+                        android:paddingStart="-212dp"
+                        android:paddingEnd="-220dp"
+                        android:src="@drawable/ic_iupb" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/ic_minciencias" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -15,6 +15,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.app_investigarte.ListadoArtefactos.ListadoArtefactosActivity
 import com.app_investigarte.fragments.Map.MapFragment
+import com.app_investigarte.fragments.SubRegionsFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 
@@ -72,22 +73,32 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val itemMapa = (R.id.nav_map)
         val itemArtifact = (R.id.nav_artifact)
+        val itemSubregions = (R.id.nav_sub_region)
         val itemConfig = (R.id.nav_config)
-        val itemInfo = (R.id.nav_info)
         val itemExit = (R.id.nav_salir)
 
         // Según el id del item presionado realizamos su acción correspondiente
         when (item.itemId) {
             itemMapa -> showFragmentMap()  // Mostramos el Fragment
             itemArtifact -> showAllartifat()   // Pasamos a al activity para mostrar todos los artefactos
+            itemSubregions -> showAllSubregions()
             itemConfig -> Toast.makeText(this, "item Config", Toast.LENGTH_SHORT).show()
-            itemInfo -> Toast.makeText(this, "item Info", Toast.LENGTH_SHORT).show()
-            itemExit -> exitActivity()       // Finalizamos la aplicación y deslogeamos al usuario
+            itemExit -> exit()       // Finalizamos la aplicación y deslogeamos al usuario
         }
         drawer.closeDrawer(GravityCompat.START)
 
         // El método retorna un Buleano asi que devolvemos un verdadero indicado de que realizo la operación exitosamente
         return true
+    }
+
+    private fun showAllSubregions() {
+        //Reemplazamos en el Fragment Principal por el Fragment de las subregiones
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container_fragment,
+                SubRegionsFragment()
+            )
+            .setReorderingAllowed(true).addToBackStack(null)
+            .commit()
     }
 
     // Metodos del Menu lateral generados automáticamente
@@ -118,9 +129,6 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     //Función para cerrar la app y deslogear el usuario.
     private fun exitActivity() {
 
-        //finalizar activity y removerla de la lista de tareas.
-        finishAndRemoveTask()
-
         //Borrar datos del Usuario
         val prefs: SharedPreferences.Editor = getSharedPreferences(
             getString(R.string.PREFERENS),
@@ -128,6 +136,9 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         ).edit()
         prefs.clear()
         prefs.apply()
+
+        //finalizar activity y removerla de la lista de tareas.
+        finishAndRemoveTask()
     }
 
     // Función Para iniciar la activity que muestra todos los artefactos.
@@ -152,7 +163,6 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     fun close() {
         val title = getString(R.string.title_exit_alert)
         val message = getString(R.string.message_exit_alert)
-        getString(R.string.negative_exit_alert)
         val btnPositive = getString(R.string.positive_exit_alert)
         MaterialAlertDialogBuilder(this)
             .setTitle(title)
@@ -160,6 +170,23 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             .setPositiveButton(
                 btnPositive
             ) { dialogInterface: DialogInterface?, i: Int -> finishAndRemoveTask() }
+            .show()
+    }
+
+    fun exit() {
+        val title = getString(R.string.title_exit_alert)
+        val message = getString(R.string.message_exit_alert) + "la secion iniciado serra cerada por completo "
+        val btnPositive = getString(R.string.positive_exit_alert)
+        val btnNegativo = getString(R.string.negative_exit_alert)
+        MaterialAlertDialogBuilder(this)
+            .setTitle(title)
+            .setMessage(message)
+            .setNegativeButton(
+                btnNegativo
+            ){dialogInterface: DialogInterface?, I: Int -> }
+            .setPositiveButton(
+                btnPositive
+            ) { dialogInterface: DialogInterface?, i: Int -> exitActivity() }
             .show()
     }
 

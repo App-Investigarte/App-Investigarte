@@ -32,6 +32,8 @@
         <!-- Customize your theme here. -->
         <!-- Fuente de texto familia Helvetica. -->
         <!-- Customize your theme here. -->
+
+        <item name="android:colorControlHighlight">@color/color_primary</item>
         <item name="android:windowBackground">@color/color_background_dark</item>
         <item name="android:fontFamily">@font/helvetica_boldoblique</item>
 

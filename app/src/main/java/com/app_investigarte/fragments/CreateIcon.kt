@@ -15,6 +15,28 @@ object CreateIcon {
     fun vectorToBitmap(
         context: Context,
         @DrawableRes id: Int,
+        width: Int
+    ): BitmapDescriptor {
+        val vectorDrawable = ResourcesCompat.getDrawable(context.resources, id, null)
+        if (vectorDrawable == null) {
+            Log.e("BitmapHelper", "Resource not found")
+            return BitmapDescriptorFactory.defaultMarker()
+        }
+        val bitmap = Bitmap.createBitmap(
+            width,
+            width,
+            Bitmap.Config.ARGB_8888
+        )
+        val canvas = Canvas(bitmap)
+        vectorDrawable.setBounds(0, 0, canvas.width, canvas.height)
+        vectorDrawable.draw(canvas)
+        return BitmapDescriptorFactory.fromBitmap(bitmap)
+    }
+    //aplicar este metodo cuando queremos cambiar el color de la imagen
+    /*
+    fun vectorToBitmap(
+        context: Context,
+        @DrawableRes id: Int,
         @ColorInt color: Int,
         width: Int
     ): BitmapDescriptor {
@@ -34,4 +56,6 @@ object CreateIcon {
         vectorDrawable.draw(canvas)
         return BitmapDescriptorFactory.fromBitmap(bitmap)
     }
+    */
+
 }
