@@ -92,5 +92,6 @@
     <string name="municipio_sonson">Municipio de Sonsón</string>
     <string name="user_existe">El usuario ya esta registrado</string>
     <string name="correo_existe">El Correo lectronico ya esta registrado.</string>
+    <string name="todo">TODO</string>
 
 </resources>

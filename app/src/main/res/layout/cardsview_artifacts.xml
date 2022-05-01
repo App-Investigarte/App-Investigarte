@@ -12,8 +12,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardvw_artifact1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:foreground="?attr/selectableItemBackgroundBorderless"
             app:cardBackgroundColor="@color/color_text_onprimary"
             app:cardCornerRadius="100dp">
@@ -22,14 +22,13 @@
                 android:id="@+id/artifact1_imagvw"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="center"
-                app:tint="#212020">
+                android:scaleType="center">
             </ImageView>
         </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/artifact1_txtvw"
-        android:layout_width="68dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cardvw_artifact1"
         android:layout_alignStart="@+id/cardvw_artifact1"
