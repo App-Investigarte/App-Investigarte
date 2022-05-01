@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="90dp"
             app:cardBackgroundColor="@color/color_text_onprimary"
             app:cardCornerRadius="40dp"
             app:cardElevation="1dp">
@@ -29,8 +29,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="100dp">
+                android:layout_marginTop="100dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/txt_name_artefact"
@@ -41,7 +41,7 @@
                     android:text="NOMBRE"
                     android:textColor="@color/color_text_onsecondary"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <ScrollView
                     android:id="@+id/scrollView2"
@@ -241,7 +241,7 @@
                         android:id="@+id/img_artefacto_description"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                        android:foreground="?attr/selectableItemBackgroundBorderless" />
                 </androidx.cardview.widget.CardView>
             </androidx.cardview.widget.CardView>
 
