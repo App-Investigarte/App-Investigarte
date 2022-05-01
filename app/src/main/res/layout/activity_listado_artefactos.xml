@@ -20,6 +20,7 @@
         android:id="@+id/artefactos_recycleryview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingHorizontal="20dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp"/>
 </androidx.cardview.widget.CardView>

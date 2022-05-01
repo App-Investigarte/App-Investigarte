@@ -222,8 +222,8 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
                 app:cardBackgroundColor="@color/Color_darck"
                 app:cardCornerRadius="100dp"
                 app:cardElevation="0dp">
@@ -240,8 +240,7 @@
                     <ImageView
                         android:id="@+id/img_artefacto_description"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:tintMode="multiply" />
+                        android:layout_height="match_parent" />
                 </androidx.cardview.widget.CardView>
             </androidx.cardview.widget.CardView>
 

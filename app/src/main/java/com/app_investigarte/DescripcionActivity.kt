@@ -1,9 +1,9 @@
 package com.app_investigarte
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import com.app_investigarte.database.DatabaseAccess
 import com.app_investigarte.databinding.ActivityDescripcionBinding
 
@@ -41,6 +41,10 @@ class DescripcionActivity : AppCompatActivity() {
                 imgArtefactoDescription.setImageResource(R.drawable.ic_sombrero)
                 imgArtefactoDescription.scaleType = ImageView.ScaleType.CENTER_INSIDE
                 imgArtefactoDescription.setColorFilter(R.color.color_background_dark)
+            }else{
+                var img = resources.getIdentifier("@drawable/art_${informacionArtefacto[2]}", "drawable", packageName)
+                imgArtefactoDescription.setImageResource(img)
+                imgArtefactoDescription.scaleType = ImageView.ScaleType.CENTER_CROP
             }
 
             txtMunicipioArtifact.text = informacionArtefacto[4]
