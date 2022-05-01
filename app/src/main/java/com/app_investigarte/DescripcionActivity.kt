@@ -1,15 +1,21 @@
 package com.app_investigarte
 
 import android.annotation.SuppressLint
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.app_investigarte.database.DatabaseAccess
 import com.app_investigarte.databinding.ActivityDescripcionBinding
+import com.app_investigarte.databinding.ShowImgDialogBinding
+
 
 class DescripcionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDescripcionBinding
+
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,10 +47,20 @@ class DescripcionActivity : AppCompatActivity() {
                 imgArtefactoDescription.setImageResource(R.drawable.ic_sombrero)
                 imgArtefactoDescription.scaleType = ImageView.ScaleType.CENTER_INSIDE
                 imgArtefactoDescription.setColorFilter(R.color.color_background_dark)
-            }else{
-                var img = resources.getIdentifier("@drawable/art_${informacionArtefacto[2]}", "drawable", packageName)
+            } else {
+                val img = resources.getIdentifier(
+                    "@drawable/art_${informacionArtefacto[2]}",
+                    "drawable",
+                    packageName
+                )
                 imgArtefactoDescription.setImageResource(img)
                 imgArtefactoDescription.scaleType = ImageView.ScaleType.CENTER_CROP
+
+
+                binding.imgArtefactoDescription.setOnClickListener {
+                    showImgDialog(img)
+                }
+
             }
 
             txtMunicipioArtifact.text = informacionArtefacto[4]
@@ -55,6 +71,25 @@ class DescripcionActivity : AppCompatActivity() {
             txtClothingCategoryArtifact!!.text = informacionArtefacto[10]
             txtPatrimonialCategoryArtifact!!.text = informacionArtefacto[11]
             txtDescriptionArtifact.text = informacionArtefacto[3]
+        }
+    }
+
+    private fun showImgDialog(img_art: Int) {
+
+        val binding2: ShowImgDialogBinding = ShowImgDialogBinding.inflate(layoutInflater)
+
+        binding2.imgArt.setImageResource(img_art)
+
+        val dialog: Dialog = Dialog(this)
+        dialog.setContentView(binding2.root)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.show()
+
+      //  imgArtefactoDescription.scaleType = ImageView.ScaleType.CENTER_CROP
+
+        binding2.imgArt.setOnClickListener{
+            //para cerrar el dialogo
+            dialog.dismiss()
         }
     }
 }
