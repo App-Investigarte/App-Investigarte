@@ -83,6 +83,7 @@ class DescripcionActivity : AppCompatActivity() {
         val dialog: Dialog = Dialog(this)
         dialog.setContentView(binding2.root)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window?.setWindowAnimations(R.style.AnimationsForDialog)
         dialog.show()
 
       //  imgArtefactoDescription.scaleType = ImageView.ScaleType.CENTER_CROP
