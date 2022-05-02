@@ -367,13 +367,13 @@ INSERT INTO Artifact(id, name, description, history, image, video, coments, id_m
 VALUES (10, "Artesanías en totumo","description", "history", "10", "video", "coments", 108, 0, 1, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (11, "Bolsos cestería en calceta de plátano", "description", "history", "image", "video", "coments", 108, 0, 0, 0, 0 );
+VALUES (11, "Bolsos cestería en calceta de plátano", "description", "history", "11", "video", "coments", 108, 0, 0, 0, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (12, "Sombreros en fibra, tipo sombrero vueltiado", "description", "history", "12", "video", "coments", 113, 0, 2, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (13, "Canastos y esteras con la fibra de la iraca y el bodré", "description", "history", "13", "video", "coments", 110, 10, 0, 0, 0 );
+VALUES (13, "Canastos y esteras con la fibra de la iraca y el bodré", "description", "history", "image", "video", "coments", 110, 10, 0, 0, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (14, "Artesanías afrocolombianas", "description", "history", "image", "video", "coments", 110, 1, 2, 0, 0 );
