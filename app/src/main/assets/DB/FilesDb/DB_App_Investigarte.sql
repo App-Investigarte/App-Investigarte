@@ -401,7 +401,7 @@ VALUES (20, "Sombrero aguadeño","Se utiliza como parte del traje típico en el 
 
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (21, "Ruana",  "description", "history", "image", "video", "coments", 87, 0, 2, 1, 0);
+VALUES (21, "Ruana",  "description", "history", "21", "video", "coments", 87, 0, 2, 1, 0);
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (22, "Atuendo tradicional arriero y vestuario de la mula", "description", "history", "image", "video", "coments", 88, 0, 2, 0, 0);
@@ -445,7 +445,7 @@ INSERT INTO Artifact(id, name, description, history, image, video, coments, id_m
 VALUES (33, "Ropas afro coloridas con musica", "description", "history", "33", "video", "coments", 121, 6, 2, 0, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (34, "Muleras, Atuendo tradicional", "description", "history", "image", "video", "coments", 124, 0, 2, 1, 0 );
+VALUES (34, "Muleras, Atuendo tradicional", "description", "history", "34", "video", "coments", 124, 0, 2, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (35, "Peinados afro", "description", "history", "image", "video", "coments", 124, 0, 0, 0, 0 );
