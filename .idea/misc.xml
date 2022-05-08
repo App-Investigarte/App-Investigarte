@@ -27,6 +27,8 @@
         <entry key="app/src/main/res/drawable-v24/shape_circle.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/shape_rectangulo.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable-v24/shape_rectangulo_txt.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/art_12.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/art_12_svg.xml" value="0.1875" />
         <entry key="app/src/main/res/drawable/artecato_ruana.xml" value="0.335" />
         <entry key="app/src/main/res/drawable/background_activities.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/background_activities_colors_cold.xml" value="0.22" />
@@ -49,6 +51,7 @@
         <entry key="app/src/main/res/drawable/fondo_verde.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/fondooo.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_account_circle_24.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/ic_bajo_cauca_1.xml" value="0.142" />
         <entry key="app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_baseline_miscellaneous_services_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_exit_to_app_24.xml" value="0.13055555555555556" />

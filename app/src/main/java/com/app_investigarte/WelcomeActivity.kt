@@ -1,6 +1,7 @@
 package com.app_investigarte
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
@@ -18,6 +19,9 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //ago una intacion del sonido pop.mp3
+        val pop = MediaPlayer.create(this, R.raw.pop)
 
         //se recuperan los datos de usuario logeado
         val pref = getSharedPreferences(getString(R.string.PREFERENS), MODE_PRIVATE)
@@ -37,6 +41,7 @@ class WelcomeActivity : AppCompatActivity() {
 
         //pasar de activity al precionar el boton.
         binding.btnStart.setOnClickListener { view: View? ->
+            pop.start()
             startActivity(Intent(this, NavDrawerActivity::class.java))
             overridePendingTransition(R.anim.slide_in,R.anim.slide_out)
             super.finishAffinity()

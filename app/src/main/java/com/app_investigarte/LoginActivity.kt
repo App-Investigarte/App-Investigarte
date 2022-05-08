@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
+import android.media.MediaPlayer
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.Bundle
@@ -36,15 +37,22 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //ago una intacion del sonido pop.mp3
+        val pop = MediaPlayer.create(this, R.raw.pop)
+
         //funcion para logiar al usuario
         //login por medio del correo y la contraseña
         //val email = binding.edtUser?.text.toString()
         binding.btnLogin.setOnClickListener {
+            //reproducir sonido de pop
+            pop.start()
             login()
         }
 
         //with(){
         binding.imgBtnGoogle?.setOnClickListener {
+            //reproducir sonido de pop
+            pop.start()
             //verificacion de la conectividad de internet
             val cm = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
@@ -58,6 +66,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.btnRegister?.setOnClickListener {
+            //reproducir sonido de pop
+            pop.start()
             startActivity(Intent(this, RegisterActivity::class.java))
             overridePendingTransition(R.anim.slide_in,R.anim.slide_out)
         }

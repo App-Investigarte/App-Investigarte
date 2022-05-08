@@ -5,6 +5,7 @@ import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -87,6 +88,9 @@ public class RecyVWAdapter extends RecyclerView.Adapter<RecyVWAdapter.ViewHolder
             //Se controla el evento de click en la vista en este caso el CardView
 
             view.setOnClickListener(v -> {
+                //reproducimos el sonido de pop
+                MediaPlayer POP = MediaPlayer.create(view.getContext() , R.raw.pop);
+                POP.start();
                 //reducionmos la opacida como si el elemento ya uviera sido selecionado
                 //view.setAlpha(0.7f);
                 intent = new Intent(view.getContext(), DescripcionActivity.class);

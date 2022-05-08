@@ -448,11 +448,10 @@ INSERT INTO Artifact(id, name, description, history, image, video, coments, id_m
 VALUES (34, "Muleras, Atuendo tradicional", "description", "history", "34", "video", "coments", 124, 0, 2, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (35, "Peinados afro", "description", "history", "image", "video", "coments", 124, 0, 0, 0, 0 );
+VALUES (35, "Peinados afro", "description", "history", "35", "video", "coments", 124, 0, 0, 0, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (36, "Joyeria en filigrana", "description", "history", "image", "video", "coments", 3, 0, 2, 1, 0 );
-
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (37, "Cañaflecha", "description", "history", "37", "video", "coments", 5, 7, 2, 1, 1 );
