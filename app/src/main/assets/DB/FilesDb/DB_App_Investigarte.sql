@@ -345,13 +345,13 @@ INSERT INTO Artifact(id, name, description, history, image, video, coments, id_m
 VALUES (3, "Prendas en saburete y molas",  "description", "history", "image", "video", "coments", 111, 0, 1, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (4, "Tejido en chaquira",  "description", "history", "image", "video", "coments", 111, 0, 1, 1, 0 );
+VALUES (4, "Tejido en chaquira",  "description", "history", "4", "video", "coments", 111, 0, 1, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (5, "Accesorios en calceta de plátano", "description", "history", "5", "video", "coments", 105, 0, 2, 1, 0 );
 
-INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (6, "Tejido diagonal", "Oficio: Bisuteria, Ténica: Telar, mano alzada, tejido diagonal y sarga, Materia Prima: Chaquiras.", "history", "6", "video", "coments", 107, 0, 0, 0, 0 );
+--INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+--VALUES (6, "Tejido diagonal", "Oficio: Bisuteria, Ténica: Telar, mano alzada, tejido diagonal y sarga, Materia Prima: Chaquiras.", "history", "image", "video", "coments", 107, 0, 0, 0, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (7, "Cesteria BIJAO e IRACA", "Oficio: Cesteria Iraca", "history", "7", "video", "coments", 108, 4, 1, 1, 0 );
@@ -367,16 +367,16 @@ INSERT INTO Artifact(id, name, description, history, image, video, coments, id_m
 VALUES (10, "Artesanías en totumo","description", "history", "10", "video", "coments", 108, 0, 1, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (11, "Bolsos cestería en calceta de plátano", "description", "history", "image", "video", "coments", 108, 0, 0, 0, 0 );
+VALUES (11, "Bolsos cestería en calceta de plátano", "description", "history", "11", "video", "coments", 108, 0, 0, 0, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (12, "Sombreros en fibra, tipo sombrero vueltiado", "description", "history", "12", "video", "coments", 113, 0, 2, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (13, "Canastos y esteras con la fibra de la iraca y el bodré", "description", "history", "image", "video", "coments", 110, 10, 0, 0, 0 );
+VALUES (13, "Canastos y esteras con la fibra de la iraca y el bodré", "description", "history", "13", "video", "coments", 110, 10, 0, 0, 0 );
 
-INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (14, "Artesanías afrocolombianas", "description", "history", "image", "video", "coments", 110, 1, 2, 0, 0 );
+--INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+--VALUES (14, "Artesanías afrocolombianas", "description", "history", "image", "video", "coments", 110, 1, 2, 0, 0 );
 
 
 -- Suroete Antioquenio
@@ -401,7 +401,7 @@ VALUES (20, "Sombrero aguadeño","Se utiliza como parte del traje típico en el 
 
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (21, "Ruana",  "description", "history", "image", "video", "coments", 87, 0, 2, 1, 0);
+VALUES (21, "Ruana",  "description", "history", "21", "video", "coments", 87, 0, 2, 1, 0);
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (22, "Atuendo tradicional arriero y vestuario de la mula", "description", "history", "image", "video", "coments", 88, 0, 2, 0, 0);
@@ -409,12 +409,11 @@ VALUES (22, "Atuendo tradicional arriero y vestuario de la mula", "description",
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (23, "Atuendo tradicional arriero y atuendo trovador alpargatas fabricadas de cabuya, carriel, poncho o ruana y sombrero", "description", "history", "image", "video", "coments", 89, 0, 2, 1, 0);
 
-INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (24, "Vestuario indígena Emberá, vestidos, collares, pintura corporal, El costurero retazos, Colcha de retazos", "description", "history", "image", "video", "coments", 102, 0, 0, 0, 0);
+--INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+--VALUES (24, "Vestuario indígena Emberá, vestidos, collares, pintura corporal, El costurero retazos, Colcha de retazos", "description", "history", "image", "video", "coments", 102, 0, 0, 0, 0);
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (25, "Traje de chapolera desde lo tradicional/ desde lo actual gorra (sombrero, pañoleta), botas de caucho, manga larga", "description", "history", "image", "video", "coments", 90, 0, 2, 1, 0);
-
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (26, "Joyería en filigrana en oro y plata", "description", "history", "26", "video", "coments", 56, 0, 2, 1, 0 );
@@ -423,18 +422,18 @@ INSERT INTO Artifact(id, name, description, history, image, video, coments, id_m
 VALUES (27, "Mascaras y vesturios performático", "Fiesta de los diablitos", "history", "27", "video", "coments", 56, 0, 2, 1, 5 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (28, "Sombrero Aguadeño", "Sombrero de paja o iraca", "history", "27", "video", "coments", 57, 0, 2, 1, 3 );
+VALUES (28, "Sombrero Aguadeño", "Sombrero de paja o iraca", "history", "28", "video", "coments", 57, 0, 2, 1, 3 );
 
 
-INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (29, "Artesanías en barro Vereda Untí", "description", "history", "image", "video", "coments", 43, 0, 2, 0, 0 );
+--INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+--VALUES (29, "Artesanías en barro Vereda Untí", "description", "history", "image", "video", "coments", 43, 0, 2, 0, 0 );
 
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (30, "Cestería en  Bijao e iraca", "description", "history", "30", "video", "coments", 46, 11, 0, 0, 0 );
 
-INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (31, "Costura, bordado, tejido", "description", "history", "31", "video", "coments", 48, 0, 2, 1, 0 );
+--INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+--VALUES (31, "Costura, bordado, tejido", "description", "history", "31", "video", "coments", 48, 0, 2, 1, 0 );
 
 
 --Norte Antioquenio
@@ -446,7 +445,7 @@ INSERT INTO Artifact(id, name, description, history, image, video, coments, id_m
 VALUES (33, "Ropas afro coloridas con musica", "description", "history", "33", "video", "coments", 121, 6, 2, 0, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (34, "Muleras, Atuendo tradicional", "description", "history", "image", "video", "coments", 124, 0, 2, 1, 0 );
+VALUES (34, "Muleras, Atuendo tradicional", "description", "history", "34", "video", "coments", 124, 0, 2, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (35, "Peinados afro", "description", "history", "image", "video", "coments", 124, 0, 0, 0, 0 );
@@ -461,26 +460,26 @@ VALUES (37, "Cañaflecha", "description", "history", "37", "video", "coments", 5
 
 
 --Magdalena Medio
-INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (38, "Atuendo del pesacador cotidiano",  "description", "history", "image", "video", "coments", 9, 0, 2, 1, 0 );
+--INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+--VALUES (38, "Atuendo del pesacador cotidiano",  "description", "history", "image", "video", "coments", 9, 0, 2, 1, 0 );
 
 
 
 -- Nordeste Antioquenio
 
-INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (39, "Pañolones, mantillas, mantones",  "description", "history", "image", "video", "coments", 14, 0, 2, 2, 0 );
+--INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+--VALUES (39, "Pañolones, mantillas, mantones",  "description", "history", "image", "video", "coments", 14, 0, 2, 2, 0 );
 
-INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (40, "Pañoles, mantillas, mantones",  "description", "history", "image", "video", "coments", 16, 0, 2, 2, 0 );
+--INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+--VALUES (40, "Pañoles, mantillas, mantones",  "description", "history", "image", "video", "coments", 16, 0, 2, 2, 0 );
 
-INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (41, "bisutería con alusión al tigre",  "description", "history", "image", "video", "coments", 13, 8, 3, 0, 0);
+--INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+--VALUES (41, "bisutería con alusión al tigre",  "description", "history", "image", "video", "coments", 13, 8, 3, 0, 0);
 
 
 -- Orinete Antioquenio
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (42, "Taller de artesanias, en telares (producion en lana)",  "description", "history", "image", "video", "coments", 64, 0, 2, 1, 4 );
+VALUES (42, "Taller de artesanias, en telares (producion en lana)",  "description", "history", "42", "video", "coments", 64, 0, 2, 1, 4 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (43, "Bisuteria en ceramica",  "description", "history", "43", "video", "coments", 64, 0, 3, 1, 2 );
@@ -489,7 +488,7 @@ INSERT INTO Artifact(id, name, description, history, image, video, coments, id_m
 VALUES (44, "Ruana Perrileña", "description", "history", "44", "video", "coments", 81, 0, 0, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, coments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (45, "Sombrero aguadeño", "description", "history", "image", "video", "coments", 81, 0, 0, 0, 0 );
+VALUES (45, "Sombrero aguadeño", "description", "history", "20", "video", "coments", 81, 0, 0, 0, 0 );
 
 
 
