@@ -26,10 +26,12 @@ class SplashScreenActivity : AppCompatActivity() {
 
         if (email != null) {
             startActivity(Intent(this, WelcomeActivity::class.java))
+            overridePendingTransition(R.anim.slide_in,R.anim.slide_out)
             super.finish()//para finalizar la actividad y no quede en segundo plano avierta por detras luego de abrir la otra actividad.
 
         } else {
             startActivity(Intent(this, LoginActivity::class.java))
+            overridePendingTransition(R.anim.slide_in,R.anim.slide_out)
             super.finish()//para finalizar la actividad y no quede en segundo plano avierta por detras luego de abrir la otra actividad.
         }
 
