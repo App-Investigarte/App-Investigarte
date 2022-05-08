@@ -21,23 +21,24 @@ class WelcomeActivity : AppCompatActivity() {
 
         //se recuperan los datos de usuario logeado
         val pref = getSharedPreferences(getString(R.string.PREFERENS), MODE_PRIVATE)
-        val email = pref.getString("email", "")
+        val email = pref.getString("email","")
         val name = pref.getString("name", "")
         val provider = pref.getString("provider", "")
 
         if (provider != null) {
-            if (provider.equals(ProviderType.GOOGLE.toString())) {
+            if(provider.equals(ProviderType.GOOGLE.toString())){
                 binding.txtusername.text = email
-            } else {
+            }else{
                 binding.txtusername.text = name
             }
         }
 
 
+
         //pasar de activity al precionar el boton.
         binding.btnStart.setOnClickListener { view: View? ->
-
             startActivity(Intent(this, NavDrawerActivity::class.java))
+            overridePendingTransition(R.anim.slide_in,R.anim.slide_out)
             super.finishAffinity()
         }
     }

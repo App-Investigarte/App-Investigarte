@@ -59,6 +59,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnRegister?.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
+            overridePendingTransition(R.anim.slide_in,R.anim.slide_out)
         }
 
     }
@@ -165,6 +166,7 @@ class LoginActivity : AppCompatActivity() {
         prefs.apply()
 
         startActivity(Intent(this, WelcomeActivity::class.java))
+        overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up)
         super.finish()
     }
 
