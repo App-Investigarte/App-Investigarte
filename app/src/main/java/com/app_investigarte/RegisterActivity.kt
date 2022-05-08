@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
@@ -29,6 +30,9 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //ago una intacion del sonido pop.mp3
+        val pop = MediaPlayer.create(this, R.raw.pop)
+
         val today = MaterialDatePicker.todayInUtcMilliseconds()
         val datePicker =
             MaterialDatePicker.Builder.datePicker()
@@ -36,7 +40,10 @@ class RegisterActivity : AppCompatActivity() {
                 .setSelection(today)
                 .build()
 
-        binding.btnDate.setOnClickListener { showDatePicker(datePicker) }
+        binding.btnDate.setOnClickListener {
+            pop.start();
+            showDatePicker(datePicker)
+        }
 
         controlFlujoEdt()
 
@@ -47,6 +54,7 @@ class RegisterActivity : AppCompatActivity() {
             binding.txtDate.text = formatter.format(calendar.timeInMillis)
         }
         binding.btnRegister.setOnClickListener {
+            pop.start();
             emptyData = 0
             validacionCamposVacidos()
             //Registro de usuario

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -75,6 +76,10 @@ class DescripcionActivity : AppCompatActivity() {
     }
 
     private fun showImgDialog(img_art: Int) {
+
+        //reproducimos el sonido de Pop
+        val POP = MediaPlayer.create(this, R.raw.pop)
+        POP.start()
 
         val binding2: ShowImgDialogBinding = ShowImgDialogBinding.inflate(layoutInflater)
 
