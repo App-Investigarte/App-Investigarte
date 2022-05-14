@@ -8,16 +8,15 @@
             android:title="Mapa" />
         <item
             android:id="@+id/nav_sub_region"
-            android:icon="@android:drawable/ic_menu_mapmode"
-            android:title="Sub Reguiones" />
+            android:icon="@drawable/ic_montana"
+            android:title="Subregiones"/>
         <item
             android:id="@+id/nav_artifact"
             android:icon="@drawable/ic_pin_drop_24"
             android:title="Artefactos" />
-
     </group>
 
-    <item android:title="Opciónes">
+    <item android:title="Opciones">
         <menu>
             <item
                 android:id="@+id/nav_config"
@@ -28,7 +27,7 @@
             <item
                 android:id="@+id/nav_salir"
                 android:icon="@drawable/ic_exit_to_app_24"
-                android:title="salir" />
+                android:title="Salir" />
         </menu>
     </item>
 

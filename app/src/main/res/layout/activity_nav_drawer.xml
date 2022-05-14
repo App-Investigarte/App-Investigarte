@@ -60,19 +60,23 @@
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="65dp"
+                        android:layout_height="70dp"
                         android:contentDescription="TODO"
-                        android:paddingStart="-80dp"
-                        android:paddingEnd="-235dp"
-                        android:src="@drawable/icono_lila" />
+                        android:paddingStart="-400dp"
+                        android:paddingEnd="-400dp"
+                        android:layout_marginLeft="-40dp"
+                        android:src="@drawable/ic_pascual"
+                        android:layout_gravity="center"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="62dp"
+                        android:layout_height="30dp"
                         android:contentDescription="TODO"
-                        android:paddingStart="-212dp"
-                        android:paddingEnd="-220dp"
-                        android:src="@drawable/ic_iupb" />
+                        android:paddingStart="-20dp"
+                        android:paddingEnd="0dp"
+                        android:src="@drawable/ic_upb"
+                        android:layout_marginLeft="-70dp"
+                        android:layout_gravity="center"/>
                 </LinearLayout>
 
                 <ImageView
