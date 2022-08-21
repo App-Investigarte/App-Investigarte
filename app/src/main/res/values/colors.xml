@@ -39,10 +39,10 @@
     <color name="azul">#6498FE</color>
     <color name="color_transparente_white">#BFFFFFFF</color>
     <color name="color_transparente">#00FFFFFF</color>
-    <color name="Color_darck">#3015182C</color>
+    <color name="Color_darck">#132940</color>
     <color name="light_purple">#FFA687DD</color>
     <color name="Dark_purple">#FF5D34A6</color>
-    <color name="color_background_dark">#212020</color>
+    <color name="color_background_dark">#132940</color>
 
     <!--   Colors by subregions -->
     <color name="color_uraba">#3778bc</color>
