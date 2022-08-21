@@ -27,8 +27,6 @@
         <entry key="app/src/main/res/drawable-v24/shape_circle.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/shape_rectangulo.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable-v24/shape_rectangulo_txt.xml" value="0.1295" />
-        <entry key="app/src/main/res/drawable/art_12.xml" value="0.1875" />
-        <entry key="app/src/main/res/drawable/art_12_svg.xml" value="0.1875" />
         <entry key="app/src/main/res/drawable/artecato_ruana.xml" value="0.335" />
         <entry key="app/src/main/res/drawable/background_activities.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/background_activities_colors_cold.xml" value="0.22" />
@@ -51,7 +49,6 @@
         <entry key="app/src/main/res/drawable/fondo_verde.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/fondooo.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_account_circle_24.xml" value="0.1295" />
-        <entry key="app/src/main/res/drawable/ic_bajo_cauca_1.xml" value="0.142" />
         <entry key="app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_baseline_miscellaneous_services_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_exit_to_app_24.xml" value="0.13055555555555556" />
@@ -102,7 +99,7 @@
         <entry key="app/src/main/res/layout/fragment_artefactos.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/fragment_sub_regiones.xml" value="0.2625" />
-        <entry key="app/src/main/res/layout/fragment_sub_regions.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_sub_regions.xml" value="0.234251968503937" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/show_img_dialog.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/menu/activity_menu_main_drawer.xml" value="0.22" />
