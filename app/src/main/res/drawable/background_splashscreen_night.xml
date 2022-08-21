@@ -28,7 +28,7 @@
         android:width="400dp"
         android:height="300dp"
         android:bottom="80dp">
-        <bitmap android:src="@drawable/logo">
+        <bitmap android:src="@drawable/logo_investigarte">
         </bitmap>
     </item>
 
