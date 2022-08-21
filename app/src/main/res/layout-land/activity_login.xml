@@ -22,7 +22,7 @@
                 android:layout_height="100dp"
                 android:backgroundTint="#00FFFFFF"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/logo"
+                app:srcCompat="@drawable/logonew"
                 tools:ignore="SpeakableTextPresentCheck" />
             <TextView
                 android:id="@+id/textView2"
