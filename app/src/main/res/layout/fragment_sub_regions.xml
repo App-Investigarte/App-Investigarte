@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="30dp">
+            android:padding="10dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_uraba"
@@ -184,23 +184,24 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_valle_aburra"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 app:cardBackgroundColor="@color/color_background_dark"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="200dp"
                 app:cardElevation="8dp">
 
                 <RelativeLayout
                     android:id="@+id/rtly_valle_aburra"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp">
+                    android:layout_width="340dp"
+                    android:layout_height="340dp">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:scaleType="centerCrop"
+                        android:scaleType="centerInside"
                         android:src="@drawable/ic_valle_aburra_3" />
 
                     <View
@@ -224,23 +225,24 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_bajo_cauca"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 app:cardBackgroundColor="@color/color_background_dark"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="200dp"
                 app:cardElevation="8dp">
 
                 <RelativeLayout
                     android:id="@+id/rtly_bajo_cauca"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp">
+                    android:layout_width="340dp"
+                    android:layout_height="340dp">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:scaleType="centerCrop"
+                        android:scaleType="centerInside"
                         android:src="@drawable/ic_bajo_cauca_3" />
 
                     <View
@@ -264,23 +266,24 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_magdalena_medio"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 app:cardBackgroundColor="@color/color_background_dark"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="200dp"
                 app:cardElevation="8dp">
 
                 <RelativeLayout
                     android:id="@+id/rtly_magdalena_medio"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp">
+                    android:layout_width="340dp"
+                    android:layout_height="340dp">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:scaleType="centerCrop"
+                        android:scaleType="centerInside"
                         android:src="@drawable/ic_magdalena_medio_3" />
 
                     <View
@@ -304,23 +307,24 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_nordeste"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 app:cardBackgroundColor="@color/color_background_dark"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="200dp"
                 app:cardElevation="8dp">
 
                 <RelativeLayout
                     android:id="@+id/rtly_nordeste"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp">
+                    android:layout_width="340dp"
+                    android:layout_height="340dp">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:scaleType="centerCrop"
+                        android:scaleType="centerInside"
                         android:src="@drawable/ic_nordeste_3" />
 
                     <View
@@ -344,22 +348,23 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_oriente"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 app:cardBackgroundColor="@color/color_background_dark"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="200dp"
                 app:cardElevation="8dp">
 
                 <RelativeLayout
                     android:id="@+id/rtly_oriente"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp">
+                    android:layout_width="340dp"
+                    android:layout_height="340dp">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:scaleType="centerCrop"
+                        android:scaleType="centerInside"
                         android:src="@drawable/ic_oriente_3" />
 
                     <View
