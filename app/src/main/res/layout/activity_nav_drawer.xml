@@ -56,22 +56,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="100"
+                    android:layout_gravity="center_horizontal">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="65dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="50"
+                        android:layout_height="105dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginBottom="-20dp"
                         android:contentDescription="TODO"
-                        android:paddingStart="-80dp"
-                        android:paddingEnd="-235dp"
-                        android:src="@drawable/icono_lila" />
+                        android:src="@drawable/iupb" />
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="35"
                         android:layout_height="62dp"
+                        android:layout_gravity="bottom"
                         android:contentDescription="TODO"
-                        android:paddingStart="-212dp"
-                        android:paddingEnd="-220dp"
                         android:src="@drawable/ic_iupb" />
                 </LinearLayout>
 
