@@ -116,6 +116,7 @@ public class RecyVWAdapter extends RecyclerView.Adapter<RecyVWAdapter.ViewHolder
             } else {
                 int img = context.getResources().getIdentifier("@drawable/art_"+imagen, "drawable", context.getPackageName());
                 IMAGEVIEW1.setImageResource(img);
+                IMAGEVIEW1.setColorFilter(null);
                 IMAGEVIEW1.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
             }
