@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_primary"
+    android:background="@color/color_background_dark"
     tools:context=".LoginActivity"
     android:weightSum="100"
     android:orientation="vertical">
@@ -22,7 +22,7 @@
                 android:layout_height="100dp"
                 android:backgroundTint="#00FFFFFF"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/logonew"
+                app:srcCompat="@drawable/logo_investigarte"
                 tools:ignore="SpeakableTextPresentCheck" />
             <TextView
                 android:id="@+id/textView2"
