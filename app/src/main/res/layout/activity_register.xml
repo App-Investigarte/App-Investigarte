@@ -25,7 +25,7 @@
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Aventurero, antes de empezar tu travesia debes registrarte."
+        android:text="Aventurero, antes de empezar tu travesía debes registrarte."
         android:textColor="@color/color_text_onprimary"
         android:textStyle="italic|normal"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
@@ -96,7 +96,7 @@
                             android:layout_height="35dp"
                             android:layout_gravity="center_horizontal"
                             android:background="@drawable/style_btn_4"
-                            android:hint="Identificacion"
+                            android:hint="Identificación"
                             android:inputType="numberDecimal"
                             android:maxLength="70"
                             android:paddingTop="7dp"
@@ -116,7 +116,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Crear Usuario*"
+                        android:text="Crear usuario*"
                         android:textColor="@color/color_text_onsecondary"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -134,7 +134,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/style_btn_4"
                         android:gravity="center"
-                        android:hint="Correo Electronico"
+                        android:hint="Correo electrónico"
                         android:paddingHorizontal="4dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -179,7 +179,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/style_btn_4"
-                        android:hint="Nombre Completo"
+                        android:hint="Nombre completo"
                         android:paddingHorizontal="4dp">
 
                         <com.google.android.material.textfield.TextInputEditText

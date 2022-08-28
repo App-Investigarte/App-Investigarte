@@ -31,7 +31,7 @@
         </menu>
     </item>
 
-    <item  android:title="Version: 1.0.2">
+    <item  android:title="Versión: 1.0.2">
         <menu>
             <item android:title=""
                 android:enabled="false"/>
