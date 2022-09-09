@@ -175,7 +175,7 @@ class NavDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
     fun exit() {
         val title = getString(R.string.title_exit_alert)
-        val message = getString(R.string.message_exit_alert) + "la secion iniciado serra cerada por completo "
+        val message = getString(R.string.message_exit_alert) + " \nLa sesión iniciada se cerrará por completo "
         val btnPositive = getString(R.string.positive_exit_alert)
         val btnNegativo = getString(R.string.negative_exit_alert)
         MaterialAlertDialogBuilder(this)

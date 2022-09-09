@@ -37,7 +37,7 @@
         <entry key="app/src/main/res/drawable/background_splashscreen.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/background_splashscreen_1.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/background_splashscreen_2.xml" value="0.5" />
-        <entry key="app/src/main/res/drawable/background_splashscreen_3.xml" value="0.22" />
+        <entry key="app/src/main/res/drawable/background_splashscreen_3.xml" value="0.335" />
         <entry key="app/src/main/res/drawable/background_splashscreen_night.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/background_welcome.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/boceto_negro.xml" value="0.1295" />
@@ -60,9 +60,6 @@
         <entry key="app/src/main/res/drawable/ic_pin_drop_24.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/ic_ruana.xml" value="0.1635" />
         <entry key="app/src/main/res/drawable/ic_suroeste_1.xml" value="0.234" />
-        <entry key="app/src/main/res/drawable/logo-svg.xml" value="0.1635" />
-        <entry key="app/src/main/res/drawable/logo.xml" value="0.151" />
-        <entry key="app/src/main/res/drawable/logo_investigarte.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/prueba.xml" value="0.202" />
         <entry key="app/src/main/res/drawable/splash_activity_background.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/splash_background.xml" value="0.1" />
@@ -76,21 +73,20 @@
         <entry key="app/src/main/res/drawable/style_google.xml" value="0.142" />
         <entry key="app/src/main/res/drawable/svg_splashscreen.xml" value="0.1295" />
         <entry key="app/src/main/res/drawable/svg_splashscreen_2.xml" value="0.25" />
-        <entry key="app/src/main/res/drawable/svg_splashscreen_3.xml" value="0.1635" />
         <entry key="app/src/main/res/drawable/svg_uraba.xml" value="0.234" />
         <entry key="app/src/main/res/layout-land-night/activity_descripcion.xml" value="0.18" />
         <entry key="app/src/main/res/layout-land/activity_descripcion.xml" value="0.25" />
         <entry key="app/src/main/res/layout-land/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout-land/activity_welcome.xml" value="0.22" />
         <entry key="app/src/main/res/layout-night/activity_descripcion.xml" value="0.2625" />
-        <entry key="app/src/main/res/layout/activity_descripcion.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_descripcion.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_listado_artefactos.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_login2.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19427083333333334" />
-        <entry key="app/src/main/res/layout/activity_nav_drawer.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.24018475750577367" />
-        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_nav_drawer.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_welcome1.xml" value="0.20520833333333333" />
         <entry key="app/src/main/res/layout/activity_welcome_activitykt.xml" value="0.20520833333333333" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.2625" />
@@ -101,7 +97,6 @@
         <entry key="app/src/main/res/layout/fragment_sub_regiones.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/fragment_sub_regions.xml" value="0.234251968503937" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.2625" />
-        <entry key="app/src/main/res/layout/show_img_dialog.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/menu/activity_menu_main_drawer.xml" value="0.22" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1605" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />

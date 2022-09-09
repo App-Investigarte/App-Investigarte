@@ -81,7 +81,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
-                            android:text="SubRegion:"
+                            android:text="Subregión:"
                             android:textColor="@color/color_text_onsecondary"
                             android:textSize="15sp" />
 
@@ -89,7 +89,7 @@
                             android:id="@+id/txt_sup_reguion_artifact"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="SubRegion"
+                            android:text="Subregión"
                             android:textColor="@color/color_text_onsecondary"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -99,7 +99,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
-                            android:text="Municipo:"
+                            android:text="Municipio:"
                             android:textColor="@color/color_text_onsecondary"
                             android:textSize="15sp" />
 
@@ -107,7 +107,7 @@
                             android:id="@+id/txt_municipio_artifact"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Municipo"
+                            android:text="Municipio"
                             android:textColor="@color/color_text_onsecondary"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -137,7 +137,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
-                            android:text="Clasificación Artesanal:"
+                            android:text="Clasificación artesanal:"
                             android:textColor="@color/color_text_onsecondary"
                             android:textSize="15sp" />
 
@@ -145,7 +145,7 @@
                             android:id="@+id/txt_artisan_classification_artifact"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Clasificación Artesanal"
+                            android:text="Clasificación artesanal"
                             android:textColor="@color/color_text_onsecondary"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -173,7 +173,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
-                            android:text="Categoria Patrimonial:"
+                            android:text="Categoría patrimonial:"
                             android:textColor="@color/color_text_onsecondary"
                             android:textSize="15sp" />
 
@@ -181,7 +181,7 @@
                             android:id="@+id/txt_patrimonial_category_artifact"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Categoria Patrimonial"
+                            android:text="Categoría patrimonial"
                             android:textColor="@color/color_text_onsecondary"
                             android:textSize="18sp"
                             android:textStyle="bold" />
