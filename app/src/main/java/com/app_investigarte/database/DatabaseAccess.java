@@ -106,7 +106,7 @@ public class DatabaseAccess {
         "FROM Artifact a "+
         "INNER JOIN Municipality m on a.id_municipality = m.id "+
         "INNER JOIN Subregions s  on m.id_subregions = s.id " +
-        "INNER JOIN Departmen d on s.id_department = d.id " +
+        "INNER JOIN Department d on s.id_department = d.id " +
         "INNER JOIN Community c on a.id_community = c.id " +
         "INNER JOIN Artisan_classification ac on a.id_artisan_classification  = ac.id " +
         "INNER JOIN Clothing_category cc on a.id_clothing_category  = cc.id " +
