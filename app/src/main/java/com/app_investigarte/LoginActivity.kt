@@ -117,9 +117,12 @@ class LoginActivity : AppCompatActivity() {
         //configuracion
         val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build()
+        //val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        //    .requestEmail()
+        //    .build()
         val googleClient = GoogleSignIn.getClient(this, googleConf)
 
-        //deslogiamos cualquier cuneta previa que aya podido estar autenticada en ese momento
+        //desbloqiamos cualquier cuenta previa que alla podido estar autenticada en ese momento
         googleClient.signOut()
 
         resultLauncher.launch(googleClient.signInIntent)
@@ -127,7 +130,9 @@ class LoginActivity : AppCompatActivity() {
 
     private var resultLauncher: ActivityResultLauncher<Intent> =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
+           //showAlertMs("Hola John"+ Activity.RESULT_OK + "\n" + result.resultCode)
+
+            if (result.resultCode == Activity.RESULT_OK ) {
                 val task: Task<GoogleSignInAccount> =
                     GoogleSignIn.getSignedInAccountFromIntent(result.data)
 
@@ -136,7 +141,7 @@ class LoginActivity : AppCompatActivity() {
                     //recuperamos la cuneta selecionada por el usuario
                     val account: GoogleSignInAccount? = task.getResult(ApiException::class.java)
 
-                    //verificamos que no sea una cuneta nula
+                    //verificamos que no sea una cuenta nula
                     if (account != null) {
                         //recuperamos la credencial de la cuenta
                         val credential: AuthCredential =
@@ -164,6 +169,7 @@ class LoginActivity : AppCompatActivity() {
                     showAlert()
                 }
             }
+
         }
 
     private fun showWelcome(email: String, provider: ProviderType) {
@@ -174,6 +180,7 @@ class LoginActivity : AppCompatActivity() {
         prefs.putString("email", email)
         prefs.putString("provider", provider.name)
         prefs.apply()
+
 
         startActivity(Intent(this, WelcomeActivity::class.java))
         overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up)
@@ -207,6 +214,18 @@ class LoginActivity : AppCompatActivity() {
             .show()
     }
 
+    private fun showAlertMs(ms: String) {
+        val title = "Error"
+        val message = ms
+        val btnPositive = "Aceptar"
+        MaterialAlertDialogBuilder(this)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton(
+                btnPositive
+            ) { dialogInterface: DialogInterface?, i: Int -> }
+            .show()
+    }
     private fun showAlertNotInternet() {
         val title = "Error"
         val message = "\nEn este momento el dispositivo no tienen connexion a internet, registrate para poder ingresar"

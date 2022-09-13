@@ -57,17 +57,19 @@ dependencies {
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
 
 
+    // Impor the firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:30.4.1')
     //********************* autenticacion por gmail *********************/
     //Autenticacion con Firebase
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.3'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.8'
 
     //********************* autenticacion por google *********************/
     //autenticacion por medio de google
-    implementation 'com.google.android.gms:play-services-auth:20.1.0'
+    implementation 'com.google.android.gms:play-services-auth:20.3.0'
     implementation 'com.firebaseui:firebase-ui-auth:8.0.1'
 
     //************* Implementacion del mapa de google Map ****************/
-    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
 
     //Conecion con la base de datos local
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
