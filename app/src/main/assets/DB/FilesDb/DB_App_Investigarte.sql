@@ -342,7 +342,7 @@ INSERT INTO Artifact(id, name, description, history, image, video, comments, id_
 VALUES (2, "Prendas en saburete y molas", "", "history", "2", "video", "comments", 114, 0, 1, 1, 0);
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (3, "Prendas en saburete y molas",  "", "history", "image", "video", "comments", 111, 0, 1, 1, 0 );
+VALUES (3, "Prendas en saburete y molas",  "", "history", "3", "video", "comments", 111, 0, 1, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (4, "Tejido en chaquira",  "", "history", "4", "video", "comments", 111, 0, 1, 1, 0 );
@@ -358,10 +358,10 @@ VALUES (7, "Cestería bijao e iraca", "Oficio: Cestería en iraca", "history", "
 
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (8, "Bolsos con zuncho", "", "history", "image", "video", "comments", 108, 0, 3, 1, 0 );
+VALUES (8, "Bolsos con zuncho", "", "history", "8", "video", "comments", 108, 0, 3, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (9, "Tejido en chaquira", "", "history", "image", "video", "comments", 108, 0, 1, 1, 0 );
+VALUES (9, "Tejido en chaquira", "", "history", "9", "video", "comments", 108, 0, 1, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (10, "Artesanías en totumo","", "history", "10", "video", "comments", 108, 0, 1, 1, 0 );
@@ -388,13 +388,13 @@ INSERT INTO Artifact(id, name, description, history, image, video, comments, id_
 VALUES (16, "Accesorios en chaquiras", "", "history", "16", "video", "comments", 92, 2, 2, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (17, "Técnica de yoyo-ropa hogar", "", "history", "image", "video", "comments", 92, 3, 2, 2, 0 );
+VALUES (17, "Técnica de yoyo-ropa hogar", "", "history", "17", "video", "comments", 92, 3, 2, 2, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (18, "Kipará", "", "history", "18", "video", "comments", 83, 0, 1, 1, 0);
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (19, "Tejido en chaquiras", "", "history", "image", "video", "comments", 83, 4, 1, 0, 0);
+VALUES (19, "Tejido en chaquiras", "", "history", "19", "video", "comments", 83, 4, 1, 0, 0);
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (20, "Sombrero aguadeño","Se utiliza como parte del traje típico en el festival y danzas", "history", "20", "video", "comments", 85, 0, 0, 0, 0);
@@ -404,10 +404,10 @@ INSERT INTO Artifact(id, name, description, history, image, video, comments, id_
 VALUES (21, "Ruana",  "", "history", "21", "video", "comments", 87, 0, 2, 1, 0);
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (22, "Atuendo tradicional arriero y vestuario de la mula", "", "history", "image", "video", "comments", 88, 0, 2, 0, 0);
+VALUES (22, "Atuendo tradicional arriero y vestuario de la mula", "", "history", "22", "video", "comments", 88, 0, 2, 0, 0);
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (23, "Atuendo tradicional arriero y atuendo trovador alpargatas fabricadas de cabuya, carriel, poncho o ruana y sombrero", "", "history", "image", "video", "comments", 89, 0, 2, 1, 0);
+VALUES (23, "Atuendo tradicional arriero y atuendo trovador alpargatas fabricadas de cabuya, carriel, poncho o ruana y sombrero", "", "history", "23", "video", "comments", 89, 0, 2, 1, 0);
 
 --INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 --VALUES (24, "Vestuario indígena Emberá, vestidos, collares, pintura corporal, El costurero retazos, Colcha de retazos", "", "history", "image", "video", "comments", 102, 0, 0, 0, 0);
@@ -439,8 +439,10 @@ VALUES (30, "Cestería en  bijao e iraca", "", "history", "30", "video", "commen
 --Norte Antioqueño
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (32, "Atuendo trovador alpargatas fabricadas de cabuya, carriel, poncho o ruana y sombrero", "", "history", "image", "video", "comments", 28, 0, 2, 1, 0 );
+VALUES (32, "Atuendo trovador alpargatas fabricadas de cabuya, carriel, poncho o ruana y sombrero", "", "history", "32", "video", "comments", 28, 0, 2, 1, 0 );
 
+
+--valle de aburra
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (33, "Ropa afro coloridas con música", "", "history", "33", "video", "comments", 121, 6, 2, 0, 0 );
 
@@ -450,30 +452,36 @@ VALUES (34, "Muleras, Atuendo tradicional", "", "history", "34", "video", "comme
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (35, "Peinados afro", "", "history", "35", "video", "comments", 124, 0, 0, 0, 0 );
 
+
+
+-- Bajo Cauca
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (36, "Joyería en filigrana", "", "history", "image", "video", "comments", 3, 0, 2, 1, 0 );
+VALUES (36, "Joyería en filigrana", "Semana cultural del oro. En El Bagre. para la joyería el proceso de diseño se viene manejando de  acuerdo al mercado y a la necesidad del cliente. En algunos casos los joyeros diseñan sus propias piezas. especialmente para las joyas de filigrana. Los dibujos previos se hacen en el momento del encargo para acordar con el cliente las características de la pieza. En la elaboración de la joyería de El Bagre las materias primas utilizadas son el oro, la plata y el cobre como metal de aleación. Usualmente se emplea oro de aluvión extraído en la región. el cual tiene una ley que oscila entre 920 y 940,  y se adquiere comprando a los mineros. También se trabaja la plata que se compra en Medellín.", "history", "36", "video", "comments", 3, 0, 2, 1, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (37, "Cañaflecha", "", "history", "37", "video", "comments", 5, 7, 2, 1, 1 );
+VALUES (37, "Cañaflecha", "Fibra vegetal tomada de la planta Gynerium.De la palma de caña flecha, se extrae la fibra vegetal con la que los Zenú elaboran diferentes productos bajo el oficio de la tejeduría. Esta materia prima. propia de su región (departamentos de Córdoba y Sucre). crece  en zonas húmedas y pantanosas. Además de crear artesanías con ella, esta comunidad también utiliza la caña flecha para construir sus casas y elaborar las canas de pescar. Razón por la cual, algunos investigadores le atribuyen el nombre de flecha.", "history", "37", "video", "comments", 5, 7, 2, 1, 1 );
 
 
 
 --Magdalena Medio
---INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
---VALUES (38, "Atuendo del pescador cotidiano",  "", "history", "image", "video", "comments", 9, 0, 2, 1, 0 );
+INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (38, "Atuendo del pescador cotidiano (desde lo prosaico) Atarraya",  "Noche de los poetas, danzas y música folclórica, La atarraya es un tipo de red de pesca que se lanza a mano. Es común en muchos parajes y recibe nombres como tarraya. atarraya. rallo o rail. Los pescadores de los ríos frecuentemente lo usan por su cómoda figura y su facilidad de manejo en las orillas del agua. por tanto, se utiliza a pie(descalzandose) o bien, con embarcación. El pescador cotidiano utiliza pantalones. camiseta y chanclas para realizar este oficio.", "history", "38", "video", "comments", 9, 0, 2, 1, 0 );
 
 
 
 -- Nordeste Antioqueño
 
---INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
---VALUES (39, "Pañolones, mantillas, mantones",  "", "history", "image", "video", "comments", 14, 0, 2, 2, 0 );
+INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (39, "Pañolones, mantillas, mantones",  "Semana Santa en vivo, Reinado del oro y la minería.", "history", "39", "video", "comments", 14, 0, 2, 2, 0 );
 
---INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
---VALUES (40, "Pañoles, mantillas, mantones",  "", "history", "image", "video", "comments", 16, 0, 2, 2, 0 );
+INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (40, "Pañolones, mantillas, mantones",  "Semana Santa en vivo, Reinado del oro y la minería.", "history", "40", "video", "comments", 16, 0, 2, 2, 0 );
 
---INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
---VALUES (41, "bisutería con alusión al tigre",  "", "history", "image", "video", "comments", 13, 8, 3, 0, 0);
+INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (41, "bisutería con alusión al tigre", "Amalfi es reconocido por ser ‘LA Tierra del Tigre’, debido a la historia del ‘Tigre de Amalfi’ y el uso tradicional y cultural de la bicicleta como medio de transporte. El parque principal del municipio cuenta con monumentos al tigre.", "history", "41", "video", "comments", 13, 8, 3, 0, 0);
+
+INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
+VALUES (50, "Pantalones coje puerco", "Pantalón largo que es doblado en la bota hasta media pierna. En un principio inició su uso en las labores del campo. en las cocheras de cerdos, para no llenar de lodo los pantalones se doblaban a la media pierna, por eso rozan todo el nombre ‘pantalon cogepuerco’.Autor Gutierroz Yojan. adaptado de Arriero. 1894(Fotografía de Meliton Rodrigez tomado de: German Ferro. A lomo de mula. Bancafe, Bogotá, 1994).", "history", "50", "video", "comentarios", 22, 0, 2, 2, 0 );
 
 
 -- Oriente Antioquenio
@@ -504,10 +512,7 @@ INSERT INTO Artifact(id, name, description, history, image, video, comments, id_
 VALUES (48, "Poncho", "", "history", "48", "video", "comments", 0, 0, 2, 1, 3 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (49, "Pañolones, mantillas, mantones", "", "history", "image", "video", "comentarios", 0, 0, 0, 0, 0 );
-
-INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
-VALUES (50, "Pantalones coje puerco", "", "history", "image", "video", "comentarios", 0, 0, 0, 0, 0 );
+VALUES (49, "Pañolones, mantillas, mantones", "", "history", "49", "video", "comentarios", 0, 0, 0, 0, 0 );
 
 INSERT INTO Artifact(id, name, description, history, image, video, comments, id_municipality, id_community, id_artisan_classification, id_clothing_category, id_patrimonial_category )
 VALUES (51, "La mulera", "", "history", "51", "video", "comentarios", 0, 0, 0, 0, 0 );
