@@ -5,9 +5,12 @@ import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
+import android.opengl.Visibility
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isGone
 import com.app_investigarte.database.DatabaseAccess
 import com.app_investigarte.databinding.ActivityDescripcionBinding
 import com.app_investigarte.databinding.ShowImgDialogBinding
@@ -34,7 +37,7 @@ class DescripcionActivity : AppCompatActivity() {
 
         //Cambio de tema deacuerdo a la subreguion
         SetThemeActivity.setTheme(this, informacionArtefacto[7].toInt())
-        //se inserta el layout para se mostrada la vista
+        //se inserta el layout para ser mostrada la vista
         setContentView(binding.root)
 
 
@@ -67,10 +70,42 @@ class DescripcionActivity : AppCompatActivity() {
             txtMunicipioArtifact.text = informacionArtefacto[4]
             txtSupReguionArtifact.text = informacionArtefacto[5]
             txtDepartamentoArtifact.text = (informacionArtefacto[6])
+
+
+            if (informacionArtefacto[8].equals("Sin definer")) {
+                txtCommunityArtifact!!.visibility = View.GONE
+                txtCommunity!!.visibility = View.GONE
+            }
             txtCommunityArtifact!!.text = informacionArtefacto[8]
+
+            if (informacionArtefacto[9].equals("Sin definer")) {
+                txtArtisanClassificationArtifact!!.visibility = View.GONE
+                txtArtisanClassification!!.visibility = View.GONE
+            }
             txtArtisanClassificationArtifact!!.text = informacionArtefacto[9]
+
+            if (informacionArtefacto[10].equals("Sin definer")) {
+                txtClothingCategoryArtifact!!.visibility = View.GONE
+                txtClothingCategory!!.visibility = View.GONE
+            }
             txtClothingCategoryArtifact!!.text = informacionArtefacto[10]
+
+            if (informacionArtefacto[11].equals("Sin definer")) {
+                txtPatrimonialCategoryArtifact!!.visibility = View.GONE
+                txtPatrimonialCategory!!.visibility = View.GONE
+            }
             txtPatrimonialCategoryArtifact!!.text = informacionArtefacto[11]
+
+            if (informacionArtefacto[12].equals("")) {
+                txtMaterialsArtifact!!.visibility = View.GONE
+                txtMaterials!!.visibility = View.GONE
+            }
+            txtMaterialsArtifact!!.text = informacionArtefacto[12]
+
+            if (informacionArtefacto[3].equals("")) {
+                txtDescriptionArtifact!!.visibility = View.GONE
+                txtDescription!!.visibility = View.GONE
+            }
             txtDescriptionArtifact.text = informacionArtefacto[3]
         }
     }
@@ -91,9 +126,9 @@ class DescripcionActivity : AppCompatActivity() {
         dialog.window?.setWindowAnimations(R.style.AnimationsForDialog)
         dialog.show()
 
-      //  imgArtefactoDescription.scaleType = ImageView.ScaleType.CENTER_CROP
+        //  imgArtefactoDescription.scaleType = ImageView.ScaleType.CENTER_CROP
 
-        binding2.imgArt.setOnClickListener{
+        binding2.imgArt.setOnClickListener {
             //para cerrar el dialogo
             dialog.dismiss()
         }

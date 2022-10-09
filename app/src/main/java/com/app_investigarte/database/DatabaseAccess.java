@@ -102,7 +102,7 @@ public class DatabaseAccess {
     //consulta informacion Artefacto
     public String[] getDescription(int id) {
 
-        c = db.rawQuery("SELECT a.id, a.name, a.image, a.description, m.name, s.name, d.name, s.id, c.name, ac.name, cc.name, pc.name "+
+        c = db.rawQuery("SELECT a.id, a.name, a.image, a.description, m.name, s.name, d.name, s.id, c.name, ac.name, cc.name, pc.name, a.materials "+
         "FROM Artifact a "+
         "INNER JOIN Municipality m on a.id_municipality = m.id "+
         "INNER JOIN Subregions s  on m.id_subregions = s.id " +
@@ -113,7 +113,7 @@ public class DatabaseAccess {
         "INNER JOIN Patrimonial_category pc on a.id_patrimonial_category  = pc.id " +
         "WHERE a.id =  "+id+";",null);
 
-        int columnas=12;
+        int columnas=13;
 
         String informacion[]= new String[columnas];
 
@@ -124,6 +124,7 @@ public class DatabaseAccess {
         }
         return informacion;
     }
+
 
     public String[] getUserCorreoExiste(String email){
         //c = db.rawQuery("select count(*) , name from Users where  email= 'esteban.ea145@gmail.com'",null);
