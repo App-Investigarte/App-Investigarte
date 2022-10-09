@@ -68,7 +68,15 @@ class DescripcionActivity : AppCompatActivity() {
             }
 
             txtMunicipioArtifact.text = informacionArtefacto[4]
+
+
+
+            if (informacionArtefacto[5].equals("Sin definer")) {
+                txtSupReguionArtifact.visibility = View.GONE
+                txtSupReguion!!.visibility = View.GONE
+            }
             txtSupReguionArtifact.text = informacionArtefacto[5]
+
             txtDepartamentoArtifact.text = (informacionArtefacto[6])
 
 
