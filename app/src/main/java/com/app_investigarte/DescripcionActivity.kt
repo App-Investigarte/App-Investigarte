@@ -58,7 +58,7 @@ class DescripcionActivity : AppCompatActivity() {
                     packageName
                 )
                 imgArtefactoDescription.setImageResource(img)
-                imgArtefactoDescription.scaleType = ImageView.ScaleType.CENTER_CROP
+                imgArtefactoDescription.scaleType = ImageView.ScaleType.FIT_XY
 
 
                 binding.imgArtefactoDescription.setOnClickListener {
@@ -127,7 +127,7 @@ class DescripcionActivity : AppCompatActivity() {
         val binding2: ShowImgDialogBinding = ShowImgDialogBinding.inflate(layoutInflater)
 
         binding2.imgArt.setImageResource(img_art)
-
+        binding2.imgArt.scaleType = ImageView.ScaleType.FIT_XY
         val dialog: Dialog = Dialog(this)
         dialog.setContentView(binding2.root)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
